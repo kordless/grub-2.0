@@ -12,8 +12,7 @@ for item in evalcontent:
 		key,token = item.split('-')
 
 token = "solr"
-config = 
-"""
+config = """
 {
 "authentication":{ 
    "blockUnknown": true, 
@@ -24,5 +23,5 @@ config =
 }
 """ % token
 
-f = open("security.json")
+f = open("security.json", "w")
 f.write(config)
