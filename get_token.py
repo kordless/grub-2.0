@@ -12,24 +12,7 @@ for item in evalcontent:
 		key,token = item.split('-')
 
 config = """
-user www-data;
-worker_processes auto;
-pid /run/nginx.pid;
-events {
-        worker_connections 768;
-        # multi_accept on;
-}
-http {
-        server {
-                listen  8389;
-                location / {
-                        auth_basic "solr";
-                        auth_basic_user_file /etc/nginx/htpasswd
-                        proxy_pass http://localhost:8983/;
-                }
-        }
-}
+%s
 """ % token
 
-f = open("/etc/nginx/nginx.conf", "w")
-f.write(config)
+print(config)
