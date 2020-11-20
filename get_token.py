@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# get the token from gcp tag on instance
+# get token from gcp tag
 import httplib2
 http = httplib2.Http()
 url = 'http://metadata.google.internal/computeMetadata/v1/instance/tags'
@@ -11,8 +11,7 @@ for item in evalcontent:
 	if 'token' in item:
 		key,token = item.split('-')
 
-config = """
-%s
-""" % token
+# run it
+import os
+os.system("/usr/bin/htpasswd -b -c /etc/nginx/htpasswd solr %s" % token)
 
-print(config)

@@ -77,9 +77,8 @@ apt-get install apache2-utils -y
 apt-get install nginx -y
 cp nginx.conf /etc/nginx/
 
-# set password
-htpasswd -b -c /etc/nginx/htpasswd solr $TOKEN
-echo $TOKEN >> /etc/nginx/token
+# save password token to /etc/nginx/htpasswd
+python3 get_token.py
 
 # expose 8389 --> solr 8983
 systemctl restart nginx.service
