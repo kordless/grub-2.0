@@ -80,6 +80,7 @@ cp nginx.conf /etc/nginx/
 
 # set password
 htpasswd -b -c /etc/nginx/htpasswd solr $TOKEN
+echo $TOKEN >> /etc/nginx/token
 
 # expose 8389 --> solr 8983
 systemctl restart nginx.service
