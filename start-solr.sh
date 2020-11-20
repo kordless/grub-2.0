@@ -13,7 +13,7 @@ echo "This instance is preemtible, unless it's started with --prod";
 case $option in
     -p|--prod|--production)
     unset PREEMPTIBLE
-    IP="--address=35.233.156.51"
+	IP="--address=34.83.44.36"
     echo "Production mode enabled..."
     echo;
     unset IP;
@@ -42,6 +42,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --labels type=solr \
 --tags mitta,solr,$TOKEN \
 --preemptible \
+--subnet=default $IP --network-tier=PREMIUM \
 --metadata startup-script='#! /bin/bash
 sudo su -
 date >> /opt/start.time
