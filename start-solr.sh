@@ -32,7 +32,7 @@ fi
 
 gcloud compute instances create $NAME-$NEW_UUID \
 --machine-type $TYPE \
---image "ubuntu-1804-bionic-v20201014" \
+--image "ubuntu-1804-bionic-v20201116" \
 --image-project "ubuntu-os-cloud" \
 --boot-disk-size "10GB" \
 --boot-disk-type "pd-ssd" \
@@ -61,9 +61,10 @@ curl https://archive.apache.org/dist/lucene/solr/8.7.0/solr-8.7.0.tgz > solr-8.7
 tar xzf solr-8.7.0.tgz solr-8.7.0/bin/install_solr_service.sh --strip-components=2
 
 # run installer
-bash ./install_solr_service.sh solr-8.7.0.tgz -i /opt -d /opt/solr/server/logs -u solr -s solr -p 8983
+bash ./install_solr_service.sh solr-8.7.0.tgz -u solr -s solr -p 8983
 
 # update perms
+mkdir /opt/solr/server/logs/
 cd /opt/
 chown -R solr.solr solr*
 
