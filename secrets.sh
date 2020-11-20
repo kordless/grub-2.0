@@ -1,1 +1,1 @@
-TOKEN=securetokenstringhere
+TOKEN=f00bar

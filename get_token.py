@@ -11,17 +11,25 @@ for item in evalcontent:
 	if 'token' in item:
 		key,token = item.split('-')
 
-token = "solr"
 config = """
-{
-"authentication":{ 
-   "blockUnknown": true, 
-   "class":"solr.BasicAuthPlugin",
-   "credentials":{"%s":"IV0EHq1OnNrj6gvRCwvFwTrZ1+z1oBbnQdiVC3otuq0= Ndd7LKvVBAaZIF0QAVi1ekCfAJXr1GGfLtRUXhgrF8c="}, 
-   "realm":"purelands", 
-   "forwardCredentials": false 
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+events {
+        worker_connections 768;
+        # multi_accept on;
+}
+http {
+        server {
+                listen  8389;
+                location / {
+                        auth_basic "solr";
+                        auth_basic_user_file /etc/nginx/htpasswd
+                        proxy_pass http://localhost:8983/;
+                }
+        }
 }
 """ % token
 
-f = open("security.json", "w")
+f = open("/etc/nginx/nginx.conf", "w")
 f.write(config)

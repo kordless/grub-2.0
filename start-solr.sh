@@ -40,7 +40,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --service-account mitta-us@appspot.gserviceaccount.com \
 --zone $ZONE \
 --labels type=solr \
---tags mitta,solr,token-$TOKEN \
+--tags mitta,solr,$TOKEN \
 --preemptible \
 --metadata startup-script='#! /bin/bash
 sudo su -
@@ -61,31 +61,28 @@ curl https://archive.apache.org/dist/lucene/solr/8.7.0/solr-8.7.0.tgz > solr-8.7
 tar xzf solr-8.7.0.tgz solr-8.7.0/bin/install_solr_service.sh --strip-components=2
 
 # run installer
-bash ./install_solr_service.sh solr-8.7.0.tgz -i /opt -d /var/solr -u solr -s solr -p 8983
+bash ./install_solr_service.sh solr-8.7.0.tgz -i /opt -d /opt/solr/server/logs -u solr -s solr -p 8983
 
 # update perms
 cd /opt/
 chown -R solr.solr solr*
 
-# fix up auth file
+# fix up a config for nginx
 git clone https://github.com/kordless/mitta-deploy.git
 cd mitta-deploy
-python3 get_token.py
 
-# move auth file
-mv security.json /opt/solr-8.7.0/server/solr/
+# install nginx
+apt-get install apache2-utils
+apt-get install nginx -y
+cp nginx.conf /etc/nginx/
 
-# update perms
-cd /opt/
-chown -R solr.solr solr*
+# set password
+htpasswd -b -c /etc/nginx/htpasswd solr $TOKEN
 
-# restart
-cd /opt/solr-8.7.0/bin/
-su solr
-./solr restart
+# expose 8389 --> solr 8983
+systemctl restart nginx.service
 
 '
 sleep 15
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
-gcloud compute firewall-rules create fusion --allow tcp:8764
-gcloud compute firewall-rules create fusion --allow tcp:8763
+gcloud compute firewall-rules create solr-proxy --allow tcp:8389
