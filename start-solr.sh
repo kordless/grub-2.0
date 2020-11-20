@@ -87,3 +87,4 @@ systemctl restart nginx.service
 sleep 15
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
 gcloud compute firewall-rules create solr-proxy --allow tcp:8389
+echo "Password token is: $TOKEN"
