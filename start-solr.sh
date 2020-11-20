@@ -44,6 +44,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --preemptible \
 --metadata startup-script='#! /bin/bash
 sudo su -
+date >> /opt/start.time
 apt-get update -y
 apt-get install unzip -y
 # install OpenJDK
@@ -73,7 +74,7 @@ git clone https://github.com/kordless/mitta-deploy.git
 cd mitta-deploy
 
 # install nginx
-apt-get install apache2-utils
+apt-get install apache2-utils -y
 apt-get install nginx -y
 cp nginx.conf /etc/nginx/
 
@@ -83,6 +84,7 @@ htpasswd -b -c /etc/nginx/htpasswd solr $TOKEN
 # expose 8389 --> solr 8983
 systemctl restart nginx.service
 
+date >> /opt/done.time
 '
 sleep 15
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
