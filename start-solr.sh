@@ -18,7 +18,7 @@ case $option in
 esac
 
 if [ -f secrets.sh ]; then
-   source secrets.sh # truly, a travesty
+   source secrets.sh # truly, a travesty, sets TOKEN=token-[passphrase]
    echo "Here's where I say, hold on a second while we fire things up."
    gcloud compute project-info add-metadata --metadata token=$TOKEN
    echo;
@@ -38,7 +38,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --service-account mitta-us@appspot.gserviceaccount.com \
 --zone $ZONE \
 --labels type=solr \
---tags mitta,solr,$TOKEN \
+--tags mitta,solr,token-$TOKEN \
 --preemptible \
 --subnet=default $IP --network-tier=PREMIUM \
 --metadata startup-script='#! /bin/bash
