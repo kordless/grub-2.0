@@ -48,18 +48,41 @@ apt-get update -y
 apt-get install unzip -y
 # install OpenJDK
 apt-get update -y
+
+# java
 apt-get install openjdk-11-jdk -y
 echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/environment
 
+# work here
 cd /opt/
 
+# grab solr and extract installer
 curl https://archive.apache.org/dist/lucene/solr/8.7.0/solr-8.7.0.tgz > solr-8.7.0.tgz
 tar xzf solr-8.7.0.tgz solr-8.7.0/bin/install_solr_service.sh --strip-components=2
 
-sudo bash ./install_solr_service.sh solr-8.7.0.tgz -i /opt -d /var/solr -u solr -s solr -p 8983
-mv /opt/security.json /opt/solr-8.7.0/server/solr/
+# run installer
+bash ./install_solr_service.sh solr-8.7.0.tgz -i /opt -d /var/solr -u solr -s solr -p 8983
+
+# update perms
+cd /opt/
+chown -R solr.solr solr*
+
+# fix up auth file
+git clone https://github.com/kordless/mitta-deploy.git
+cd mitta-deploy
+python3 get_token.py
+
+# move auth file
+mv security.json /opt/solr-8.7.0/server/solr/
+
+# update perms
+cd /opt/
+chown -R solr.solr solr*
+
+# restart
 cd /opt/solr-8.7.0/bin/
-echo "would start python generator script"
+su solr
+./solr restart
 
 '
 sleep 15
