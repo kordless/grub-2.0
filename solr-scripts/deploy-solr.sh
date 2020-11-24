@@ -44,11 +44,9 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --subnet=default $IP --network-tier=PREMIUM \
 --metadata startup-script='#! /bin/bash
 if [ -d "/opt/solr/" ]; then
-  # already installed, so start solr
   echo "starting solr"
   bash /etc/init.d/solr
 else
-  # else
   sudo su -
   date >> /opt/start.time
   apt-get update -y
@@ -56,58 +54,44 @@ else
   # install OpenJDK
   apt-get update -y
 
-  # java
   apt-get install openjdk-11-jdk -y
   echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/environment
 
-
-  # work here
   cd /opt/
 
-  # grab solr and extract installer
   curl https://archive.apache.org/dist/lucene/solr/8.7.0/solr-8.7.0.tgz > solr-8.7.0.tgz
   tar xzf solr-8.7.0.tgz solr-8.7.0/bin/install_solr_service.sh --strip-components=2
 
-  # run installer
   bash ./install_solr_service.sh solr-8.7.0.tgz -u solr -s solr -p 8983
 
-  # new directory and update perms
   mkdir /opt/solr/server/logs/
   mkdir /opt/solr/mitta/
   cd /opt/
   chown -R solr.solr solr*
 
-  # halt server and install cloud
   sudo -i -u solr /opt/solr/bin/solr stop
   sudo -i -u solr /opt/solr/bin/solr -e cloud -noprompt
   mv /opt/solr/example/cloud /opt/solr/mitta
 
-  # grab the repo
   git clone https://github.com/kordless/mitta-deploy.git
 
-  # start solr again
   cd mitta-deploy
   chmod -R 755 *.sh
   ./solr-scripts/start-solr.sh
 
-  # start on reboot hopefully (does not work)
   cp solr /etc/init.d/solr
   chmod 755 /etc/init.d/solr
 
-  # install nginx
   apt-get install apache2-utils -y
   apt-get install nginx -y
   cp nginx.conf /etc/nginx/
 
-  # save password token to /etc/nginx/htpasswd
   python3 get_token.py
 
-  # expose 8389 --> solr 8983
   systemctl restart nginx.service
 
   date >> /opt/done.time
 
-  # end if
 fi
 '
 sleep 15
