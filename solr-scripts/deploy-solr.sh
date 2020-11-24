@@ -44,8 +44,9 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --subnet=default $IP --network-tier=PREMIUM \
 --metadata startup-script='#! /bin/bash
 if [ -d "/opt/solr/" ]; then
-  # do nothing
-  echo "skipping"
+  # already installed, so start solr
+  echo "starting solr"
+  bash /etc/init.d/solr
 else
   # else
   sudo su -
@@ -86,8 +87,8 @@ else
 
   # start solr again
   cd mitta-deploy
-  chmod 755 *-solr.sh
-  ./start-solr.sh
+  chmod -R 755 *.sh
+  ./solr-scripts/start-solr.sh
 
   # start on reboot hopefully
   cp solr /etc/init.d/solr
