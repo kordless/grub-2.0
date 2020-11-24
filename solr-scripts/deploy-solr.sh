@@ -90,7 +90,7 @@ else
   chmod -R 755 *.sh
   ./solr-scripts/start-solr.sh
 
-  # start on reboot hopefully
+  # start on reboot hopefully (does not work)
   cp solr /etc/init.d/solr
   chmod 755 /etc/init.d/solr
 
