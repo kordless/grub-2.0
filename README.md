@@ -1,6 +1,8 @@
 # Deploy Solr on Google Cloud
 Useful information and scripts for deploying instance based Solr Cloud.
 
+Check this repo out on your Google Cloud Shell terminal.
+
 ## Launch Solr
 Deploy a secure Solr instance on Google cloud:
 
