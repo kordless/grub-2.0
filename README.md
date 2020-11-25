@@ -25,4 +25,4 @@ $ ./deploy-fastener.sh
 Instance will be running in 2.5 minutes, listening on port 80.
 
 ## Bookmark and Index
-Bookmark and index this page using [Mitta.us](https://mitta.us/https://github.com/kordless/mitta-deploy/).
+[Bookmark and index](https://mitta.us/https://github.com/kordless/mitta-deploy/) this page using [Mitta.us](https://mitta.us/https://github.com/kordless/mitta-deploy/).
