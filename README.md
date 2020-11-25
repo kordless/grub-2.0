@@ -11,6 +11,14 @@ $ ./deploy-solr.sh
 Password token is: f00bar
 ```
 
+### Create a secrets.sh file
+
+```
+$ vi secrets.sh
+TOKEN=f00bar
+:x
+```
+
 Instance will be running in 2.5 minutes, listening on port 8389.
 
 URL like: http://solr:password@x.x.x.x:8389
