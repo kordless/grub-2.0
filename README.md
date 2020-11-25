@@ -1,6 +1,7 @@
 # Deploy Solr on Google Cloud
+Useful information and scripts for deploying instance based Solr Cloud.
 
-## Solr
+## Launch Solr
 Deploy a secure Solr instance on Google cloud:
 
 ```
@@ -8,12 +9,12 @@ $ ./start-solr.sh
 Password token is: f00bar
 ```
 
-Instance will be running in 2.5 minutes, listening on 8389.
+Instance will be running in 2.5 minutes, listening on port 8389.
 
-Username is 'solr'. 
+URL like: http://solr:password@x.x.x.x:8389
 
 ## Fastener
-Deploy a controller box for Solr instances.
+Deploy a controller box for Solr instances. Not done yet.
 
 ```
 $ ./deploy-solr.sh
