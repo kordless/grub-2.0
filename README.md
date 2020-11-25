@@ -1,5 +1,5 @@
 # Deploy Solr on Google Cloud in 2 Minutes
-Useful information and scripts for deploying instance based Solr Cloud.
+Useful information and scripts for deploying an instance based Solr Cloud in 2 minutes.
 
 Check this repo out on your Google Cloud Shell terminal.
 
