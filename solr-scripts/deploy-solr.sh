@@ -2,7 +2,7 @@
 TYPE=n1-standard-4
 ZONE=us-west1-c
 NAME=solr
-VERSION=8.7.0
+VERSION=8.6.3
 NEW_UUID=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
 
 option=$1
@@ -58,10 +58,10 @@ else
 
   cd /opt/
 
-  curl https://archive.apache.org/dist/lucene/solr/8.7.0/solr-8.7.0.tgz > solr-8.7.0.tgz
-  tar xzf solr-8.7.0.tgz solr-8.7.0/bin/install_solr_service.sh --strip-components=2
+  curl https://archive.apache.org/dist/lucene/solr/8.6.3/solr-8.6.3.tgz > solr-8.6.3.tgz
+  tar xzf solr-8.6.3.tgz solr-8.6.3/bin/install_solr_service.sh --strip-components=2
 
-  bash ./install_solr_service.sh solr-8.7.0.tgz -u solr -s solr -p 8983
+  bash ./install_solr_service.sh solr-8.6.3.tgz -u solr -s solr -p 8983
 
   mkdir /opt/solr/server/logs/
   mkdir /opt/solr/mitta/
