@@ -95,7 +95,11 @@ fi
 '
 sleep 15
 gcloud compute instances add-metadata $NAME-$NEW_UUID \
-  --metadata shutdown-script='#!/bin/bash /opt/mitta-deploy/solr-scripts/stop-solr.sh' \
+--zone $ZONE \
+--metadata shutdown-script='#!/bin/bash
+/opt/mitta-deploy/solr-scripts/stop-solr.sh
+sleep 5
+'
 
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
 gcloud compute firewall-rules create solr-proxy --allow tcp:8389
