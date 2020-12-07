@@ -109,6 +109,7 @@ gcloud compute instances add-metadata $NAME-$NEW_UUID \
 --zone $ZONE \
 --metadata shutdown-script='#!/bin/bash
 /opt/mitta-deploy/solr-scripts/stop-solr.sh
+touch /root/shutdown-complete
 sleep 5
 '
 
