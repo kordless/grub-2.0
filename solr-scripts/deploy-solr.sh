@@ -41,7 +41,8 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --tags mitta,solr,token-$TOKEN \
 --preemptible \
 --subnet=default $IP --network-tier=PREMIUM \
---metadata startup-script='#! /bin/bash
+--metadata shutdown-script='#!/bin/bash /opt/mitta-deploy/solr-scripts/stop-solr.sh' \
+--metadata startup-script='#!/bin/bash
 if [ -d "/opt/solr/" ]; then
   echo "starting solr"
   bash /etc/init.d/solr
