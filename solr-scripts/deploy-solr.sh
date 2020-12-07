@@ -59,10 +59,10 @@ else
   /etc/init.d/rng-tools restart
 
   # files
-  cat "solr hard nofile 65535" >> /etc/security/limits.conf
-  cat "solr soft nofile 65535" >> /etc/security/limits.conf
-  cat "solr hard nproc 65535" >> /etc/security/limits.conf
-  cat "solr soft nproc 65535" >> /etc/security/limits.conf
+  echo "solr hard nofile 65535" >> /etc/security/limits.conf
+  echo "solr soft nofile 65535" >> /etc/security/limits.conf
+  echo "solr hard nproc 65535" >> /etc/security/limits.conf
+  echo "solr soft nproc 65535" >> /etc/security/limits.conf
 
   apt-get install openjdk-11-jdk -y
   echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/environment
