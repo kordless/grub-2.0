@@ -41,7 +41,6 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --tags mitta,solr,token-$TOKEN \
 --preemptible \
 --subnet=default $IP --network-tier=PREMIUM \
---metadata shutdown-script='#!/bin/bash /opt/mitta-deploy/solr-scripts/stop-solr.sh' \
 --metadata startup-script='#!/bin/bash
 if [ -d "/opt/solr/" ]; then
   echo "starting solr"
@@ -95,6 +94,9 @@ else
 fi
 '
 sleep 15
+gcloud compute instances add-metadata $NAME-$NEW_UUID \
+  --metadata shutdown-script='#!/bin/bash /opt/mitta-deploy/solr-scripts/stop-solr.sh' \
+
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
 gcloud compute firewall-rules create solr-proxy --allow tcp:8389
 echo "Password token is: $TOKEN"
