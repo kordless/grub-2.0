@@ -53,6 +53,19 @@ else
   # install OpenJDK
   apt-get update -y
 
+  #entropy
+  apt-get -y install rng-tools
+  cat "HRNGDEVICE=/dev/urandom" >> /etc/default/rng-tools
+  /etc/init.d/rng-tools restart
+
+  # files
+  cat "
+  solr hard nofile 65535
+  solr soft nofile 65535
+  solr hard nproc 65535
+  solr soft nproc 65535
+  " >> /etc/security/limits.conf
+
   apt-get install openjdk-11-jdk -y
   echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/environment
 
