@@ -1,13 +1,12 @@
 #!/bin/bash
-TYPE=n1-standard-4
+TYPE=e2-medium
 ZONE=us-west1-c
-NAME=solr
-VERSION=8.6.3
+NAME=grub
 NEW_UUID=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
 
 option=$1
 PREEMPTIBLE="--preemptible"
-IP="--address=35.233.155.193"
+IP=""
 
 echo "This instance is preemtible, unless it's started with --prod";
 case $option in
@@ -15,6 +14,7 @@ case $option in
     unset PREEMPTIBLE
 	echo "Production mode enabled..."
     echo;
+    IP="--address=35.233.155.193"
 esac
 
 if [ -f secrets.sh ]; then
@@ -37,14 +37,16 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --boot-disk-device-name "$NEW_UUID" \
 --service-account mitta-us@appspot.gserviceaccount.com \
 --zone $ZONE \
---labels type=solr \
---tags mitta,solr,token-$TOKEN \
---preemptible \
+--labels type=grub \
+--tags mitta,grub,token-$TOKEN \
+$PREEMPTIBLE \
 --subnet=default $IP --network-tier=PREMIUM \
 --metadata startup-script='#! /bin/bash
 if [ -d "/opt/mitta-deploy/" ]; then
   echo "starting grub"
-  bash /opt/mitta-deploy/grub-scripts/start-grub.sh
+  cd /opt/mitta-deploy/
+  screen -dmS geckodriver bash -c "bash ./grub-scripts/start-geckodriver.sh"
+  screen -dmS grub bash -c "bash ./grub-scripts/start-grub.sh"
 else
   sudo su -
   date >> /opt/start.time
@@ -52,28 +54,29 @@ else
   apt-get install unzip -y
   apt-get update -y
 
+  pip3 install urllib3
+  pip3 install requests
+
   cd /opt/
   
   curl https://storage.googleapis.com/mitta-config/geckodriver-v0.28.0-linux64.tar.gz > geckodriver.tar.gz
-  tar xzf geckodriver.tar.gz
+  tar xzhf geckodriver.tar.gz
 
   git clone https://github.com/kordless/mitta-deploy.git
 
   mv geckodriver /opt/mitta-deploy/
-
   cd mitta-deploy
-  
   chmod -R 755 *.sh
-  screen -dmS buttons bash -c "bash start-geckodriver.sh"
 
-  ./grub-scripts/start-grub.sh
+  echo "starting grub"
+  screen -dmS geckodriver bash -c "bash ./grub-scripts/start-geckodriver.sh"
+  screen -dmS grub bash -c "bash ./grub-scripts/start-grub.sh"
 
   date >> /opt/done.time
-
 fi
 '
 sleep 15
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
-gcloud compute firewall-rules create solr-proxy --allow tcp:8389
+gcloud compute firewall-rules create solr-proxy --allow tcp:8989
 echo "Password token is: $TOKEN"
 histo

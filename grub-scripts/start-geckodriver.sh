@@ -1,1 +1,1 @@
-start-geckodriver.sh
+./geckodriver -v --host 0.0.0.0
