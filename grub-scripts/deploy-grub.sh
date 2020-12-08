@@ -30,7 +30,7 @@ fi
 
 gcloud compute instances create $NAME-$NEW_UUID \
 --machine-type $TYPE \
---image "ubuntu-1804-bionic-v20201116" \
+--image "ubuntu-1804-bionic-v20201130" \
 --image-project "ubuntu-os-cloud" \
 --boot-disk-size "10GB" \
 --boot-disk-type "pd-ssd" \
@@ -64,6 +64,8 @@ else
   cd mitta-deploy
   
   chmod -R 755 *.sh
+  screen -dmS buttons bash -c "bash start-geckodriver.sh"
+
   ./grub-scripts/start-grub.sh
 
   date >> /opt/done.time
