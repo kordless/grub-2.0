@@ -54,6 +54,8 @@ else
   apt-get install unzip -y
   apt-get update -y
 
+  ln -s /usr/bin/python3 /usr/bin/python
+
   pip3 install urllib3
   pip3 install requests
   pip3 install httplib2
@@ -80,4 +82,3 @@ sleep 15
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
 gcloud compute firewall-rules create solr-proxy --allow tcp:8989
 echo "Password token is: $TOKEN"
-histo
