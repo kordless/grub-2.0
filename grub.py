@@ -12,30 +12,8 @@ from flask import Flask, render_template, request, abort
 # app up
 app = Flask(__name__)
 
-# get token from gcp tag
-import httplib2
-http = httplib2.Http()
-url = 'http://metadata.google.internal/computeMetadata/v1/instance/tags'
-headers = {'Metadata-Flavor': 'Google'}
-response, content = http.request(url, 'GET', headers=headers)
-evalcontent = eval(content)
-for item in evalcontent:
-	if 'token' in item:
-		key,token = item.split('-')
-
-
 @app.route('/g', methods=['POST'])
 def grub():
-	try:
-		request_token = request.args.get('token')
-	except:
-		request_token = ""
-
-	if request_token == token:
-		print("we're good")
-	else:
-		abort(404, description="resource not found")
-
 	# build document
 	document = {}
 	

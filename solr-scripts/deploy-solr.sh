@@ -94,7 +94,7 @@ else
 
   apt-get install apache2-utils -y
   apt-get install nginx -y
-  cp nginx.conf /etc/nginx/
+  cp nginx.conf.solr /etc/nginx/nginx.conf
 
   python3 get_token.py
 

@@ -53,12 +53,22 @@ else
   apt-get update -y
   apt-get install unzip -y
   apt-get update -y
+  apt-get install python3-pip -y
 
   ln -s /usr/bin/python3 /usr/bin/python
 
+  pip3 install flask
   pip3 install urllib3
   pip3 install requests
   pip3 install httplib2
+
+  apt-get install apache2-utils -y
+  apt-get install nginx -y
+  cp nginx.conf.grub /etc/nginx/nginx.conf
+
+  python3 get_token.py
+
+  systemctl restart nginx.service
 
   cd /opt/
   
@@ -80,5 +90,5 @@ fi
 '
 sleep 15
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
-gcloud compute firewall-rules create solr-proxy --allow tcp:8989
+gcloud compute firewall-rules create grub-proxy --allow tcp:8983
 echo "Password token is: $TOKEN"

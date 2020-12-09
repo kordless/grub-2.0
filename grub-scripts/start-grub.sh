@@ -1,4 +1,4 @@
 while true; do
-  python ./grub.py
+  python3 ./grub.py
   sleep 5
 done
