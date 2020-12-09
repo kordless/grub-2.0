@@ -6,15 +6,15 @@ events {
         # multi_accept on;
 }
 http {
-        upstream solr {
+        upstream grub {
                 server localhost:7070;
         }
         server {
                 listen  8983;
                 location / {
-                        auth_basic "solr";
+                        auth_basic "grub";
                         auth_basic_user_file /etc/nginx/htpasswd;
-                        proxy_pass http://solr/;
+                        proxy_pass http://grub/;
                 }
         }
 }

@@ -62,6 +62,8 @@ else
   pip3 install requests
   pip3 install httplib2
 
+  cd /opt/
+
   apt-get install apache2-utils -y
   apt-get install nginx -y
   cp nginx.conf.grub /etc/nginx/nginx.conf
@@ -69,9 +71,7 @@ else
   python3 get_token.py
 
   systemctl restart nginx.service
-
-  cd /opt/
-  
+    
   curl https://storage.googleapis.com/mitta-config/geckodriver-v0.28.0-linux64.tar.gz > geckodriver.tar.gz
   tar xzhf geckodriver.tar.gz
 
