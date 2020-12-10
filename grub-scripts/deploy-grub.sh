@@ -64,14 +64,6 @@ else
 
   cd /opt/
 
-  apt-get install apache2-utils -y
-  apt-get install nginx -y
-  cp nginx.conf.grub /etc/nginx/nginx.conf
-
-  python3 get_token.py
-
-  systemctl restart nginx.service
-    
   curl https://storage.googleapis.com/mitta-config/geckodriver-v0.28.0-linux64.tar.gz > geckodriver.tar.gz
   tar xzhf geckodriver.tar.gz
 
@@ -81,6 +73,14 @@ else
   cd mitta-deploy
   chmod -R 755 *.sh
 
+  apt-get install apache2-utils -y
+  apt-get install nginx -y
+  cp nginx.conf.grub /etc/nginx/nginx.conf
+
+  python3 get_token.py
+
+  systemctl restart nginx.service
+ 
   echo "starting grub"
   screen -dmS geckodriver bash -c "bash ./grub-scripts/start-geckodriver.sh"
   screen -dmS grub bash -c "bash ./grub-scripts/start-grub.sh"
