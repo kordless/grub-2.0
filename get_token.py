@@ -13,5 +13,7 @@ for item in evalcontent:
 
 # run it
 import os
-os.system("/usr/bin/htpasswd -b -c /etc/nginx/htpasswd solr %s" % token)
+
+user = sys.argv[1]
+os.system("/usr/bin/htpasswd -b -c /etc/nginx/htpasswd %s %s" % (user, token))
 
