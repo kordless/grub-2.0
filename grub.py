@@ -23,6 +23,7 @@ def grub():
 			json = json.dumps({"result": "success", "document": document})
 		)
 	)
+	return response
 
 @app.errorhandler(404)
 def f404_notfound(e):
