@@ -12,7 +12,7 @@ for item in evalcontent:
 		key,token = item.split('-')
 
 # run it
-import os
+import os, sys
 
 user = sys.argv[1]
 os.system("/usr/bin/htpasswd -b -c /etc/nginx/htpasswd %s %s" % (user, token))
