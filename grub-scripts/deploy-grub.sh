@@ -77,7 +77,7 @@ else
   apt-get install nginx -y
   cp nginx.conf.grub /etc/nginx/nginx.conf
 
-  python3 get_token.py
+  python3 get_token.py grub
 
   systemctl restart nginx.service
  

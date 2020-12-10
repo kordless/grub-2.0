@@ -96,7 +96,7 @@ else
   apt-get install nginx -y
   cp nginx.conf.solr /etc/nginx/nginx.conf
 
-  python3 get_token.py
+  python3 get_token.py solr
 
   systemctl restart nginx.service
 
