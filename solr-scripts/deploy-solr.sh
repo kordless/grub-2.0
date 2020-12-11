@@ -83,9 +83,9 @@ else
   sudo -i -u solr /opt/solr/bin/solr -e cloud -noprompt
   mv /opt/solr/example/cloud /opt/solr/mitta
 
-  git clone https://github.com/kordless/mitta-deploy.git
+  git clone https://github.com/kordless/grub-2.0.git
 
-  cd mitta-deploy
+  cd grub-2.0
   chmod -R 755 *.sh
   ./solr-scripts/start-solr.sh
 
@@ -108,7 +108,7 @@ sleep 15
 gcloud compute instances add-metadata $NAME-$NEW_UUID \
 --zone $ZONE \
 --metadata shutdown-script='#!/bin/bash
-/opt/mitta-deploy/solr-scripts/stop-solr.sh >> /root/shutdown-complete
+/opt/grub-2.0/solr-scripts/stop-solr.sh >> /root/shutdown-complete
 '
 
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')

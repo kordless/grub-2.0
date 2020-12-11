@@ -42,9 +42,9 @@ gcloud compute instances create $NAME-$NEW_UUID \
 $PREEMPTIBLE \
 --subnet=default $IP --network-tier=PREMIUM \
 --metadata startup-script='#! /bin/bash
-if [ -d "/opt/mitta-deploy/" ]; then
+if [ -d "/opt/grub-2.0/" ]; then
   echo "starting grub"
-  cd /opt/mitta-deploy/
+  cd /opt/grub-2.0/
   screen -dmS geckodriver bash -c "bash ./grub-scripts/start-geckodriver.sh"
   screen -dmS grub bash -c "bash ./grub-scripts/start-grub.sh"
 else
@@ -67,10 +67,10 @@ else
   curl https://storage.googleapis.com/mitta-config/geckodriver-v0.28.0-linux64.tar.gz > geckodriver.tar.gz
   tar xzhf geckodriver.tar.gz
 
-  git clone https://github.com/kordless/mitta-deploy.git
+  git clone https://github.com/kordless/grub-2.0.git
 
-  mv geckodriver /opt/mitta-deploy/
-  cd mitta-deploy
+  mv geckodriver /opt/grub-2.0/
+  cd grub-2.0
   chmod -R 755 *.sh
 
   apt-get install apache2-utils -y

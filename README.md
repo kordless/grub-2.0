@@ -16,7 +16,7 @@ Here is Google Vision looking at a Bloomberg article.
 
 ![andy](https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/googlevision.PNG)
 
-Grub runs on Flask in Python and uses Solr, Webdriver and Tensorflow.
+Grub runs on [Flask]() in Python and uses [Solr 7.5.2](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
 
 This open code repository provides information and scripts for deploying the system.
 
@@ -84,4 +84,4 @@ $ ./deploy-fastener.sh
 Instance will be running in 2.5 minutes, listening on port 80.
 
 ## Bookmark
-[Bookmark and index](https://mitta.us/https://github.com/kordless/mitta-deploy/) this page using [Mitta.us](https://mitta.us/https://github.com/kordless/mitta-deploy/).
+[Bookmark and index](https://mitta.us/https://github.com/kordless/grub-2.0/) this page using [Mitta.us](https://mitta.us/).
