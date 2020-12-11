@@ -1,8 +1,6 @@
 import urllib.parse as urlparse
 
-import lib.webdriver.error as error
-import lib.webdriver.protocol as protocol
-import lib.webdriver.transport as transport
+from lib.webdriver import error, protocol, transport
 
 
 from six import string_types

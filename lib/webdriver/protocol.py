@@ -1,7 +1,6 @@
 import json
 
-import webdriver
-
+from lib import webdriver
 
 """WebDriver wire protocol codecs."""
 

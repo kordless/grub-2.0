@@ -3,7 +3,7 @@ import json
 import select
 import urllib.parse as urlparse
 
-import webdriver.error
+from lib.webdriver import error
 
 from six import text_type
 
