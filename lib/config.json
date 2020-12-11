@@ -1,0 +1,20 @@
+{
+  "webdriverip": "127.0.0.1",
+  "webdriverport": 4444,
+  "capabilities": {
+        "alwaysMatch": {
+            "moz:firefoxOptions": {
+                "binary": "/usr/bin/firefox-esr",
+                "args": ["--new-instance", "--marionette"], 
+                "prefs": {
+                    "dom.ipc.processCount": 8,
+                    "extensions.screenshots.disabled": false,
+                    "devtools.command-button-screenshot.enabled": "true"
+                },
+                "log": {
+                    "level": "trace"
+                }
+            }
+        }
+    }
+}
