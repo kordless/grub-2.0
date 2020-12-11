@@ -1,9 +1,13 @@
 # Grub 2.0
 Grub is AI applied to crawling the web. When you give Grub a URL, it returns an image and index by which you can query for that image later. This may be useful in training new visual models.
 
-Grub will "crawl" the page visually. Instead of looking inside code that builds the page, Grub looks at the page like a user would, by imaging it.
+Queried by URL, Grubs "crawls" the page visually using Gekcodriver. An image of the code run during the session is also available.
 
-This open code repository provides information and scripts for deploying your own Solr based crawler onto Google Cloud.
+Grub "looks" at the page like a user would, by imaging it with an "eye". By passing this image to a machine learning model, text found on a page may be converted into data. Another model finds and crops images on the page, which are then extracted and passed to another model for more tagging.
+
+Grub runs on Flask in Python and uses Solr, Webdriver and Tensorflow.
+
+This open code repository provides information and scripts for deploying the system.
 
 Begin by checking out this repo onto your Google Cloud Shell terminal:
 
@@ -27,6 +31,7 @@ Then copy it into script directories:
 ```
 $ cp secrets.sh grub-scripts
 $ cp secrets.sh solr-scripts
+$ cp secrets.sh tensor-scripts
 ```
 
 ## Deploy Solr
@@ -49,6 +54,14 @@ Instances will be running in 2.5 minutes, listening on port 8389 for Solr and 89
 
 ## Manage Solr
 Login URL looks like: http://solr:f00bark@x.x.x.x:8389
+
+## Tensorflow
+Deploy a tensorflow model:
+
+```
+$ ./deploy-tensorflow.sh
+Password token is: f00bark
+```
 
 ## Fastener
 Deploy a controller box for Solr instances. Not done yet.
