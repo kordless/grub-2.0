@@ -16,7 +16,7 @@ Here is Google Vision looking at a Bloomberg article.
 
 ![andy](https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/googlevision.PNG)
 
-Grub runs on [Flask]() in Python and uses [Solr 7.5.2](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
+Grub runs on [Flask](https://flask.palletsprojects.com/en/1.1.x/) in Python and uses [Solr 7.5.2](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
 
 This open code repository provides information and scripts for deploying the system.
 
