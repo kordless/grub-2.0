@@ -7,6 +7,8 @@ import requests
 import urllib
 import json
 
+from BrowserSession import BrowserSession
+
 from flask import Flask, render_template, make_response, request, abort
 
 # app up
@@ -17,6 +19,16 @@ def grub():
 	# build document
 	document = {}
 	
+	# url
+	url = request.form.get('url')
+
+	# snapshot page
+	browser = BrowserSession()
+    browser.headless = True
+    browser.setup_session()
+    browser.go_to_url(url)
+    browser.save_screenshot()
+
 	response = make_response(
 		render_template(
 			'grub.json',
