@@ -3,7 +3,7 @@
 name='webdriver'
 
 
-from webdriver.client import (
+from lib.webdriver.client import (
     Cookies,
     Element,
     Find,
@@ -12,7 +12,7 @@ from webdriver.client import (
     Timeouts,
     Window)
 
-from webdriver.error import (
+from lib.webdriver.error import (
     ElementNotSelectableException,
     ElementNotVisibleException,
     InvalidArgumentException,

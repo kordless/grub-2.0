@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import webdriver
+import lib.webdriver
 import json
 import base64
 import sys

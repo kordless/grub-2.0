@@ -28,7 +28,7 @@ def grub():
 
 	# snapshot page
 	browser = Session()
-    browser.image_url(url)
+	browser.image_url(url)
 
 	response = make_response(
 		render_template(
@@ -52,12 +52,5 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-	# test imaging
-	url = "https://google.com/"
-	browser = Session()
-    browser.headless = True
-    browser.setup_session()
-    browser.go_to_url(url)
-    browser.save_screenshot()
 
 	app.run(host='0.0.0.0', port=7070, debug=True)
