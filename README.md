@@ -1,5 +1,5 @@
 # Grub 2.0
-Grub "one oh" was an Open Source search engine designed to distribute the job of gathering content (crawling) from the web. Grub was purchased and later resold to Wikimedia. Grub-2.0 is a further expansion on the idea of decentralizing search processes.
+[Grub "one oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine designed to distribute the job of gathering content (crawling) from the web. Grub was purchased and later resold to Wikimedia. Grub-2.0 is a further expansion on the idea of decentralizing search processes.
 
 Grub-2.0 provides a means of "sight" for a machine, which is talking to a user or another machine learning model. When Grub is given a URL, it may return one or more images and indexes by which images may be queried later using search features such as time or relatedness. 
 
