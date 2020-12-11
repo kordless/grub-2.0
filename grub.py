@@ -7,7 +7,7 @@ import requests
 import urllib
 import json
 
-from BrowserSession import BrowserSession
+from lib.browser import Session
 
 from flask import Flask, render_template, make_response, request, abort
 
