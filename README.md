@@ -9,7 +9,7 @@ Queried by URL, Grubs "crawls" the page visually using Gekcodriver. An image of 
 
 Grub "looks" at the page like a user would, by imaging it with an "eye". By passing this image to a machine learning model, text found on a page may be converted into data. Another model could find and crop images on the page, which are then extracted and passed to yet another model for more tagging.
 
-Google Vision looking at Bloomberg article.
+Here is Google Vision looking at a Bloomberg article.
 
 ![andy](https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/googlevision.PNG)
 
