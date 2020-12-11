@@ -23,7 +23,7 @@ import time
 # Think of this like the Selenium but a true browser
 
 
-class BrowserSession:
+class Session:
     
 
     def __init__(self, url=None, persistent=False, debug=False):
@@ -32,18 +32,20 @@ class BrowserSession:
         # soon it will be from MongoDB/LocalBox
 
         self.debug = debug
-        #Navigation
+
         self.url = url
         self.stayopen = False
-        #BrowserSpecific
-        self.headless = False
+
+        self.headless = True
         self.fullscreen = True
-        #CrawlSpecific
+
         self.local_db = None # stick to local socket
         self.local_index = None # somelocalIndex Store
         self.save_text = False
+        self.headless = True
 
-    def setup_session(self):
+
+    def image_url(self, url = None, fullscreen = True):
 
         self.config = json.loads(open('config.json', 'r').read()) 
 
@@ -55,11 +57,6 @@ class BrowserSession:
         print(self.config['capabilities'])
 
         self.session = webdriver.Session(self.config['webdriverip'], self.config['webdriverport'], capabilities=self.config['capabilities'])
-        return
-
-        
-
-    def go_to_url(self,url=None,fullscreen=True):
 
         if url is None:
             url = self.url 
@@ -71,10 +68,6 @@ class BrowserSession:
         if self.debug:
             print("WebDriver to sessionID -------> {}".format(self.session.session_id))
 
-        return
-
-
-    def save_screenshot(self,filename=None):
         if filename is None:
             filename = "Screenshots/ss_{:.0f}.png".format(time.time())
             print("Full Filename to use:\n\n")
@@ -100,6 +93,8 @@ class BrowserSession:
         except Exception:
             traceback.print_exc()
             pass
+
+        return "all functions return things, joe"
     
         
 def main_test():

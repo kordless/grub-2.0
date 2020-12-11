@@ -1,7 +1,8 @@
-import datetime
-import logging
 import os
 import re
+
+import datetime
+import logging
 
 import requests
 import urllib
@@ -27,10 +28,7 @@ def grub():
 
 	# snapshot page
 	browser = Session()
-    browser.headless = True
-    browser.setup_session()
-    browser.go_to_url(url)
-    browser.save_screenshot()
+    browser.image_url(url)
 
 	response = make_response(
 		render_template(
@@ -54,6 +52,12 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-	# This is used when running locally. Gunicorn is used to run the
-	# application on Google App Engine. See entrypoint in app.yaml.
+	# test imaging
+	url = "https://google.com/"
+	browser = Session()
+    browser.headless = True
+    browser.setup_session()
+    browser.go_to_url(url)
+    browser.save_screenshot()
+
 	app.run(host='0.0.0.0', port=7070, debug=True)
