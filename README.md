@@ -1,35 +1,74 @@
 # Grub 2.0
-Grub is AI applied to crawling the web. When you give Grub a URL, it returns an image and index by which you can query for that image later. This may be useful in training new visual models.
+Grub 1.0 was an Open Source crawler designed to distribute the job of gathering content from the web. Grub was purchased and later resold to Wikimedia. 2.0 is a further decentralization of the search processes needed for providing "sight" to the machine talking to the user.
 
-This open code repository provides information and scripts for deploying your own Solr based system onto Google Cloud.
+Grub provides image based search and crawling capabilities. When you give Grub a URL, it may return one or more images and indexes by which you can query for those images later using search. This may be useful in training machine learning models.
 
-Begin by checking out this repo onto your Google Cloud Shell terminal.
+Queried by URL, Grubs "crawls" the page visually using Gekcodriver. An image of the code run during the session is also available.
 
+![foo](https://github.com/kordless/grub-2.0/blob/main/docs/googlecloud.PNG?raw=true)
 
+Grub "looks" at the page like a user would, by imaging it with an "eye". By passing this image to a machine learning model, text found on a page may be converted into data. Another model finds and crops images on the page, which are then extracted and passed to another model for more tagging.
 
+Grub runs on Flask in Python and uses Solr, Webdriver and Tensorflow.
 
-## Launch Solr
+This open code repository provides information and scripts for deploying the system.
+
+Begin by checking out this repo onto your Google Cloud Shell terminal:
+
+```
+$ git clone https://github.com/kordless/grub-2.0.git
+```
+
+![foo](https://github.com/kordless/grub-2.0/blob/main/docs/googlecloud.PNG?raw=true)
+
+## Edit the secrets.sh file:
+
+```
+$ cd grub-2.0
+$ vi secrets.sh
+TOKEN=f00bark
+:x
+```
+
+Then copy it into script directories:
+
+```
+$ cp secrets.sh grub-scripts
+$ cp secrets.sh solr-scripts
+$ cp secrets.sh tensor-scripts
+```
+
+## Deploy Solr
 Deploy a secure Solr instance on Google cloud:
 
 ```
 $ ./deploy-solr.sh
-Password token is: f00bar
+Password token is: f00bark
 ```
 
-### Create a secrets.sh file
+## Deploy Grub
+Deploy a secure Grub instance on Google cloud:
 
 ```
-$ vi secrets.sh
-TOKEN=f00bar
-:x
+$ ./deploy-grub.sh
+Password token is: f00bark
 ```
 
-Instance will be running in 2.5 minutes, listening on port 8389.
+Instances will be running in 2.5 minutes, listening on port 8389 for Solr and 8983 for Grub.
 
-URL like: http://solr:password@x.x.x.x:8389
+## Manage Solr
+Login URL looks like: http://solr:f00bark@x.x.x.x:8389
+
+## Tensorflow
+Deploy a tensorflow model. Not done yet.
+
+```
+$ ./deploy-tensorflow.sh
+Password token is: f00bark
+```
 
 ## Fastener
-Deploy a controller box for Solr instances. Not done yet.
+Deploy a controller box for starting instances. Not done yet.
 
 ```
 $ ./deploy-fastener.sh
@@ -37,5 +76,5 @@ $ ./deploy-fastener.sh
 
 Instance will be running in 2.5 minutes, listening on port 80.
 
-## Bookmark and Index
+## Bookmark
 [Bookmark and index](https://mitta.us/https://github.com/kordless/mitta-deploy/) this page using [Mitta.us](https://mitta.us/https://github.com/kordless/mitta-deploy/).
