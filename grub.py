@@ -22,8 +22,11 @@ def grub():
 	# url
 	url = request.form.get('url')
 
+	if not url:
+		abort(404, "go away")
+
 	# snapshot page
-	browser = BrowserSession()
+	browser = Session()
     browser.headless = True
     browser.setup_session()
     browser.go_to_url(url)
