@@ -1,7 +1,11 @@
-# Deploy Solr on Google Cloud in 2 Minutes
-Useful information and scripts for deploying an instance based Solr Cloud in 2 minutes.
+# Grub 2.0
+Grub is AI applied to crawling the web. When you give Grub a URL, it returns an image and index by which you can query for that image later, based on information gained from showing various AI models imagery.
 
-Check this repo out on your Google Cloud Shell terminal.
+This open code repository provides information and scripts for deploying your own on Google Cloud.
+
+Begin by checking out this repo out on your Google Cloud Shell terminal.
+
+
 
 ## Launch Solr
 Deploy a secure Solr instance on Google cloud:
