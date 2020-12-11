@@ -1,9 +1,10 @@
 # Grub 2.0
-Grub is AI applied to crawling the web. When you give Grub a URL, it returns an image and index by which you can query for that image later, based on information gained from showing various AI models imagery.
+Grub is AI applied to crawling the web. When you give Grub a URL, it returns an image and index by which you can query for that image later. This may be useful in training new visual models.
 
-This open code repository provides information and scripts for deploying your own on Google Cloud.
+This open code repository provides information and scripts for deploying your own Solr based system onto Google Cloud.
 
-Begin by checking out this repo out on your Google Cloud Shell terminal.
+Begin by checking out this repo onto your Google Cloud Shell terminal.
+
 
 
 
