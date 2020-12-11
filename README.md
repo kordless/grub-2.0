@@ -1,5 +1,5 @@
 # Grub 2.0
-Grub 1.0 was an Open Source crawler designed to distribute the job of gathering content from the web. Grub was purchased and later resold to Wikimedia. 2.0 is a further decentralization of the search processes needed for providing "sight" to the machine talking to the user.
+Grub 1.0 was an Open Source search engine designed to distribute the job of gathering content from the web. Grub was purchased and later resold to Wikimedia. 2.0 is a further decentralization of the search processes needed for providing "sight" to the machine talking to the user.
 
 Grub provides image based search and crawling capabilities. When you give Grub a URL, it may return one or more images and indexes by which you can query for those images later using search. This may be useful in training machine learning models.
 
