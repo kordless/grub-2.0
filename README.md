@@ -5,7 +5,7 @@ This open code repository provides information and scripts for deploying your ow
 
 Begin by checking out this repo onto your Google Cloud Shell terminal.
 
-
+![foo](https://github.com/kordless/grub-2.0/blob/main/docs/googlecloud.PNG?raw=true)
 
 
 ## Launch Solr
