@@ -5,7 +5,7 @@ Grub provides image based search and crawling capabilities. When you give Grub a
 
 Queried by URL, Grubs "crawls" the page visually using Gekcodriver. An image of the code run during the session is also available.
 
-![foo](https://github.com/kordless/grub-2.0/blob/main/docs/googlecloud.PNG?raw=true)
+![foo](https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/index.png)
 
 Grub "looks" at the page like a user would, by imaging it with an "eye". By passing this image to a machine learning model, text found on a page may be converted into data. Another model finds and crops images on the page, which are then extracted and passed to another model for more tagging.
 
