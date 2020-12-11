@@ -56,7 +56,7 @@ Instances will be running in 2.5 minutes, listening on port 8389 for Solr and 89
 Login URL looks like: http://solr:f00bark@x.x.x.x:8389
 
 ## Tensorflow
-Deploy a tensorflow model:
+Deploy a tensorflow model. Not done yet.
 
 ```
 $ ./deploy-tensorflow.sh
@@ -64,7 +64,7 @@ Password token is: f00bark
 ```
 
 ## Fastener
-Deploy a controller box for Solr instances. Not done yet.
+Deploy a controller box for starting instances. Not done yet.
 
 ```
 $ ./deploy-fastener.sh
