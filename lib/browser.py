@@ -42,9 +42,7 @@ class Session:
         self.local_index = None # somelocalIndex Store
         self.save_text = False
         self.headless = True
-
-
-    def image_url(self, url = None, fullscreen = True):
+        self.session = webdriver.Session(self.config['webdriverip'], self.config['webdriverport'], capabilities=self.config['capabilities'])
 
         self.config = json.loads(open('lib/config.json', 'r').read()) 
 
@@ -53,9 +51,9 @@ class Session:
             self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--height=1080')
             self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--width=1920')
 
-        print(self.config['capabilities'])
+    def image_url(self, url = None, fullscreen = True):
 
-        self.session = webdriver.Session(self.config['webdriverip'], self.config['webdriverport'], capabilities=self.config['capabilities'])
+        print(self.config['capabilities'])
 
         if url is None:
             url = self.url 
