@@ -41,8 +41,6 @@ class Session:
         self.local_index = None # somelocalIndex Store
         self.save_text = False
         self.headless = True
-        self.session = webdriver.Session(self.config['webdriverip'], self.config['webdriverport'], capabilities=self.config['capabilities'])
-
         self.config = json.loads(open('lib/config.json', 'r').read()) 
 
         if self.headless:
@@ -53,7 +51,9 @@ class Session:
     def image_url(self, url = None, fullscreen = True):
 
         print(self.config['capabilities'])
+        self.session = webdriver.Session(self.config['webdriverip'], self.config['webdriverport'], capabilities=self.config['capabilities'])
 
+       
         if url is None:
             url = self.url 
         
