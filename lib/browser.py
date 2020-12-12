@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from lib import webdriver
+from lib import lswebdriver
 import json
 import base64
 import sys
@@ -67,10 +67,9 @@ class Session:
         if self.debug:
             print("WebDriver to sessionID -------> {}".format(self.session.session_id))
 
-        if filename is None:
-            filename = "ss_{:.0f}.png".format(time.time())
-            print("Full Filename to use:\n\n")
-            print(filename + "\n\n")
+        filename = "ss_{:.0f}.png".format(time.time())
+        print("Full Filename to use:\n\n")
+        print(filename + "\n\n")
 
         try:
             if self.fullscreen:
