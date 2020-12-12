@@ -25,7 +25,6 @@ import time
 
 class Session:
     
-
     def __init__(self, url=None, persistent=False, debug=False):
         
         # currently the configuration is going to be config.json 
@@ -69,7 +68,7 @@ class Session:
             print("WebDriver to sessionID -------> {}".format(self.session.session_id))
 
         if filename is None:
-            filename = "Screenshots/ss_{:.0f}.png".format(time.time())
+            filename = "ss_{:.0f}.png".format(time.time())
             print("Full Filename to use:\n\n")
             print(filename + "\n\n")
 

@@ -27,7 +27,7 @@ def grub():
 		abort(404, "go away")
 
 	# snapshot page
-	browser = Session()
+	gbrowser = Session()
 	browser.image_url(url)
 
 	response = make_response(
