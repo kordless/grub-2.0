@@ -55,6 +55,10 @@ else
   apt-get update -y
   apt-get install python3-pip -y
 
+  add-apt-repository ppa:mozillateam/ppa -y
+  apt-get update -y
+  apt-get install -y --no-install-recommends wget firefox-esr
+
   ln -s /usr/bin/python3 /usr/bin/python
 
   pip3 install flask

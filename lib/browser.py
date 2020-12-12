@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import lib.webdriver
+from lib import webdriver
 import json
 import base64
 import sys
@@ -46,7 +46,7 @@ class Session:
 
     def image_url(self, url = None, fullscreen = True):
 
-        self.config = json.loads(open('config.json', 'r').read()) 
+        self.config = json.loads(open('lib/config.json', 'r').read()) 
 
         if self.headless:
             self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--headless')
