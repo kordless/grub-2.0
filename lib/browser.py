@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-
-from lib import webdriver
+import webdriver
 import json
 import base64
 import sys
@@ -94,13 +93,12 @@ class Session:
     
         
 def main_test():
-    new_session = BrowserSession()
-    new_session.headless = True
-    new_session.setup_session()
-    #new_session.go_to_url('https://google.com/search?q=MLK',fullscreen=True)
-    new_session.go_to_url('https://news.ycombinator.com',fullscreen=True)
-    print("waiting two seconds for page to load")
+    new_session = Session()
+    
+    new_session.image_url('https://news.ycombinator.com',fullscreen=True)
+    
     time.sleep(2)
+    
     new_session.save_screenshot()
     
 if __name__ == '__main__':

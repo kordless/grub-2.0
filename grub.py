@@ -8,7 +8,9 @@ import requests
 import urllib
 import json
 
-from lib.browser import Session
+import sys
+sys.path.insert(0, '/opt/grub-2.0/lib')
+from browser import Session
 
 from flask import Flask, render_template, make_response, request, abort
 
