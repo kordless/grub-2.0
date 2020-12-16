@@ -3,7 +3,9 @@
 
 ![grubby](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png)
 
-Likey Grubby's huge eyeballs, Grub-2.0 provides a machine means of a mental eye, or "seeing things" function for a machine. Many of us see a taxi (in mind) when someone says the word "taxi", all withough having a real taxi handy or googling the image. The machine querying will be able to "see" things by using optimized search queries. That machine may be talking to a user (in app) or another machine learning model. 
+Likey Grubby's huge eyeballs, Grub-2.0 provides a mental eye, or "seeing things in mind" function for machines or humans. Many of us see a taxi (in mind) when someone says the word "taxi", all usually without having to have a real taxi at hand. A machine or human querying will be able to "see" things by using optimized search queries like "robot hand".
+
+![hand](https://i.ytimg.com/vi/l6xqTcLXXC8/maxresdefault.jpg)
 
 When Grub is given a URL, it may return one or more image and word index. Images may be queried by time or relatedness. 
 
