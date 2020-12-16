@@ -19,7 +19,7 @@ Queried by URL, Grub "crawls" the page visually using Gekcodriver. An image of t
 
 Grub "looks" at the page like a user would, by imaging it with an "eye" which looks like Geckodriver-->Multiple Machine Models-->Solr. By passing this image through mutiple models one model could find and crop images on the page, while others detect, and decode, text for tagging.
 
-Here's Google Vision looking at a Bloomberg article and seeing faces and people, given Cuomo is human after all:
+Here's Google Vision looking at a Bloomberg article and seeing people, given Cuomo is people. That search, "cuomo people" would return this article and a picture of Cuomo.
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/googlevision.PNG" width="500">
 
