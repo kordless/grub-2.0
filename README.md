@@ -14,13 +14,15 @@ This may be useful for training machine learning models or providing usercentric
 ## How
 Queried by URL, Grub "crawls" the page visually using Gekcodriver. An image of the code run during the session is also available.
 
-![foo](https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/index.png | width=150)
+
+<img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/index.png" width="150">
 
 Grub "looks" at the page like a user would, by imaging it with an "eye". By passing this image to a machine learning model, text found on a page may be converted into data. Another model could find and crop images on the page, which are then extracted and passed to yet another model for more tagging.
 
 Here is Google Vision looking at a Bloomberg article.
 
-![andy](https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/googlevision.PNG)
+
+<img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/googlevision.PNG" width="150">
 
 Grub runs on [Flask](https://flask.palletsprojects.com/en/1.1.x/) in Python and uses [Solr 7.5.2](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
 
