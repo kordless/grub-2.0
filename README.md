@@ -3,9 +3,11 @@
 
 ![grubby](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png)
 
-Grub-2.0 provides a means of "sight" for a machine, which is talking to a user or another machine learning model. When Grub is given a URL, it may return one or more images and indexes by which images may be queried later using search features such as time or relatedness. 
+Likey Grubby's huge eyeballs, Grub-2.0 provides a machine means of a mental eye, or "seeing things" function for a machine. In as much as many of us see a taxi when someone says the word "taxi", the machine will be able to "see" things by optimized search queries. The machine may be talking to a user or another machine learning model. 
 
-This may be useful in training machine learning models or providing user level search features.
+When Grub is given a URL, it may return one or more image and word index. Images may be queried by time or relatedness. 
+
+This may be useful for training machine learning models or providing usercentric search features.
 
 ## How
 Queried by URL, Grub "crawls" the page visually using Gekcodriver. An image of the code run during the session is also available.
