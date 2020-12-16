@@ -3,7 +3,7 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Likey Grubby's huge eyeballs, WORKING_NAME_Grub-2.0 provides a mental eye, or *"seeing things in mind"* function for machines or humans. Many of us see a taxi (in mind) when someone says the word *taxi*, all usually without having to have a real taxi on hand. 
+Likey Grubby's huge eyeballs, Grub provides a mental eye, or *"seeing things in mind"* function for machines or humans. Many of us see a taxi (in mind) when someone says the word *taxi*, all usually without having to have a real taxi on hand. 
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
