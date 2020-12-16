@@ -1,11 +1,11 @@
 # Grub 2.0
 [Grub "one oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine designed to distribute the job of gathering content from the web (crawling). Grub was purchased and later resold to Wikimedia. Grub-2.0 is a further expansion on the idea of decentralizing search processes.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="48">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="150">
 
 Likey Grubby's huge eyeballs, Grub-2.0 provides a mental eye, or "seeing things in mind" function for machines or humans. Many of us see a taxi (in mind) when someone says the word "taxi", all usually without having to have a real taxi at hand. A machine or human querying will be able to "see" things by using optimized search queries like "robot hand".
 
-![hand](https://i.ytimg.com/vi/l6xqTcLXXC8/maxresdefault.jpg | width=150) 
+<img src="https://i.ytimg.com/vi/l6xqTcLXXC8/maxresdefault.jpg" width="150">
 
 When Grub is given a URL, it may return one or more image and word index. Images may be queried by time or relatedness. 
 
