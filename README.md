@@ -5,7 +5,7 @@
 
 Likey Grubby's huge eyeballs, Grub-2.0 provides a mental eye, or "seeing things in mind" function for machines or humans. Many of us see a taxi (in mind) when someone says the word "taxi", all usually without having to have a real taxi at hand. 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="500">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
 
 A machine or human querying will be able to "see" things by using optimized search queries like "robot hand".
