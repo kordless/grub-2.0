@@ -98,3 +98,6 @@ Instance will be running in 2.5 minutes, listening on port 80.
 
 ## Bookmark
 [Bookmark and index](https://mitta.us/https://github.com/kordless/grub-2.0/) this page using [Mitta.us](https://mitta.us/).
+
+## Credits
+"Your ideas don't stink. Just make sure they become a reality." - Igor
