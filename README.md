@@ -17,8 +17,7 @@ When Grub is given a URL, it may return one or more image and word index. Images
 This may be useful for training machine learning models or providing usercentric search features.
 
 ## How
-Queried by URL, Grub "crawls" the page visually using Gekcodriver. An image of the code run during the session is also available.
-
+Queried by URL, Grub "crawls" the page visually using Gekcodriver and some machine learning models trained to find image crops for certain images on a web page.
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/index.png" width="500">
 
