@@ -185,9 +185,8 @@ class HTTPWireProtocol(object):
 
         url = self.url(uri)
 
-        # if self._has_unread_data():
-        self.close()
-        
+        if self._has_unread_data():
+            self.close()
         self.connection.request(method, url, payload, headers)
         return self.connection.getresponse()
 
