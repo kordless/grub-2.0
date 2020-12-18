@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import webdriver
 import json
 import base64
@@ -22,38 +23,44 @@ import time
 # Think of this like the Selenium but a true browser
 
 
-class Session:
+class BrowserSession:
     
+
     def __init__(self, url=None, persistent=False, debug=False):
         
         # currently the configuration is going to be config.json 
         # soon it will be from MongoDB/LocalBox
 
         self.debug = debug
-
+        #Navigation
         self.url = url
         self.stayopen = False
-
-        self.headless = True
+        #BrowserSpecific
+        self.headless = False
         self.fullscreen = True
-
+        #CrawlSpecific
         self.local_db = None # stick to local socket
         self.local_index = None # somelocalIndex Store
         self.save_text = False
-        self.headless = True
-        self.config = json.loads(open('lib/config.json', 'r').read()) 
+
+    def setup_session(self):
+
+        self.config = json.loads(open('config.json', 'r').read()) 
 
         if self.headless:
             self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--headless')
             self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--height=1080')
             self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--width=1920')
 
-    def image_url(self, url = None, fullscreen = True):
-
         print(self.config['capabilities'])
-        self.session = webdriver.Session(self.config['webdriverip'], self.config['webdriverport'], capabilities=self.config['capabilities'])
 
-       
+        self.session = webdriver.Session(self.config['webdriverip'], self.config['webdriverport'], capabilities=self.config['capabilities'])
+        return
+
+        
+
+    def go_to_url(self,url=None,fullscreen=True):
+
         if url is None:
             url = self.url 
         
@@ -64,9 +71,14 @@ class Session:
         if self.debug:
             print("WebDriver to sessionID -------> {}".format(self.session.session_id))
 
-        filename = "ss_{:.0f}.png".format(time.time())
-        print("Full Filename to use:\n\n")
-        print(filename + "\n\n")
+        return
+
+
+    def save_screenshot(self,filename=None):
+        if filename is None:
+            filename = "ss_{:.0f}.png".format(time.time())
+            print("Full Filename to use:\n\n")
+            print(filename + "\n\n")
 
         try:
             if self.fullscreen:
@@ -88,17 +100,18 @@ class Session:
         except Exception:
             traceback.print_exc()
             pass
-
-        return "all functions return things, joe"
     
         
 def main_test():
-    new_session = Session()
-    
-    new_session.image_url('https://news.ycombinator.com',fullscreen=True)
-    
+    new_session = BrowserSession()
+    new_session.headless = True
+    new_session.setup_session()
+    #new_session.go_to_url('https://google.com/search?q=MLK',fullscreen=True)
+    print("going for it")
+    new_session.go_to_url('https://news.ycombinator.com/',fullscreen=True)
+    # new_session.go_to_url('https://www.theguardian.com/us-news/2020/jul/05/trump-july-fourth-speech-rushmore-coronavirus-race-protests',fullscreen=True)
+    print("waiting two seconds for page to load")
     time.sleep(2)
-    
     new_session.save_screenshot()
     
 if __name__ == '__main__':

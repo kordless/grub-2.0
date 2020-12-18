@@ -10,12 +10,17 @@ import json
 
 import sys
 sys.path.insert(0, '/opt/grub-2.0/lib')
-from browser import Session
+from BrowserSession import BrowserSession
 
 from flask import Flask, render_template, make_response, request, abort
 
 # app up
 app = Flask(__name__)
+
+# session
+new_session = BrowserSession()
+new_session.headless = True
+new_session.setup_session()
 
 @app.route('/g', methods=['POST'])
 def grub():
@@ -28,11 +33,12 @@ def grub():
 	if not url:
 		abort(404, "go away")
 
-	# snapshot page
-	browser = Session()
-	browser.image_url(url)
+    new_session.go_to_url(url,fullscreen=True)
+    time.sleep(2)
+    new_session.save_screenshot()
 
-	response = make_response(
+    # snapshot page
+		response = make_response(
 		render_template(
 			'grub.json',
 			json = json.dumps({"result": "success", "document": document})
