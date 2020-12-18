@@ -33,11 +33,11 @@ def grub():
 	if not url:
 		abort(404, "go away")
 
-    new_session.go_to_url(url,fullscreen=True)
-    time.sleep(2)
-    new_session.save_screenshot()
+	new_session.go_to_url(url,fullscreen=True)
+	time.sleep(2)
+	new_session.save_screenshot()
 
-    # snapshot page
+	# snapshot page
 		response = make_response(
 		render_template(
 			'grub.json',
