@@ -38,7 +38,7 @@ def grub():
 	new_session.save_screenshot()
 
 	# snapshot page
-		response = make_response(
+	response = make_response(
 		render_template(
 			'grub.json',
 			json = json.dumps({"result": "success", "document": document})
