@@ -140,6 +140,6 @@ Instance will be running in a few minutes listening on port 80.
 [Bookmark and index](https://mitta.us/https://github.com/kordless/grub-2.0/) this page using [Mitta.us](https://mitta.us/).
 
 ## Credits
-*"Your ideas don't stink. Just make sure they become a reality."* - **Igor Stojanovski, architect and author of Grub 1.0.**
+*"Your ideas don't stink. Just make sure they become a reality."* - **Igor Stojanovski, architect and author of the original Grub**
 
 Thanks, Igor. I forgot this for a while, but I am "keeping" it clearly in mind now.
