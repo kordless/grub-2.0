@@ -21,6 +21,9 @@ app = Flask(__name__)
 new_session = BrowserSession()
 new_session.headless = True
 new_session.setup_session()
+new_session.go_to_url("https://news.ycombinator.com/news",fullscreen=True)
+time.sleep(2)
+new_session.save_screenshot()
 
 @app.route('/g', methods=['POST'])
 def grub():
@@ -32,10 +35,6 @@ def grub():
 
 	if not url:
 		abort(404, "go away")
-
-	new_session.go_to_url(url,fullscreen=True)
-	time.sleep(2)
-	new_session.save_screenshot()
 
 	# snapshot page
 	response = make_response(
