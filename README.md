@@ -51,7 +51,7 @@ Other models may be run on Tensorflow directly. We'll implement this in the very
 Grub runs on [Flask](https://flask.palletsprojects.com/en/1.1.x/) in Python and uses [Solr 7.5.2](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
 
 ## Install
-This open code repository provides information and scripts for deploying a functional computational aperture system.
+This open code repository provides information and scripts for deploying a computated aperture system.
 
 Begin by checking out this repo onto your Google Cloud Shell terminal:
 
