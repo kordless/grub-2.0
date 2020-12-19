@@ -12,15 +12,17 @@ Here's an old sketch of how they thought this worked:
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
 ## Competition
-Google provides this function, but does so for all data they have crawled. A machine or human using Grub will receive similar imagery using search queries like "robot hand", given the system has been able to view a few pages on robot hands. This keeps things simple and secure.
+Google provides image search functions, but does so for all the enormous amount of data they have crawled. 
 
-Here's an image fragment created with Grub:
+A machine or human using Grub will also be able to receive imagery using search queries such as "robot hand" if Grub is shown a few pages on robot hands. This keeps things simple and secure and doesn't require scraping Google results. Ick!
+
+Here's a page fragment created with Grub:
 
 <img src="https://github.com/kordless/grub-2.0/blob/main/docs/h2ssme1AjSKfObij3DMZyQ2.jpg?raw=true" width="500">
 
-When Grub is given a URL, it may return one or more images and/or word indexes. Images may be queried in Solr later by time or relatedness function.
+Unlike Google, when Grub is given a site it may return one or more images and/or word indexes. Images may be queried in Solr later by time or relatedness function.
 
-This may be useful for testing or training machine learning models or providing search features to users.
+This may be useful for testing or training machine learning models or providing new types of search features to users, such as I am doing with [mitta.us](https://mitta.us).
 
 ## How
 Queried by URL, Grub "crawls" the page visually using Gekcodriver and machine learning models trained to find crops for  images found on a web page.
@@ -29,9 +31,11 @@ Queried by URL, Grub "crawls" the page visually using Gekcodriver and machine le
 
 Grub "looks" at the page using a computed aperture implemented with Geckodriver, Solr and machine leaarning. By passing a website through mutiple model paths, we may find and crop related images on the page. Those new images may also be passed onto other models for object extraction, while others may detect and decode text for indexing text.
 
-Here we see Google Vision looking at a Bloomberg article and seeing people, given Cuomo is people. A subsequent search, "cuomo people", would return this article and a picture of Cuomo.
+Here we see a Google Vision model looking at a Bloomberg article and seeing people, given Cuomo is people. A subsequent search, "cuomo people", would return this article and a picture of Cuomo.
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/googlevision.PNG" width="500">
+
+Other models may be run on Tensorflow directly. We'll implement this in the very near future.
 
 Grub runs on [Flask](https://flask.palletsprojects.com/en/1.1.x/) in Python and uses [Solr 7.5.2](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
 
