@@ -16,7 +16,7 @@ Imagine that, if you can.
 ## Competition
 Google provides image search functions for the massive amount of content they have crawled. Many believe that having more content in your index is better.
 
-A few don't.
+A few don't. Smaller data sets are attractive for a variety of reasons.
 
 A machine or human using Grub may receive related imagery using search queries such as "robot hand" even if Grub is only shown a few pages on robot hands. This keeps things simple and secure and doesn't require scraping Google results to get imagery into your machine.
 
