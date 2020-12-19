@@ -26,7 +26,10 @@ Unlike Google, when Grub is given a site it may return one or more images and/or
 
 This process may be useful for testing or training machine learning models or providing new types of search features to users, such as I am doing with [mitta.us](https://mitta.us).
 
-In summary, you can imagine Grub-2.0 as an AI powered crawler.
+In summary, you can imagine Grub-2.0 as an AI powered crawler. Watch this video for more information about artificial general intellegence:
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/frB8I5gxSXk/0.jpg)](https://www.youtube.com/watch?v=frB8I5gxSXk)
+
 
 ## How
 Queried by URL, Grub "crawls" the page visually using Gekcodriver and machine learning models trained to find crops for  images found on a web page.
