@@ -1,6 +1,8 @@
 # Grub 2.0
 [Grub "1.0"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine designed to distribute the job of gathering content from the web (crawling). Grub was purchased and later resold to Wikimedia. Grub-2.0 is a further expansion on the idea of decentralizing search processes. We may have to rename it, if the bootloader gods will it.
 
+It was always about the eyes.
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
 Grub provides a "computed aperture function" for machines and humans to "see" a website without needing to navigate to the site directly. Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. The ancients thought people had internal sense organs which "saw" these things that were not real. Here's an old sketch of how they thought this worked:
