@@ -12,17 +12,19 @@ Here's an old sketch of how they thought this worked:
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
 ## Competition
-Google provides image search functions, but does so for all the enormous amount of data they have crawled. 
+Google provides image search functions for the massive amount of content they have crawled. Many believe that having more content is better. Some don't believe that at all.
 
-A machine or human using Grub will also be able to receive imagery using search queries such as "robot hand" if Grub is shown a few pages on robot hands. This keeps things simple and secure and doesn't require scraping Google results. Ick!
+A machine or human using Grub will also be able to receive related imagery using search queries such as "robot hand" even if Grub is only shown a few pages on robot hands. This keeps things simple and secure and doesn't require scraping Google results to get imagery into your machine.
 
-Here's a page fragment created with Grub:
+Here's an example page fragment created with Grub:
 
 <img src="https://github.com/kordless/grub-2.0/blob/main/docs/h2ssme1AjSKfObij3DMZyQ2.jpg?raw=true" width="500">
 
-Unlike Google, when Grub is given a site it may return one or more images and/or word indexes. Images may be queried in Solr later by time or relatedness function.
+Unlike Google, when Grub is given a site it may return one or more images and/or search indexes. Indexes can be queried later by using Solr's time or relatedness functions.
 
-This may be useful for testing or training machine learning models or providing new types of search features to users, such as I am doing with [mitta.us](https://mitta.us).
+This process may be useful for testing or training machine learning models or providing new types of search features to users, such as I am doing with [mitta.us](https://mitta.us).
+
+In summary, you can imagine Grub-2.0 as an AI powered crawler.
 
 ## How
 Queried by URL, Grub "crawls" the page visually using Gekcodriver and machine learning models trained to find crops for  images found on a web page.
