@@ -61,7 +61,7 @@ class BrowserSession:
 
     def save_screenshot(self,filename=None):
         if filename is None:
-            filename = "images/%s.png" % random_string(23)
+            filename = "/opt/grub-2.0/aperture/images/%s.png" % random_string(23)
             if self.debug:
                 print("filename="+filename)
 
