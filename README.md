@@ -86,7 +86,7 @@ Password token is: f00bark
 
 Instances will be running in a few minutes, listening on port 8389 for Solr.
 
-Yes, the default port numbers have been transposeds.
+Yes, the default port numbers for Solr have been transposed.
 
 ### Manage Solr
 Login URL looks like: http://solr:f00bark@x.x.x.x:8389
