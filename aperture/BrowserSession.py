@@ -61,7 +61,8 @@ class BrowserSession:
 
     def save_screenshot(self,filename=None):
         if filename is None:
-            filename = "/opt/grub-2.0/aperture/images/%s.png" % random_string(23)
+            filename = "%s.png" % random_string(23)
+
             if self.debug:
                 print("filename="+filename)
 
@@ -72,7 +73,7 @@ class BrowserSession:
                 r = requests.get(url="http://localhost:4444/session/" + self.session.session_id + "/screenshot")
             if r.status_code == 200:
                 try:
-                    with open(filename, 'wb') as screenshot:
+                    with open("/opt/grub-2.0/aperture/images/%s" % filename, 'wb') as screenshot:
                         screenshot.write(base64.b64decode(r.json()['value']))
                 except IOError as err:
                     print("I/O error: {0}".format(err))
