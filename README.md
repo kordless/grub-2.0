@@ -36,13 +36,11 @@ Now watch this video for more information about artificial general intellegence:
 
 
 ## How
-Queried by URL, Grub "crawls" the page visually using Gekcodriver and machine learning models trained to find crops for text and images found on a web page.
+Grub "looks" at the page using a computed aperture implemented with Geckodriver, Firefox, Solr and soon various Tensorflow models. By passing a website through a model, we may find and crop related images or text on the page. When image are found they may be passed onto other models for object extraction.
 
-We can even image and then extract the source code of the page:
+We can even image and extract the source code of the page (this example uses Google Vision's model):
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/index.png" width="500">
-
-Grub "looks" at the page using a computed aperture implemented with Geckodriver, Firefox, Solr and machine learning. By passing a website through mutiple model paths, we may find and crop related images or text on the page. Images may also be passed onto other models for object extraction, while others may detect and decode text for indexing text.
 
 Here we see a Google Vision model looking at a Bloomberg article and seeing people, given Cuomo is people. A subsequent search, "cuomo people", would return this article and a picture of Cuomo.
 
