@@ -84,6 +84,8 @@ class BrowserSession:
         except Exception:
             traceback.print_exc()
             pass
+
+        return filename
     
         
 def main():
@@ -92,8 +94,9 @@ def main():
     new_session.setup_session()
 
     new_session.go_to_url(sys.argv[1],fullscreen=True)
-    time.sleep(2)
-    new_session.save_screenshot()
+    time.sleep(1)
+    filename = new_session.save_screenshot()
     
+    print(filename)
 if __name__ == '__main__':
     main()

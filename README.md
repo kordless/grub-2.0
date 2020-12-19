@@ -8,7 +8,7 @@ Keeping Grubby's huge eyeballs in mind, Grub provides a "computed aperture funct
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
 
-Google provides this function, but does so for all data they have crawled. AA machine or human using Grub will receive similar imagery using search queries like "robot hand", given the system has been able to view a few pages on robot hands:
+Google provides this function, but does so for all data they have crawled. A machine or human using Grub will receive similar imagery using search queries like "robot hand", given the system has been able to view a few pages on robot hands:
 
 <img src="https://i.ytimg.com/vi/l6xqTcLXXC8/maxresdefault.jpg" width="500">
 
@@ -17,13 +17,13 @@ When Grub is given a URL, it may return one or more image and word index. Images
 This may be useful for training machine learning models or providing usercentric search features.
 
 ## How
-Queried by URL, Grub "crawls" the page visually using Gekcodriver and some machine learning models trained to find image crops for certain images on a web page.
+Queried by URL, Grub "crawls" the page visually using Gekcodriver and machine learning models trained to find crops for  images found on a web page.
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/index.png" width="500">
 
-Grub "looks" at the page like a user would, by imaging it with an "eye" which, in part, looks like Geckodriver-->Multiple Machine Models-->Solr. By passing this image through mutiple models one model can find and crop images on the page. Those new images are passed onto other models for object extraction, while others detect and decode text for indexing and applying of various graph functions.
+Grub "looks" at the page using a computed aperture implemented with Geckodriver, Solr and machine leaarning. By passing a website's images through mutiple model paths, we may find and crop related images on the page. Those new images may be passed onto other models for object extraction, while others may detect and decode text for indexing.
 
-Here's Google Vision looking at a Bloomberg article and seeing people, given Cuomo is people. That search, "cuomo people" would return this article and a picture of Cuomo.
+Here we see Google Vision looking at a Bloomberg article and seeing people, given Cuomo is people. A subsequent search, "cuomo people", would return this article and a picture of Cuomo.
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/googlevision.PNG" width="500">
 
@@ -100,3 +100,5 @@ Instance will be running in 2.5 minutes, listening on port 80.
 
 ## Credits
 *"Your ideas don't stink. Just make sure they become a reality."* - Igor Stojanovski, Grub Developer
+
+Thanks, Igor. I forgot this for a while, but I am "keeping" it clearly in mind now.

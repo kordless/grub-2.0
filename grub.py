@@ -10,12 +10,18 @@ import urllib
 import json
 
 import sys
-import subprocess
+from subprocess import check_output
+out = check_output(["ntpq", "-p"])
 
 from flask import Flask, render_template, make_response, request, abort
 
 # app up
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='aperture/images')
+
+@app.route('/images/<path:path>')
+def images(path):
+    return send_from_directory('/opt/grub-2.0/aperture/images/', path)
+
 
 @app.route('/g', methods=['POST'])
 def grub():
@@ -29,13 +35,13 @@ def grub():
 		abort(404, "go away")
 
 	# run snapshot
-	filename = subprocess.run(["python3", "./screenshot/BrowserSession.py", "https://google.com/"]
+	filename = check_output(["python3", "./aperture/BrowserSession.py", "%s" % url]
 
 	# snapshot page
 	response = make_response(
 		render_template(
 			'grub.json',
-			json = json.dumps({"result": "success", "document": document})
+			json = json.dumps({"result": "success", "filename": "%s" % filename})
 		)
 	)
 	return response
