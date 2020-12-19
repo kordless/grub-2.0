@@ -3,12 +3,12 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Likey Grubby's huge eyeballs, Grub provides a mental eye, or *"seeing things in mind"* function for machines or humans. Many of us see a taxi (in mind) when someone says the word *taxi*, all usually without having to have a real taxi on hand. The ancients actually thought people had internal sense organs that "saw" things. We now think it's more akin to a hologram. Here's some sketch of someone's idea of it:
+Keeping Grubby's huge eyeballs in mind, Grub provides computational aperture function for machines and humans to see a website without a browser. Many of us can see a taxi in mind when someone says the word *taxi*. The ancients thought people had internal sense organs which "saw" things that were not real. We now think our brain's process is more akin to a hologram than projection and detection of light. Here's an old sketch:
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
 
-Similar to what Google provides for all data, a machine or human using Grub will receive related imagery by using optimized search queries like "robot hand", given the system had been shown some pages on robot hands:
+Google provides this function, but does so for all data they have crawled. AA machine or human using Grub will receive similar imagery using search queries like "robot hand", given the system has been able to view a few pages on robot hands:
 
 <img src="https://i.ytimg.com/vi/l6xqTcLXXC8/maxresdefault.jpg" width="500">
 
