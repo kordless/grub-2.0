@@ -38,7 +38,7 @@ We can even image and then extract the source code of the page:
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/index.png" width="500">
 
-Grub "looks" at the page using a computed aperture implemented with Geckodriver, Solr and machine leaarning. By passing a website through mutiple model paths, we may find and crop related images on the page. Those new images may also be passed onto other models for object extraction, while others may detect and decode text for indexing text.
+Grub "looks" at the page using a computed aperture implemented with Geckodriver, Firefox, Solr and machine learning. By passing a website through mutiple model paths, we may find and crop related images or text on the page. Images may also be passed onto other models for object extraction, while others may detect and decode text for indexing text.
 
 Here we see a Google Vision model looking at a Bloomberg article and seeing people, given Cuomo is people. A subsequent search, "cuomo people", would return this article and a picture of Cuomo.
 
