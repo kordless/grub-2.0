@@ -16,7 +16,7 @@ Google provides image search functions for the massive amount of content they ha
 
 A few don't.
 
-A machine or human using Grub will also be able to receive related imagery using search queries such as "robot hand" even if Grub is only shown a few pages on robot hands. This keeps things simple and secure and doesn't require scraping Google results to get imagery into your machine.
+A machine or human using Grub may receive related imagery using search queries such as "robot hand" even if Grub is only shown a few pages on robot hands. This keeps things simple and secure and doesn't require scraping Google results to get imagery into your machine.
 
 Here's an example page fragment created with Grub:
 
