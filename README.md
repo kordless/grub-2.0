@@ -10,7 +10,7 @@ Keeping Grubby's huge eyeballs in mind, Grub provides a "computed aperture funct
 
 Google provides this function, but does so for all data they have crawled. A machine or human using Grub will receive similar imagery using search queries like "robot hand", given the system has been able to view a few pages on robot hands:
 
-<img src="https://i.ytimg.com/vi/l6xqTcLXXC8/maxresdefault.jpg" width="500">
+<img src="https://i.ytimg.com/vi/l6xqTcLXXC8/h2ssme1AjSKfObij3DMZyQ2.jpg" width="500">
 
 When Grub is given a URL, it may return one or more image and word index. Images may be queried by time or relatedness. 
 
