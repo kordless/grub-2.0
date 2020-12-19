@@ -33,8 +33,8 @@ def grub():
 	if not url:
 		abort(404, "go away")
 
-	# run aperture - compressed joe to a run death
-	filename = check_output(["python3", "./aperture/BrowserSession.py", "%s" % url])
+	# run aperture - compressed joe to run death
+	filename = check_output(["python3", "/opt/grub-2.0/aperture/BrowserSession.py", "%s" % url])
 
 	# snapshot page
 	response = make_response(
