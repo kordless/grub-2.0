@@ -10,37 +10,17 @@ import logging
 import time
 
 
-
-
-# TODO Setup Interaction with DB rather than with flags and config files
-
-# ideally we just want something like -> LookUpWord -> Provider -> Google
-# ideally we just want something like -> go_to_url -> Cached/NotCached -> nytimes
-
-
-# Explorer Mode
-# Use Whois, Dig, nc, etc...
-# Think of this like the Selenium but a true browser
-
-
 class BrowserSession:
     
-
     def __init__(self, url=None, persistent=False, debug=False):
-        
-        # currently the configuration is going to be config.json 
-        # soon it will be from MongoDB/LocalBox
 
         self.debug = debug
-        #Navigation
         self.url = url
         self.stayopen = False
-        #BrowserSpecific
         self.headless = False
         self.fullscreen = True
-        #CrawlSpecific
-        self.local_db = None # stick to local socket
-        self.local_index = None # somelocalIndex Store
+        self.local_db = None
+        self.local_index = None
         self.save_text = False
 
     def setup_session(self):
@@ -51,8 +31,6 @@ class BrowserSession:
             self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--headless')
             self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--height=1080')
             self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--width=1920')
-
-        print(self.config['capabilities'])
 
         self.session = webdriver.Session(self.config['webdriverip'], self.config['webdriverport'], capabilities=self.config['capabilities'])
         return
@@ -77,18 +55,15 @@ class BrowserSession:
     def save_screenshot(self,filename=None):
         if filename is None:
             filename = "ss_{:.0f}.png".format(time.time())
-            print("Full Filename to use:\n\n")
-            print(filename + "\n\n")
+            print("filename="+filename)
 
         try:
             if self.fullscreen:
                 r = requests.get(url="http://localhost:4444/session/" + self.session.session_id + "/moz/screenshot/full")
-                print(r.status_code)
             else:
                 r = requests.get(url="http://localhost:4444/session/" + self.session.session_id + "/screenshot")
             if r.status_code == 200:
                 try:
-        
                     with open(filename, 'wb') as screenshot:
                         screenshot.write(base64.b64decode(r.json()['value']))
                 except IOError as err:
@@ -102,17 +77,15 @@ class BrowserSession:
             pass
     
         
-def main_test():
+def main():
     new_session = BrowserSession()
     new_session.headless = True
     new_session.setup_session()
-    #new_session.go_to_url('https://google.com/search?q=MLK',fullscreen=True)
-    print("going for it")
-    new_session.go_to_url('https://news.ycombinator.com/',fullscreen=True)
-    # new_session.go_to_url('https://www.theguardian.com/us-news/2020/jul/05/trump-july-fourth-speech-rushmore-coronavirus-race-protests',fullscreen=True)
-    print("waiting two seconds for page to load")
+
+    new_session.go_to_url(sys.argv[1],fullscreen=True)
     time.sleep(2)
     new_session.save_screenshot()
     
 if __name__ == '__main__':
-    main_test()
+    print(sys.argv[1])
+    main()

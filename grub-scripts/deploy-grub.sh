@@ -63,8 +63,8 @@ else
 
   pip3 install flask
   pip3 install urllib3
-  pip3 install requests
   pip3 install httplib2
+  pip3 install requests
 
   cd /opt/
 
