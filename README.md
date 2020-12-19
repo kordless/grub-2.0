@@ -12,7 +12,9 @@ Here's an old sketch of how they thought this worked:
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
 ## Competition
-Google provides image search functions for the massive amount of content they have crawled. Many believe that having more content is better. Some people don't.
+Google provides image search functions for the massive amount of content they have crawled. Many believe that having more content in your index is better.
+
+A few don't.
 
 A machine or human using Grub will also be able to receive related imagery using search queries such as "robot hand" even if Grub is only shown a few pages on robot hands. This keeps things simple and secure and doesn't require scraping Google results to get imagery into your machine.
 
