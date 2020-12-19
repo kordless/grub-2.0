@@ -1,7 +1,7 @@
 # Grub 2.0
 [Grub "1.0"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine designed to distribute the job of gathering content from the web. Grub was [purchased and later resold](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/) to Wikimedia. Grub-2.0 is a further expansion on the idea of decentralizing search processes.
 
-Grubby was always about looking at things differently.
+Grubby was always about looking at things differently. Just look at those eyes.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
