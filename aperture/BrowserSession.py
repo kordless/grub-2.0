@@ -32,7 +32,7 @@ class BrowserSession:
 
     def setup_session(self):
 
-        self.config = json.loads(open('config.json', 'r').read()) 
+        self.config = json.loads(open('aperture/config.json', 'r').read()) 
 
         if self.headless:
             self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--headless')
@@ -98,6 +98,6 @@ def main():
     filename = new_session.save_screenshot()
     
     print(filename)
-    
+
 if __name__ == '__main__':
     main()
