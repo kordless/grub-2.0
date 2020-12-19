@@ -40,7 +40,7 @@ def grub():
 	response = make_response(
 		render_template(
 			'grub.json',
-			json = json.dumps({"result": "success", "filename": "%s" % filename.decode("utf-8") })
+			json = json.dumps({"result": "success", "filename": "%s" % filename.decode("utf-8").rstrip()})
 		)
 	)
 	return response
