@@ -15,7 +15,7 @@ from subprocess import check_output
 from flask import Flask, render_template, make_response, request, abort
 
 # app up
-app = Flask(__name__, static_url_path='/aperture/')
+app = Flask(__name__, static_url_path='/aperture/images/')
 
 @app.route('/images/<path:path>')
 def images(path):
@@ -40,7 +40,7 @@ def grub():
 	response = make_response(
 		render_template(
 			'grub.json',
-			json = json.dumps({"result": "success", "filename": "%s" % filename})
+			json = json.dumps({"result": "success", "filename": "%s" % filename.decode("utf-8") })
 		)
 	)
 	return response

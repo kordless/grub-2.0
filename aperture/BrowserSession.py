@@ -90,15 +90,19 @@ class BrowserSession:
     
         
 def main():
-    new_session = BrowserSession()
-    new_session.headless = True
-    new_session.setup_session()
+    try:
+        new_session = BrowserSession()
+        new_session.headless = True
+        new_session.setup_session()
 
-    new_session.go_to_url(sys.argv[1],fullscreen=True)
-    time.sleep(1)
-    filename = new_session.save_screenshot()
-    
-    print(filename)
+        new_session.go_to_url(sys.argv[1],fullscreen=True)
+        time.sleep(2)
+        filename = new_session.save_screenshot()
+        
+        print(filename)
+
+    except:
+        print("error")
 
 if __name__ == '__main__':
     main()
