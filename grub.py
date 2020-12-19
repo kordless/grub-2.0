@@ -10,18 +10,12 @@ import urllib
 import json
 
 import sys
-sys.path.insert(0, '/opt/grub-2.0/lib')
-from BrowserSession import BrowserSession
+import subprocess
 
 from flask import Flask, render_template, make_response, request, abort
 
 # app up
 app = Flask(__name__)
-
-# session
-new_session = BrowserSession()
-new_session.headless = True
-new_session.setup_session()
 
 @app.route('/g', methods=['POST'])
 def grub():
@@ -34,9 +28,8 @@ def grub():
 	if not url:
 		abort(404, "go away")
 
-	new_session.go_to_url("https://news.ycombinator.com/news",fullscreen=True)
-	time.sleep(2)
-	new_session.save_screenshot()
+	# run snapshot
+	filename = subprocess.run(["python3", "./screenshot/BrowserSession.py", "https://google.com/"]
 
 	# snapshot page
 	response = make_response(
