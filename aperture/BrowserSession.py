@@ -98,5 +98,6 @@ def main():
     filename = new_session.save_screenshot()
     
     print(filename)
+    
 if __name__ == '__main__':
     main()

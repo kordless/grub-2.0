@@ -34,7 +34,7 @@ def grub():
 	if not url:
 		abort(404, "go away")
 
-	# run snapshot
+	# run aperture - compressed joe to a run death
 	filename = check_output(["python3", "./aperture/BrowserSession.py", "%s" % url]
 
 	# snapshot page
