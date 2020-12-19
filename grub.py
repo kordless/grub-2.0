@@ -15,7 +15,7 @@ from subprocess import check_output
 from flask import Flask, render_template, make_response, request, abort
 
 # app up
-app = Flask(__name__, static_url_path='aperture/images')
+app = Flask(__name__, static_url_path='/aperture/')
 
 @app.route('/images/<path:path>')
 def images(path):
