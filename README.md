@@ -3,14 +3,14 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Keeping Grubby's huge eyeballs in mind, Grub provides a "computed aperture function" for machines and humans to "see" a website without needing to browse to the site. Many of us can see a taxi in mind when someone says the word *taxi*. The ancients thought people had internal sense organs which "saw" things that were not real.Here's an old sketch of how they thought this worked:
+Grub provides a "computed aperture function" for machines and humans to "see" a website without needing to navigate to the site directly. Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. The ancients thought people had internal sense organs which "saw" these things that were not real. Here's an old sketch of how they thought this worked:
 
-<img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/h2ssme1AjSKfObij3DMZyQ2.jpg" width="300">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
 
 Google provides this function, but does so for all data they have crawled. A machine or human using Grub will receive similar imagery using search queries like "robot hand", given the system has been able to view a few pages on robot hands:
 
-<img src="https://i.ytimg.com/vi/l6xqTcLXXC8/h2ssme1AjSKfObij3DMZyQ2.jpg" width="500">
+<img src="https://github.com/kordless/grub-2.0/blob/main/docs/h2ssme1AjSKfObij3DMZyQ2.jpg?raw=true" width="500">
 
 When Grub is given a URL, it may return one or more image and word index. Images may be queried by time or relatedness. 
 
