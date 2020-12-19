@@ -102,7 +102,7 @@ Password token is: f00bark
 Instances will be running in a few minutes, listening on port 8983 for Grub.
 
 
-## Run Grub
+### Run Grub
 An index request URL looks like: 
 
 ```
