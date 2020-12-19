@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-
-import webdriver
+import sys
+import time
 import json
 import base64
-import sys
-import requests
+
 import traceback
 import logging
-import time
+
+import webdriver
+import requests
 
 
 def random_string(size=6, chars=string.ascii_letters + string.digits):
@@ -58,7 +59,7 @@ class BrowserSession:
 
     def save_screenshot(self,filename=None):
         if filename is None:
-            filename = "./screenshot/images/%s.png" % random_string(23)
+            filename = "./aperture/images/%s.png" % random_string(23)
             if self.debug:
                 print("filename="+filename)
 
