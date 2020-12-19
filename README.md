@@ -8,7 +8,9 @@ Grub provides a "computed aperture function" for machines and humans to "see" a 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
 
-Google provides this function, but does so for all data they have crawled. A machine or human using Grub will receive similar imagery using search queries like "robot hand", given the system has been able to view a few pages on robot hands:
+Google provides this function, but does so for all data they have crawled. A machine or human using Grub will receive similar imagery using search queries like "robot hand", given the system has been able to view a few pages on robot hands. 
+
+This image fragment was created with Grub:
 
 <img src="https://github.com/kordless/grub-2.0/blob/main/docs/h2ssme1AjSKfObij3DMZyQ2.jpg?raw=true" width="500">
 
@@ -65,6 +67,11 @@ $ ./deploy-solr.sh
 Password token is: f00bark
 ```
 
+Instances will be running in a few minutes, listening on port 8389 for Solr.
+
+### Manage Solr
+Login URL looks like: http://solr:f00bark@x.x.x.x:8389
+
 ## Deploy Grub
 Deploy a secure Grub instance on Google cloud:
 
@@ -73,13 +80,28 @@ $ ./deploy-grub.sh
 Password token is: f00bark
 ```
 
-Instances will be running in 2.5 minutes, listening on port 8389 for Solr and 8983 for Grub.
+Instances will be running in a few minutes, listening on port 8983 for Grub.
 
-## Manage Solr
-Login URL looks like: http://solr:f00bark@x.x.x.x:8389
+
+## Run Grub
+An index request URL looks like: 
+
+```
+$ curl -X POST -d "https://news.ycombinator.com/news" http://grub:f00bark@x.x.x.x:8983/g
+{"result": "success", "filename": "1ORJX7BCQ6vT0J2erqu8kWd.png"}
+```
+
+On OSX, viewing the site image looks like: 
+```
+$ open http://grub:f00bark@34.82.44.60:8983/images/1ORJX7BCQ6vT0J2erqu8kWd.png
+```
 
 ## Tensorflow
-Deploy a tensorflow model. Not done yet.
+Deploy a tensorflow model. This part remains to be completed, although there is a nice Tensorflow deployment here:
+
+[Deploy Tensorflow in 10 Minutes](https://gist.github.com/kordless/c5b445447498ff5cb28178e12a7d9b0b)
+
+Back in Grub-2.0's directory, do the following:
 
 ```
 $ ./deploy-tensorflow.sh
@@ -87,18 +109,18 @@ Password token is: f00bark
 ```
 
 ## Fastener
-Deploy a controller box for starting instances. Not done yet.
+Deploy a controller box for starting instances. Not done yet, either.
 
 ```
 $ ./deploy-fastener.sh
 ```
 
-Instance will be running in 2.5 minutes, listening on port 80.
+Instance will be running in a few minutes listening on port 80.
 
 ## Bookmark
 [Bookmark and index](https://mitta.us/https://github.com/kordless/grub-2.0/) this page using [Mitta.us](https://mitta.us/).
 
 ## Credits
-*"Your ideas don't stink. Just make sure they become a reality."* - Igor Stojanovski, Grub Developer
+*"Your ideas don't stink. Just make sure they become a reality."* - **Igor Stojanovski, Software Architect and author of Grub 1.0.**
 
 Thanks, Igor. I forgot this for a while, but I am "keeping" it clearly in mind now.
