@@ -3,7 +3,7 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Keeping Grubby's huge eyeballs in mind, Grub provides computational aperture function for machines and humans to see a website without a browser. Many of us can see a taxi in mind when someone says the word *taxi*. The ancients thought people had internal sense organs which "saw" things that were not real. We now think our brain's process is more akin to a hologram than projection and detection of light. Here's an old sketch:
+Keeping Grubby's huge eyeballs in mind, Grub provides a "computed aperture function" for machines and humans to "see" a website without needing to browse to the site. Many of us can see a taxi in mind when someone says the word *taxi*. The ancients thought people had internal sense organs which "saw" things that were not real.Here's an old sketch of how they thought this worked:
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
