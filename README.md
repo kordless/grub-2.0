@@ -5,11 +5,13 @@ Grubby was always about looking at things differently. Just look at those eyes.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Grub provides a "computed aperture function" for machines and humans to "see" a website without needing to navigate to the site directly. Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. The ancients thought people had internal sense organs which "saw" these things that were not real. 
+Grub provides a "computed aperture function" for machines and humans to "see" without needing to navigate to any specific content directly. Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where did the taxi come from, then? The ancients thought people had internal sense organs which "saw" these things that were not real. 
 
 Here's an old sketch of how they thought this worked:
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
+
+Imagine that!
 
 ## Competition
 Google provides image search functions for the massive amount of content they have crawled. Many believe that having more content in your index is better.
