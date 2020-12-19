@@ -10,6 +10,10 @@ import logging
 import time
 
 
+def random_string(size=6, chars=string.ascii_letters + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+
+
 class BrowserSession:
     
     def __init__(self, url=None, persistent=False, debug=False):
@@ -54,7 +58,7 @@ class BrowserSession:
 
     def save_screenshot(self,filename=None):
         if filename is None:
-            filename = "ss_{:.0f}.png".format(time.time())
+            filename = "./screenshot/images/%s.png" % random_string(23)
             print("filename="+filename)
 
         try:
@@ -87,5 +91,4 @@ def main():
     new_session.save_screenshot()
     
 if __name__ == '__main__':
-    print(sys.argv[1])
     main()
