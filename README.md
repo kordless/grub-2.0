@@ -16,16 +16,16 @@ This image fragment was created with Grub:
 
 <img src="https://github.com/kordless/grub-2.0/blob/main/docs/h2ssme1AjSKfObij3DMZyQ2.jpg?raw=true" width="500">
 
-When Grub is given a URL, it may return one or more image and word index. Images may be queried by time or relatedness. 
+When Grub is given a URL, it may return one or more images and/or word indexes. Images may be queried by time or relatedness.
 
-This may be useful for training machine learning models or providing usercentric search features.
+This may be useful for testing or training machine learning models or providing search features to users.
 
 ## How
 Queried by URL, Grub "crawls" the page visually using Gekcodriver and machine learning models trained to find crops for  images found on a web page.
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/index.png" width="500">
 
-Grub "looks" at the page using a computed aperture implemented with Geckodriver, Solr and machine leaarning. By passing a website's images through mutiple model paths, we may find and crop related images on the page. Those new images may be passed onto other models for object extraction, while others may detect and decode text for indexing.
+Grub "looks" at the page using a computed aperture implemented with Geckodriver, Solr and machine leaarning. By passing a website through mutiple model paths, we may find and crop related images on the page. Those new images may also be passed onto other models for object extraction, while others may detect and decode text for indexing text.
 
 Here we see Google Vision looking at a Bloomberg article and seeing people, given Cuomo is people. A subsequent search, "cuomo people", would return this article and a picture of Cuomo.
 
@@ -34,7 +34,7 @@ Here we see Google Vision looking at a Bloomberg article and seeing people, give
 Grub runs on [Flask](https://flask.palletsprojects.com/en/1.1.x/) in Python and uses [Solr 7.5.2](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
 
 ## Install
-This open code repository provides information and scripts for deploying the system.
+This open code repository provides information and scripts for deploying a functional computational aperture system.
 
 Begin by checking out this repo onto your Google Cloud Shell terminal:
 
