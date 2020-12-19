@@ -6,7 +6,7 @@ NEW_UUID=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
 
 option=$1
 PREEMPTIBLE="--preemptible"
-IP=""
+IP="34.82.44.60"
 
 echo "This instance is preemtible, unless it's started with --prod";
 case $option in
