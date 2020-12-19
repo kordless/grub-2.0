@@ -5,7 +5,7 @@
 
 Keeping Grubby's huge eyeballs in mind, Grub provides a "computed aperture function" for machines and humans to "see" a website without needing to browse to the site. Many of us can see a taxi in mind when someone says the word *taxi*. The ancients thought people had internal sense organs which "saw" things that were not real.Here's an old sketch of how they thought this worked:
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
+<img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/h2ssme1AjSKfObij3DMZyQ2.jpg" width="300">
 
 
 Google provides this function, but does so for all data they have crawled. A machine or human using Grub will receive similar imagery using search queries like "robot hand", given the system has been able to view a few pages on robot hands:
