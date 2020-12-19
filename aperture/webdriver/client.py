@@ -390,7 +390,6 @@ class Session(object):
 
         self.timeouts = Timeouts(self)
         self.window = Window(self)
-        print(self.window.size)
         self.window.size = (1280,2096)
         self.find = Find(self)
         self.alert = UserPrompt(self)

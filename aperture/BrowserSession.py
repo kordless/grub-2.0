@@ -59,7 +59,8 @@ class BrowserSession:
     def save_screenshot(self,filename=None):
         if filename is None:
             filename = "./screenshot/images/%s.png" % random_string(23)
-            print("filename="+filename)
+            if self.debug:
+                print("filename="+filename)
 
         try:
             if self.fullscreen:
@@ -73,8 +74,9 @@ class BrowserSession:
                 except IOError as err:
                     print("I/O error: {0}".format(err))
             elif r.status_code == 404:
-                print("Something is wrong with the session? maybe it's closed????")
-                print(r.json())
+                if self.debug:
+                    print("Something is wrong with the session? maybe it's closed????")
+                    print(r.json())
 
         except Exception:
             traceback.print_exc()
