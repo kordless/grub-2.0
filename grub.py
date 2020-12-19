@@ -11,7 +11,6 @@ import json
 
 import sys
 from subprocess import check_output
-out = check_output(["ntpq", "-p"])
 
 from flask import Flask, render_template, make_response, request, abort
 
