@@ -32,7 +32,7 @@ In summary, you can imagine Grub-2.0 as an AI powered crawler. Watch this video 
 
 
 ## How
-Queried by URL, Grub "crawls" the page visually using Gekcodriver and machine learning models trained to find crops for  images found on a web page.
+Queried by URL, Grub "crawls" the page visually using Gekcodriver and machine learning models trained to find crops for text and images found on a web page.
 
 We can even image and then extract the source code of the page:
 
