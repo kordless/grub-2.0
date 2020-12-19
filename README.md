@@ -11,7 +11,7 @@ Here's an old sketch of how they thought this worked:
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
-Imagine that!
+Imagine that, if you can.
 
 ## Competition
 Google provides image search functions for the massive amount of content they have crawled. Many believe that having more content in your index is better.
