@@ -142,4 +142,4 @@ Instance will be running in a few minutes listening on port 80.
 ## Credits
 *"Your ideas don't stink. Just make sure they become a reality."* - **Igor Stojanovski, Author of Grub**
 
-Thanks, Igor. I forgot this for a while, but I am "keeping" it clearly in mind now.
+Thanks, Igor. I forgot this for a time, but am keeping it "clearly in mind" now.
