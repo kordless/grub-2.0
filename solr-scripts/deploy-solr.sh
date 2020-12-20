@@ -77,9 +77,10 @@ else
 
   cp -rp /opt/solr/server/solr/configsets /var/solr/data/
 
-  cd /opt/
-  chown -R solr.solr solr*
+  chown -R solr.solr /opt/solr*
+  chown -R solr.solr /var/solr*
 
+  cd /opt/
   git clone https://github.com/kordless/grub-2.0.git
 
   cd grub-2.0
