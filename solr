@@ -1,1 +1,1 @@
-sudo -i -u solr /opt/solr/bin/solr start -c -p 8983
+sudo -i -u solr /opt/solr/bin/solr start -p 8983
