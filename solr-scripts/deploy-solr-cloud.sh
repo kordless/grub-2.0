@@ -89,7 +89,7 @@ else
   chmod -R 755 *.sh
   ./solr-scripts/start-solr.sh
 
-  cp solr /etc/init.d/solr
+  cp solr-cloud /etc/init.d/solr
   chmod 755 /etc/init.d/solr
 
   apt-get install apache2-utils -y
