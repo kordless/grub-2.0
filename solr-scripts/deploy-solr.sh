@@ -2,7 +2,7 @@
 TYPE=n1-standard-4
 ZONE=us-west1-c
 NAME=solr
-VERSION=8.5.2
+VERSION=8.7.0
 NEW_UUID=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
 
 option=$1
@@ -70,19 +70,15 @@ else
 
   cd /opt/
 
-  curl https://archive.apache.org/dist/lucene/solr/8.5.2/solr-8.5.2.tgz > solr-8.5.2.tgz
-  tar xzf solr-8.5.2.tgz solr-8.5.2/bin/install_solr_service.sh --strip-components=2
+  curl https://archive.apache.org/dist/lucene/solr/8.7.0/solr-8.7.0.tgz > solr-8.7.0.tgz
+  tar xzf solr-8.7.0.tgz solr-8.7.0/bin/install_solr_service.sh --strip-components=2
 
-  bash ./install_solr_service.sh solr-8.5.2.tgz -u solr -s solr -p 8983
+  bash ./install_solr_service.sh solr-8.7.0.tgz -u solr -s solr -p 8983
 
-  mkdir /opt/solr/server/logs/
-  mkdir /opt/solr/mitta/
+  cp -rp /opt/solr/server/solr/configsets /var/solr/data/
+
   cd /opt/
   chown -R solr.solr solr*
-
-  sudo -i -u solr /opt/solr/bin/solr stop
-  sudo -i -u solr /opt/solr/bin/solr -e cloud -noprompt
-  mv /opt/solr/example/cloud /opt/solr/mitta
 
   git clone https://github.com/kordless/grub-2.0.git
 
@@ -90,7 +86,7 @@ else
   chmod -R 755 *.sh
   ./solr-scripts/start-solr.sh
 
-  cp solr-cloud /etc/init.d/solr
+  cp solr /etc/init.d/solr
   chmod 755 /etc/init.d/solr
 
   apt-get install apache2-utils -y
@@ -110,5 +106,5 @@ sleep 15
 gcloud compute instances add-metadata $NAME-$NEW_UUID --zone $ZONE --metadata-from-file=shutdown-script=stop-solr.sh
 
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
-gcloud compute firewall-rules create solr-proxy --allow tcp:8389
+gcloud compute firewall-rules create solr-proxy --target-tags solr --allow tcp:8389
 echo "Password token is: $TOKEN"
