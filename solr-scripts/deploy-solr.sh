@@ -7,7 +7,7 @@ NEW_UUID=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
 
 option=$1
 PREEMPTIBLE="--preemptible"
-# IP="--address=34.83.44.36"
+IP="--address=34.83.44.36"
 
 echo "This instance is preemtible, unless it's started with --prod";
 case $option in
@@ -58,6 +58,12 @@ else
   cat "HRNGDEVICE=/dev/urandom" >> /etc/default/rng-tools
   /etc/init.d/rng-tools restart
 
+  # files
+  echo "solr hard nofile 65535" >> /etc/security/limits.conf
+  echo "solr soft nofile 65535" >> /etc/security/limits.conf
+  echo "solr hard nproc 65535" >> /etc/security/limits.conf
+  echo "solr soft nproc 65535" >> /etc/security/limits.conf
+
   apt-get install openjdk-11-jdk -y
   echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/environment
 
@@ -68,13 +74,23 @@ else
 
   bash ./install_solr_service.sh solr-8.5.2.tgz -u solr -s solr -p 8983
 
+  mkdir /opt/solr/server/logs/
+  mkdir /opt/solr/mitta/
   cd /opt/
   chown -R solr.solr solr*
+
+  sudo -i -u solr /opt/solr/bin/solr stop
+  sudo -i -u solr /opt/solr/bin/solr -e cloud -noprompt
+  mv /opt/solr/example/cloud /opt/solr/mitta
 
   git clone https://github.com/kordless/grub-2.0.git
 
   cd grub-2.0
   chmod -R 755 *.sh
+  ./solr-scripts/start-solr.sh
+
+  cp solr-cloud /etc/init.d/solr
+  chmod 755 /etc/init.d/solr
 
   apt-get install apache2-utils -y
   apt-get install nginx -y
@@ -89,10 +105,8 @@ else
 fi
 '
 sleep 15
-gcloud compute instances add-metadata $NAME-$NEW_UUID --zone $ZONE --metadata shutdown-script='
-#!/bin/bash
-/opt/grub-2.0/solr-scripts/stop-solr.sh >> /root/shutdown-complete
-'
+
+gcloud compute instances add-metadata $NAME-$NEW_UUID --zone $ZONE --metadata-from-file stop-solr.sh
 
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
 gcloud compute firewall-rules create solr-proxy --allow tcp:8389
