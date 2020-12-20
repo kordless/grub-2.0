@@ -17,33 +17,42 @@ from flask import Flask, render_template, make_response, request, abort, send_fr
 # app up
 app = Flask(__name__)
 
+
+# serving images
 @app.route('/images/<path:path>')
 def images(path):
     return send_from_directory('/opt/grub-2.0/aperture/images/', path)
 
 
+# main route
 @app.route('/g', methods=['POST'])
 def grub():
-	# build document
-	document = {}
-	
 	# url
 	url = request.form.get('url')
 
 	if not url:
 		abort(404, "go away")
 
-	# run aperture - compressed joe to run death
+	# run aperture process externally
 	filename = check_output(["python3", "/opt/grub-2.0/aperture/BrowserSession.py", "%s" % url])
 
-	# snapshot page
-	response = make_response(
-		render_template(
-			'grub.json',
-			json = json.dumps({"result": "success", "filename": "%s" % filename.decode("utf-8").rstrip()})
+	if "error" in filename:
+		response = make_response(
+			render_template(
+				'grub.json',
+				json = json.dumps({"result": "error", "filename": "none"})
+			)
 		)
-	)
+	else:
+		response = make_response(
+			render_template(
+				'grub.json',
+				json = json.dumps({"result": "success", "filename": "%s" % filename.decode("utf-8").rstrip()})
+			)
+		)
+
 	return response
+
 
 @app.errorhandler(404)
 def f404_notfound(e):
@@ -59,5 +68,4 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-
 	app.run(host='0.0.0.0', port=7070, debug=True)

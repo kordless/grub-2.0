@@ -8,7 +8,6 @@ events {
 http {
         upstream solr {
                 server localhost:8983;
-                server localhost:7574;
         }
         server {
                 listen  8389;
