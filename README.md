@@ -105,7 +105,7 @@ Instances will be running in a few minutes, listening on port 8983 for Grub.
 
 
 ### Run Grub
-An index request URL looks like: 
+A request for imaging a URL: 
 
 ```
 $ curl -X POST -d "https://news.ycombinator.com/news" http://grub:f00bark@x.x.x.x:8983/g
