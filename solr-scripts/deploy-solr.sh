@@ -44,8 +44,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --metadata startup-script='#!/bin/bash
 if [ -d "/opt/solr/" ]; then
   echo "starting solr"
-  sudo -i -u solr /opt/solr/bin/solr restart -c -p 8983 -s /opt/solr/mitta/cloud/node1/solr
-  sudo -i -u solr /opt/solr/bin/solr restart -c -p 7574 -s /opt/solr/mitta/cloud/node2/solr -z localhost:9983
+  sudo -i -u solr /opt/solr/bin/solr start -c -p 8983
 else
   sudo su -
   date >> /opt/start.time
