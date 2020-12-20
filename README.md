@@ -36,7 +36,7 @@ Now watch this video for more information about artificial general intellegence:
 
 
 ## How
-Grub "looks" at the page using a computed aperture implemented with Geckodriver, Firefox, Solr and soon various Tensorflow models. By passing a website through a model, we may find and crop related images or text on the page. When image are found they may be passed onto other models for object extraction.
+Grub "looks" at the page using a computed aperture implemented with Geckodriver, Firefox, Solr and various maachine learning vision models. By passing a site's image to a model, we may find and crop related images or text on the page. When image are found they may be passed onto other models for object extraction.
 
 We can even image and extract the source code of the page (this example uses Google Vision's model):
 
