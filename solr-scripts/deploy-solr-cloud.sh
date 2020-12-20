@@ -105,10 +105,11 @@ else
 fi
 '
 sleep 15
+
 gcloud compute instances add-metadata $NAME-$NEW_UUID \
 --zone $ZONE \
 --metadata shutdown-script='#!/bin/bash
-/opt/grub-2.0/solr-scripts/stop-solr.sh >> /root/shutdown-complete
+/opt/grub-2.0/solr-scripts/stop-solr-cloud.sh >> /root/shutdown-complete
 '
 
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
