@@ -5,7 +5,7 @@ Grubby was always about looking at things differently.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Grub provides a "computed aperture function" for machines and humans to "see" without needing to navigate to any specific content directly. Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where did the taxi come from, then? The ancients thought people had internal sense organs which "saw" these things that were not real. 
+Grub-2.0 provides a "computed aperture function" for machines and humans to "see" without needing to navigate to any specific content directly. Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where did the taxi come from, then? The ancients thought people had internal sense organs which "saw" these things that were not real. 
 
 Here's an old sketch of how they thought this worked:
 
