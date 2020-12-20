@@ -30,7 +30,7 @@ fi
 
 gcloud compute instances create $NAME-$NEW_UUID \
 --machine-type $TYPE \
---image "ubuntu-1804-bionic-v20201123" \
+--image "ubuntu-1804-bionic-v20201211a" \
 --image-project "ubuntu-os-cloud" \
 --boot-disk-size "10GB" \
 --boot-disk-type "pd-ssd" \
@@ -89,9 +89,8 @@ else
 fi
 '
 sleep 15
-gcloud compute instances add-metadata $NAME-$NEW_UUID \
---zone $ZONE \
---metadata shutdown-script='#!/bin/bash
+gcloud compute instances add-metadata $NAME-$NEW_UUID --zone $ZONE --metadata shutdown-script='
+#!/bin/bash
 /opt/grub-2.0/solr-scripts/stop-solr.sh >> /root/shutdown-complete
 '
 
