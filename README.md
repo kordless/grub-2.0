@@ -7,7 +7,7 @@ Grub-2.0 is the literal rebirth and expansion upon the idea of decentralized sea
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and explore online content visually using smaller sets of personalized data. Various machine learning models may "crawl" or extract text and other images from a given page's screenthot. The resulting data may be placed into an index where it can be related to other content and pages.
+Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and explore online content visually using smaller sets of personalized data. Various machine learning models may "crawl" or extract text and other images from a given page. The resulting data may be placed into an index where it can be related to other content.
 
 As an analagy, many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from when the spoken request is being processed by the mind? The ancients thought they came from internal sense organs which "saw" these things that were not real.
 
