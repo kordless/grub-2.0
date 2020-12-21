@@ -1,4 +1,6 @@
 # Grub 2.0
+You may imagine Grub-2.0 as an AI powered crawler.
+
 Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and explore online content visually using smaller sets of personally guided data. Various machine learning models may be used to "crawl" or extract text and other images from a given page's image. The resulting data may be placed into an index where it can be searched or related to other content.
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/google_vision_example.png" width="200">
@@ -34,8 +36,6 @@ Here's an example page fragment created with Grub:
 Unlike Google, when Grub is given a site it may return one or more images and/or search indexes. Indexes can be queried later by using Solr's time or relatedness functions.
 
 This process may be useful for testing or training machine learning models or providing new types of search features to users, such as what is being done over at [mitta.us](https://mitta.us).
-
-In summary, you can imagine Grub-2.0 as an AI powered crawler.
 
 ## How
 Grub "looks" at the page using a computed aperture implemented with Geckodriver, Firefox, Solr and various maachine learning vision models. By passing a site's image to a model, we may find and crop related images or text on the page. When image are found they may be passed onto other models for object extraction.
