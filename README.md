@@ -1,5 +1,5 @@
 # Grub 2.0
-[Grub "1.0"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was intended to be an Open Source search engine designed to distribute the job of gathering content from the web. At one point we had several hundred volunteers crawling the web and sending us content deltas when pages updated. 
+[Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was intended to be an Open Source search engine designed to distribute the job of gathering content from the web. At one point we had several hundred volunteers crawling the web and sending us content deltas when pages updated. 
 
 I sold Grub in 2003 to Looksmart. Grub was [later purchased](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/) by Wikimedia. 
 
