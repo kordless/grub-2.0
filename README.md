@@ -5,7 +5,7 @@ Grub-2.0 is a further expansion on the idea of decentralizing search processes u
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Grub-2.0 provides a "computed aperture function" for machines and humans to "see" without needing to navigate to any specific content directly. Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from, then? The ancients thought people had internal sense organs which "saw" these things that were not real.
+Grub-2.0 provides a "computed aperture function" for machines and humans to explore online content. Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from, then? The ancients thought people had internal sense organs which "saw" these things that were not real.
 
 Here's an old sketch of how they thought this worked:
 
@@ -28,9 +28,9 @@ Unlike Google, when Grub is given a site it may return one or more images and/or
 
 This process may be useful for testing or training machine learning models or providing new types of search features to users, such as I am doing with [mitta.us](https://mitta.us).
 
-In summary, you can imagine Grub-2.0 as an AI powered crawler. 
+In summary, you can imagine Grub-2.0 as an AI powered crawler.
 
-Now watch this video for more information about artificial general intellegence:
+Here's where I proposed the idea:
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/frB8I5gxSXk/0.jpg)](https://www.youtube.com/watch?v=frB8I5gxSXk)
 
