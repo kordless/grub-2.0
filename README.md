@@ -13,7 +13,7 @@ As an analagy, many people can "see" a taxi *in mind* when someone says the word
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
-Here is the first publicly proposed idea of creating a synthetic imagination:
+Here is a related video you may find interesting:
 
 [![synth](https://img.youtube.com/vi/frB8I5gxSXk/0.jpg)](https://www.youtube.com/watch?v=frB8I5gxSXk)
 
