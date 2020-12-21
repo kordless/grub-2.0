@@ -1,7 +1,7 @@
 # Grub 2.0
-You may imagine Grub-2.0 as an AI powered crawler.
+You may imagine Grub-2.0 as an AI powered crawler which extracts text and images as opposed to links.
 
-Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and explore online content. Various machine learning models may be used to "crawl" or extract text and other images from a given page. The resulting data may be placed into an index where it can be searched or related to other content.
+Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and explore image based content. Various machine learning models may be used to "crawl" or extract text and other images from a given page. The resulting data may be placed into an index where it can be searched or related to other content.
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/google_vision_example.png" width="200">
 
