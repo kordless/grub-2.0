@@ -11,7 +11,9 @@ Here's an old sketch of how they thought this worked:
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
-Imagine that, if you can!
+Here's where I first publicly proposed the idea of creating a synthetic imagination:
+
+[![synth](https://img.youtube.com/vi/frB8I5gxSXk/0.jpg)](https://www.youtube.com/watch?v=frB8I5gxSXk)
 
 ## Competition
 Google provides image search functions for the massive amount of content they have crawled. Many believe that having more content in your index is better.
@@ -29,11 +31,6 @@ Unlike Google, when Grub is given a site it may return one or more images and/or
 This process may be useful for testing or training machine learning models or providing new types of search features to users, such as I am doing with [mitta.us](https://mitta.us).
 
 In summary, you can imagine Grub-2.0 as an AI powered crawler.
-
-Here's where I proposed the idea:
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/frB8I5gxSXk/0.jpg)](https://www.youtube.com/watch?v=frB8I5gxSXk)
-
 
 ## How
 Grub "looks" at the page using a computed aperture implemented with Geckodriver, Firefox, Solr and various maachine learning vision models. By passing a site's image to a model, we may find and crop related images or text on the page. When image are found they may be passed onto other models for object extraction.
