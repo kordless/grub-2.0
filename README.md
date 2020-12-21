@@ -33,7 +33,7 @@ Here's an example page fragment created with Grub:
 
 Unlike Google, when Grub is given a site it may return one or more images and/or search indexes. Indexes can be queried later by using Solr's time or relatedness functions.
 
-This process may be useful for testing or training machine learning models or providing new types of search features to users, such as I am doing with [mitta.us](https://mitta.us).
+This process may be useful for testing or training machine learning models or providing new types of search features to users, such as what is being done over at [mitta.us](https://mitta.us).
 
 In summary, you can imagine Grub-2.0 as an AI powered crawler.
 
