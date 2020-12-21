@@ -1,13 +1,15 @@
 # Grub 2.0
 [Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas when pages updated.
 
-Grub was sold in 2003 to Looksmart. [Grub was sold again in 2007](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), this time to Wikimedia. Within a few months of that sale, the original Grub team found itself working at Splunk.
+Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity.
 
-Grub-2.0 is an expansion on the idea of decentralizing search processes using AI-powered vision systems.
+Grub-2.0 is an rebirth and expansion on the idea of decentralizing search processes using AI-powered vision systems.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Grub-2.0 provides a "computed aperture function" for machines and humans to "see" online content. Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from, then? The ancients thought people had internal sense organs which "saw" these things that were not real.
+Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and exmplore online content visually using smaller sets of visual data. Unlike Google, who crawls the page source itself, Grub is designed to image the page as a human would see it. After imaging, various machine learning models may then "crawl" or extract text and other images. The resulting data may be placed into an index where it can be related to other content.
+
+As an analagy, many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from, then when the request is processed by the mind? The ancients thought people had internal sense organs which "saw" these things that were not real.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
