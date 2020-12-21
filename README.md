@@ -7,7 +7,7 @@ Grub-2.0 is a literal rebirth of the idea and an expansion on how we may further
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and exmplore online content visually using smaller sets of visual data. Unlike Google, who crawls the page source itself, Grub is designed to image the page as a human would see it. After imaging, various machine learning models may then "crawl" or extract text and other images. The resulting data may be placed into an index where it can be related to other content.
+Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and explore online content visually using smaller sets of personalized data. Various machine learning models may "crawl" or extract text and other images from a given page's screenthot. The resulting data may be placed into an index where it can be related to other content and pages.
 
 As an analagy, many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from, then when the request is processed by the mind? The ancients thought people had internal sense organs which "saw" these things that were not real.
 
