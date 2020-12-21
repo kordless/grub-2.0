@@ -1,6 +1,8 @@
 # Grub 2.0
 Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and explore online content visually using smaller sets of personally guided data. Various machine learning models may be used to "crawl" or extract text and other images from a given page's image. The resulting data may be placed into an index where it can be searched or related to other content.
 
+<img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/google_vision_example.png" width="200">
+
 ## History
 [Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas only when pages were noted to have changed.
 
