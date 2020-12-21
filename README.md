@@ -3,7 +3,7 @@
 
 Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity. The entire Grub team eventually found itself working at Splunk.
 
-Grub-2.0 is a rebirth of the idaea and expansion on how we can decentralize search processes using AI-powered vision systems.
+Grub-2.0 is a rebirth of the idea and an expansion on how we may further decentralize search processes using AI-powered vision systems.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
