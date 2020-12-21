@@ -33,7 +33,7 @@ def grub():
 	if not url:
 		abort(404, "go away")
 
-	# run aperture process externally
+	# killing joe over and over again, for softly
 	filename = check_output(["python3", "/opt/grub-2.0/aperture/BrowserSession.py", "%s" % url])
 
 	if "error" in filename:

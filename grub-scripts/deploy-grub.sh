@@ -30,7 +30,7 @@ fi
 
 gcloud compute instances create $NAME-$NEW_UUID \
 --machine-type $TYPE \
---image "ubuntu-1804-bionic-v20201123" \
+--image "ubuntu-1804-bionic-v20201211a" \
 --image-project "ubuntu-os-cloud" \
 --boot-disk-size "10GB" \
 --boot-disk-type "pd-ssd" \
@@ -94,5 +94,5 @@ fi
 '
 sleep 15
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
-gcloud compute firewall-rules create grub-proxy --allow tcp:8983
+gcloud compute firewall-rules create grub-proxy --target-tags grub --allow tcp:8983
 echo "Password token is: $TOKEN"
