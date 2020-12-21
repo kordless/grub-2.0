@@ -1,19 +1,17 @@
 # Grub 2.0
 [Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas when pages updated.
 
-Grub was sold in 2003 to Looksmart and the entire team was later hired by Splunk. In 2007, [Grub was again purchased](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), this time by Wikimedia.
+Grub was sold in 2003 to Looksmart. In 2007, [Grub was again sold](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), this time to Wikimedia. Within a few months of that sale, the original Grub team found itself working at Splunk.
 
-Grub-2.0 is a further expansion on the idea of decentralizing search processes using AI-powered vision systems.
+Grub-2.0 is an expansion on the idea of decentralizing search processes using AI-powered vision systems.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Grub-2.0 provides a "computed aperture function" for machines and humans to explore online content. Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from, then? The ancients thought people had internal sense organs which "saw" these things that were not real.
-
-Here's an old sketch of how they thought this worked:
+Grub-2.0 provides a "computed aperture function" for machines and humans to "see" online content. Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from, then? The ancients thought people had internal sense organs which "saw" these things that were not real.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
-Here's where I first publicly proposed the idea of creating a synthetic imagination:
+Here is the first publicly proposed idea of creating a synthetic imagination:
 
 [![synth](https://img.youtube.com/vi/frB8I5gxSXk/0.jpg)](https://www.youtube.com/watch?v=frB8I5gxSXk)
 
