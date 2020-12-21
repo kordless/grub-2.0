@@ -23,9 +23,9 @@ Here is a related video discussing building machine awareness which you may find
 [![synth](https://img.youtube.com/vi/frB8I5gxSXk/0.jpg)](https://www.youtube.com/watch?v=frB8I5gxSXk)
 
 ## Competition
-Google provides image search functions for the massive amount of content they have crawled. Many believe that having more content in your index is better.
+Google provides image search functions for the massive amount of content they have crawled. If you can build an optimized query, their semantic knoweldge graph built from billions of pages will do a good job of returning related imagery. 
 
-A few don't.
+Many believe that having more content in your index is better. A few don't.
 
 A machine or human using Grub may receive related imagery using search queries such as "robot hand" even if Grub is only shown a few pages on robot hands. This keeps things simple and secure and doesn't require scraping Google results to get imagery into your machine.
 
