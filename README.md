@@ -1,7 +1,7 @@
 # Grub 2.0
 [Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine built to distribute the job of gathering content from the web. At one point we had several hundred volunteers crawling the web and sending us content deltas when pages updated.
 
-I sold Grub in 2003 to Looksmart. Grub was [later purchased](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/) by Wikimedia.
+Grub was sold in 2003 to Looksmart and the entire team was later hired by Splunk. In 2007, [Grub was again purchased](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), this time by Wikimedia.
 
 Grub-2.0 is a further expansion on the idea of decentralizing search processes using AI-powered vision systems.
 
