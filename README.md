@@ -14,7 +14,7 @@ Grub-2.0 is the literal rebirth and expansion upon the idea of decentralized sea
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-As an analagy, many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from when the spoken request is being processed by the mind? The ancients thought this imagery came in from internal sense organs which "saw" things "in mind" that were not real.
+As an analagy, many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from when the spoken request is being processed by the mind? The ancients thought this imagery came in from internal sense organs which "saw" things *in mind* that were not real.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
@@ -38,9 +38,9 @@ Unlike Google, when Grub is given a site it may return one or more images and/or
 This process may be useful for testing or training machine learning models or providing new types of search features to users, such as what is being done over at [mitta.us](https://mitta.us).
 
 ## How
-Grub "looks" at the page using a computed aperture implemented with Geckodriver, Firefox, Solr and various maachine learning vision models. By passing a site's image to a model, we may find and crop related images or text on the page. When image are found they may be passed onto other models for object extraction.
+Grub is a "computed aperture" which has been implemented in Geckodriver, Firefox, Solr and various maachine learning vision models. By passing a site's image to a model, we may find and crop related images or text on the page. When child images are found they may be passed onto other models for additional object extraction or segmentation.
 
-We can even image and extract the source code of the page (this example uses Google Vision's model):
+We may even image and extract the source code of a page (this example uses Google Vision's model):
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/index.png" width="500">
 
