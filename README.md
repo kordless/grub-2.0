@@ -1,4 +1,7 @@
 # Grub 2.0
+Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and explore online content visually using smaller sets of personally guided data. Various machine learning models may be used to "crawl" or extract text and other images from a given page's image. The resulting data may be placed into an index where it can be searched or related to other content.
+
+## History
 [Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas only when pages were noted to have changed.
 
 Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity. The original Grub team eventually found itself working at Splunk.
@@ -7,13 +10,11 @@ Grub-2.0 is the literal rebirth and expansion upon the idea of decentralized sea
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and explore online content visually using smaller sets of personalized data. Various machine learning models may "crawl" or extract text and other images from a given page. The resulting data may be placed into an index where it can be related to other content.
-
 As an analagy, many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from when the spoken request is being processed by the mind? The ancients thought this imagery came in from internal sense organs which "saw" things "in mind" that were not real.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
 
-Here is a related video you may find interesting:
+Here is a related video discussing building machine awareness which you may find interesting:
 
 [![synth](https://img.youtube.com/vi/frB8I5gxSXk/0.jpg)](https://www.youtube.com/watch?v=frB8I5gxSXk)
 
