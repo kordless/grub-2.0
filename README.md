@@ -23,7 +23,7 @@ Here is a related video discussing building machine awareness which you may find
 [![synth](https://img.youtube.com/vi/frB8I5gxSXk/0.jpg)](https://www.youtube.com/watch?v=frB8I5gxSXk)
 
 ## Competition
-Google provides image search functions for the massive amount of content they have crawled. If you can build an optimized query, their semantic knoweldge graph built from billions of pages will do a good job of returning related imagery. 
+Google provides image search functions for the massive amount of content they have crawled. If you can build an optimized query, their semantic knowledge graph built from billions of pages will do a good job of returning related imagery. 
 
 Many believe that having more content in your index is better. A few don't.
 
@@ -38,7 +38,7 @@ Unlike Google, when Grub is given a site it may return one or more images and/or
 This process may be useful for testing or training machine learning models or providing new types of search features to users, such as what is being done over at [mitta.us](https://mitta.us).
 
 ## How
-Grub is a "computed aperture" which has been implemented in Geckodriver, Firefox, Solr and various maachine learning vision models. By passing a site's image to a model, we may find and crop related images or text on the page. When child images are found they may be passed onto other models for additional object extraction or segmentation.
+Grub is a "computed aperture" which has been implemented in Geckodriver, Firefox, Solr and various machine learning vision models. By passing a site's image to a model, we may find and crop related images or text on the page. When child images are found they may be passed onto other models for additional object extraction or segmentation.
 
 We may even image and extract the source code of a page (this example uses Google Vision's model):
 
@@ -53,9 +53,9 @@ Other models may be run on Tensorflow directly. We'll implement this in the very
 Grub runs on [Flask](https://flask.palletsprojects.com/en/1.1.x/) in Python and uses [Solr 7.5.2](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
 
 ## Install
-This open code repository provides information and scripts for deploying a computated aperture. This system can be used to image websites and image content.
+This open code repository provides information and scripts for deploying a computed aperture. This system can be used to image websites and image content.
 
-Begin by checking out this repo onto your Google Cloud Shell terminal:
+Begin by checking out this repository onto your Google Cloud Shell terminal:
 
 ```
 $ git clone https://github.com/kordless/grub-2.0.git
