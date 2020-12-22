@@ -36,20 +36,13 @@ def grub():
 	# killing joe over and over again, for softly
 	filename = check_output(["python3", "/opt/grub-2.0/aperture/BrowserSession.py", "%s" % url])
 
-	if "error" in filename:
-		response = make_response(
-			render_template(
-				'grub.json',
-				json = json.dumps({"result": "error", "filename": "none"})
-			)
+
+	response = make_response(
+		render_template(
+			'grub.json',
+			json = json.dumps({"result": "success", "filename": "%s" % filename.decode("utf-8").rstrip()})
 		)
-	else:
-		response = make_response(
-			render_template(
-				'grub.json',
-				json = json.dumps({"result": "success", "filename": "%s" % filename.decode("utf-8").rstrip()})
-			)
-		)
+	)
 
 	return response
 
