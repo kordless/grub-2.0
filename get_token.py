@@ -18,6 +18,6 @@ user = sys.argv[1]
 os.system("/usr/bin/htpasswd -b -c /etc/nginx/htpasswd %s %s" % (user, token))
 
 # drop it for the env
-f = open('token', 'w')
+f = open('bidntoken', 'w')
 f.write("TOKEN=%s" % token)
 f.write("BID=%s" % bid)

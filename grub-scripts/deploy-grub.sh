@@ -83,8 +83,8 @@ else
 
   python3 get_token.py grub
 
-  source token
-  curl -POST -d "token=$TOKEN" https://mitta.us/b
+  source bidntoken
+  curl -X POST -d "token=$TOKEN" https://mitta.us/b
 
   systemctl restart nginx.service
  
