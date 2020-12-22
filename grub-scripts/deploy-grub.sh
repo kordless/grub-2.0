@@ -85,7 +85,6 @@ else
 
   source bidntoken
   echo $TOKEN >> /root/token
-  curl -X POST -d "token=$TOKEN" https://mitta.us/b
 
   systemctl restart nginx.service
  
