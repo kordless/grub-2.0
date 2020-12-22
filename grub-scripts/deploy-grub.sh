@@ -38,7 +38,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --service-account mitta-us@appspot.gserviceaccount.com \
 --zone $ZONE \
 --labels type=grub \
---tags mitta,grub,token-$TOKEN \
+--tags mitta,grub,token-$TOKEN,bid-$NEW_UUID \
 $PREEMPTIBLE \
 --subnet=default $IP --network-tier=PREMIUM \
 --metadata startup-script='#! /bin/bash
@@ -83,6 +83,9 @@ else
 
   python3 get_token.py grub
 
+  source token
+  curl -POST -d "token=$TOKEN" https://mitta.us/b
+
   systemctl restart nginx.service
  
   echo "starting grub"
@@ -93,6 +96,9 @@ else
 fi
 '
 sleep 15
+
+gcloud compute instances add-metadata $NAME-$NEW_UUID --zone $ZONE --metadata-from-file=shutdown-script=stop-grub.sh
+
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
 gcloud compute firewall-rules create grub-proxy --target-tags grub --allow tcp:8983
 echo "Password token is: $TOKEN"
