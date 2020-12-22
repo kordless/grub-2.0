@@ -19,5 +19,5 @@ os.system("/usr/bin/htpasswd -b -c /etc/nginx/htpasswd %s %s" % (user, token))
 
 # drop it for the env
 f = open('bidntoken', 'w')
-f.write("TOKEN=%s" % token)
-f.write("BID=%s" % bid)
+f.write("TOKEN=%s\n" % token)
+f.write("BID=%s\n" % bid)
