@@ -10,9 +10,9 @@ Here is an example where we use Grub's crawler to image [a page about photograph
 ## History
 [Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas only when pages were noted to have changed.
 
-Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity. The original Grub team eventually found itself working at Splunk.
+Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity. The original Grub team would later find itself marketing and porting Splunk to Windows.
 
-Grub-2.0 is the rebirth and expansion upon the idea of decentralized search processes through AI-powered vision systems.
+Grub-2.0 is the rebirth and expansion upon the idea of decentralized search processes through AI-powered vision systems. It is only now that the orignal vision for Grub may become a reality.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
