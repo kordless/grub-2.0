@@ -7,7 +7,7 @@ Machine learning models are used to inspect and extract text or images from scre
 
 Here is an example where we use Grub's crawler to image [a page about photographing snowflakes](https://mymodernmet.com/nathan-myhrvold-snowflake-images/) and then send that image to OpenCV model to crop and extract larger imagery found on the page (in this case a photo of a snowflake). Passing the original article and the image of the snowflake to Google Vision's model returns text which may be added to a document already the index.
 
-<img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/snowflake_google_vision.png" width="200">
+<img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/snowflake_google_vision.png" width="360">
 
 ## History
 [Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas only when pages were noted to have changed.
