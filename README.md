@@ -1,7 +1,7 @@
 # Grub 2.0
 Grub-2.0 implements a machine learning crawler.
 
-Grub provides a "computed aperture function" allowing machines and humans to find, extract and explore various image based content, including content found online.
+Grub provides a "computed aperture function" allowing machines and humans to find, extract and explore various image based content, including content found online on the [World Wide Web](https://en.wikipedia.org/wiki/World_Wide_Web).
 
 Machine learning models are used to inspect and extract text or images from page screenshots imaged using a [Selinium](https://selenium-python.readthedocs.io/installation.html) box. Imagery data from the "crawl" is processed by various models and the results are then placed into an index where they can be searched or related to other content using [Solr's relatedness functions](https://lucene.apache.org/solr/guide/8_7/json-facet-api.html).
 
