@@ -3,7 +3,9 @@ Grub-2.0 is an AI powered crawler.
 
 Grub-2.0 provides a "computed imagination function" allowing machines and humans to "see" and explore various image based content. Machine learning models are used to "crawl" and extract text or images from the screenshot of a page. Data from the crawl is placed into an index where it can be searched or related to other image based content.
 
-<img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/google_vision_example.png" width="200">
+Here we send the Google Vision model an image we have extracted using OpenCV from [a news story about photographing snowflakes](https://mymodernmet.com/nathan-myhrvold-snowflake-images/). Google Vision's model returns text that is then inserted into the index as tags.
+
+<img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/snowflake_google_vision.png" width="200">
 
 ## History
 [Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas only when pages were noted to have changed.
