@@ -1,7 +1,7 @@
 # Grub 2.0
 Grub-2.0 implements a machine learning crawler.
 
-Grub provides a "computed aperture function" allowing machines and humans to find, extract and explore various image based content, including content found online on the [World Wide Web](https://en.wikipedia.org/wiki/World_Wide_Web).
+Grub provides a "computed aperture function" allowing machines and humans to find, extract and explore various image based content, including content found on-line on the [World Wide Web](https://en.wikipedia.org/wiki/World_Wide_Web).
 
 Machine learning models are used to inspect and extract text or images from page screenshots imaged using a [Selinium](https://selenium-python.readthedocs.io/installation.html) box. Imagery data from the "crawl" is processed by various models and the results are then placed into an index where they can be searched or related to other content using [Solr's relatedness functions](https://lucene.apache.org/solr/guide/8_7/json-facet-api.html).
 
@@ -10,18 +10,18 @@ Here is an example where we use Grub's crawler to image [a page about photograph
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/snowflake_google_vision.png" width="360">
 
 ## History
-[Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine inspired by [SETI@Home](https://setiathome.berkeley.edu/) and built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas only when pages were noted to have changed. One of the main requests received by the team was the abilty for voluteers to add their own curated content.
+[Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine inspired by [SETI@Home](https://setiathome.berkeley.edu/) and built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas only when pages were noted to have changed. One of the main requests received by the team was the ability for volunteers to add their own curated content.
 
 Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity. The original Grub team would later find itself working at Splunk and marketing and porting it to Windows.
 
-Grub-2.0 is the rebirth and expansion upon the idea of decentralized search processes through AI-powered vision systems. It is only now that we have the technology to see the orignal vision for Grub become a reality.
+Grub-2.0 is the rebirth and expansion upon the idea of decentralized search processes through AI-powered vision systems. It is only now that we have the technology to see the original vision for Grub become a reality.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
 ## Ramifications for AGI
-[AGI](https://en.wikipedia.org/wiki/Artificial_general_intelligence) stands for artificial generalized intellegence. 
+[AGI](https://en.wikipedia.org/wiki/Artificial_general_intelligence) stands for artificial generalized intelligence. 
 
-> "AI-complete problems are hypothesised to include general computer vision, natural language understanding, and dealing with unexpected circumstances while solving any real-world problem." - Wikipedia
+> "AI-complete problems are hypothesized to include general computer vision, natural language understanding, and dealing with unexpected circumstances while solving any real-world problem." - Wikipedia
 
 Many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from when the spoken request is being processed by the mind? The ancients thought this imagery came in from internal sense organs which "saw" things *in mind* that were not real.
 
