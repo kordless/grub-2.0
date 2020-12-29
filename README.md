@@ -16,7 +16,7 @@ Grub-2.0 is the rebirth and expansion upon the idea of decentralized search proc
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
-## Ramifications for [AGI](https://en.wikipedia.org/wiki/Artificial_general_intelligence}
+<h2>Ramifications for [AGI](https://en.wikipedia.org/wiki/Artificial_general_intelligence}</h2>
 As an analagy, many people can "see" a taxi *in mind* when someone says the word *taxi* to them. Where does this imagined taxi come from when the spoken request is being processed by the mind? The ancients thought this imagery came in from internal sense organs which "saw" things *in mind* that were not real.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/RobertFuddBewusstsein17Jh.png" width="300">
