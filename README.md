@@ -14,8 +14,6 @@ Here is an example where we use Grub's crawler to image [a page about photograph
 
 Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity. The original Grub team would later find itself working at Splunk and marketing and porting it to Windows.
 
-As of this writing, the trademark for Grub has expired. This means the use of the name may be allowed for computer system categories.
-
 Grub-2.0 is the rebirth and expansion upon the idea of decentralized search processes through AI-powered vision systems. It is only now that we have the technology to see the orignal vision for Grub become a reality.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
