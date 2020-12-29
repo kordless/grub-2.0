@@ -1,5 +1,5 @@
 # Grub 2.0
-Grub-2.0 is an AI powered crawler.
+Grub-2.0 is an machine learning powered crawler.
 
 Grub provides a "computed aperture function" allowing machines and humans to find, extract and explore various image based content online.
 
