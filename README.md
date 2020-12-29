@@ -19,7 +19,7 @@ Grub-2.0 is the rebirth and expansion upon the idea of decentralized search proc
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
 ## Ramifications for AGI
-[AGI](https://en.wikipedia.org/wiki/Artificial_general_intelligence) stands for artificial generalized intelligence. 
+[AGI](https://en.wikipedia.org/wiki/Artificial_general_intelligence) stands for artificial general intelligence. 
 
 > "AI-complete problems are hypothesized to include general computer vision, natural language understanding, and dealing with unexpected circumstances while solving any real-world problem." - Wikipedia
 
