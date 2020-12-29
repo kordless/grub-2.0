@@ -10,7 +10,7 @@ Here is an example where we use Grub's crawler to image [a page about photograph
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/snowflake_google_vision.png" width="360">
 
 ## History
-[Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine inspired by [SETI@Home](https://setiathome.berkeley.edu/) and built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas only when pages were noted to have changed. One of the main requests received by the team was the abilty for voluteers to add their own content to the system.
+[Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine inspired by [SETI@Home](https://setiathome.berkeley.edu/) and built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas only when pages were noted to have changed. One of the main requests received by the team was the abilty for voluteers to add their own curated content.
 
 Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity. The original Grub team would later find itself working at Splunk and marketing and porting it to Windows.
 
