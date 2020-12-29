@@ -32,7 +32,7 @@ How computer systems create internal imagery in the future may be key to develop
 [![synth](https://img.youtube.com/vi/frB8I5gxSXk/0.jpg)](https://www.youtube.com/watch?v=frB8I5gxSXk)
 
 ## Competition
-Google provides image search functions for the massive amount of content they have crawled. If you can build an optimized query, their semantic knowledge graph built from billions of pages will do a good job of returning related imagery. Here's a demo of optimizing search terms to extract relevant imagery from Google:
+Google provides image search functions for the massive amount of content they have crawled. If you can build an optimized query, their semantic knowledge graph built from billions of pages will do a good job of returning related imagery. Here's a demo of using search terms gathered from [Stack Exchange](https://cooking.stackexchange.com/) to help extract relevant imagery from a Google search:
 
 [![synth](https://img.youtube.com/vi/tqggQstJHX8/0.jpg)](https://www.youtube.com/watch?v=tqggQstJHX8&feature=youtu.be)
 
