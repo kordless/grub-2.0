@@ -5,7 +5,7 @@ Grub provides a "computed aperture function" allowing machines and humans to fin
 
 Machine learning models are used to inspect and extract text or images from page screenshots imaged using a [Selinium](https://selenium-python.readthedocs.io/installation.html) box. Imagery data from the "crawl" is processed by various models and the results are then placed into an index where they can be searched or related to other content using [Solr's relatedness functions](https://lucene.apache.org/solr/guide/8_7/json-facet-api.html).
 
-Here is an example where we use Grub's crawler to image [a page about photographing snowflakes](https://mymodernmet.com/nathan-myhrvold-snowflake-images/) and then send that image to OpenCV model to crop and extract larger imagery found on the page (in this case a photo of a snowflake). Passing the original article and the image of the snowflake to Google Vision's model returns text which may be added to a document already the index.
+Here is an example where we use Grub's crawler to image [a page about photographing snowflakes](https://mymodernmet.com/nathan-myhrvold-snowflake-images/) and then send that image to an [OpenCV model](https://pypi.org/project/opencv-python/) to crop and extract larger imagery found on the page (in this case a photo of a snowflake). Passing the original article and the image of the snowflake to Google Vision's model returns text which may be added to a document already the index.
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/snowflake_google_vision.png" width="360">
 
