@@ -3,7 +3,7 @@ Grub-2.0 is an AI powered crawler.
 
 Grub-2.0 provides a "computed aperture function" allowing machines and humans to find and explore various image based content. Machine learning models are used to inspect and extract text or images from the screenshot of a page we have imaged using Selinium/Geckodriver. Data from the crawl is placed into an index where it can be searched or related to other textual and imagry content using [Solr's relatedness functions](https://lucene.apache.org/solr/guide/8_7/json-facet-api.html).
 
-Here is an example where we use Grub's crawler to image [a page about photographing snowflakes](https://mymodernmet.com/nathan-myhrvold-snowflake-images/) and then send that image to OpenCV model to crop and extract larger imagery found on the page. Passing the original article and the image of the snowflake to Google Vision's model returns text which is added to the document in the index.
+Here is an example where we use Grub's crawler to image [a page about photographing snowflakes](https://mymodernmet.com/nathan-myhrvold-snowflake-images/) and then send that image to OpenCV model to crop and extract larger imagery found on the page (in this case a photo of a snowflake). Passing the original article and the image of the snowflake to Google Vision's model returns text which may be added to a document already the index.
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/snowflake_google_vision.png" width="200">
 
