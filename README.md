@@ -10,9 +10,9 @@ Here is an example where we use Grub's crawler to image [a page about photograph
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/snowflake_google_vision.png" width="360">
 
 ## History
-[Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine inspired by [SETI@Home](https://setiathome.berkeley.edu/) and built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content deltas only when pages were noted to have changed. One of the main requests received by the team was the ability for volunteers to add their own curated content.
+[Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine inspired by [SETI@Home](https://setiathome.berkeley.edu/) and built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content changes only when pages were noted to have been updated. One of the main requests received by the team was the ability for volunteers to add their own curated content.
 
-Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity. The original Grub team would later find itself working at Splunk and marketing and porting it to Windows.
+Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity. The original Grub team would later find itself working at Splunk, marketing and porting it to Windows.
 
 Grub-2.0 is the rebirth and expansion upon the idea of decentralized search processes through AI-powered vision systems. It is only now that we have the technology to see the original vision for Grub become a reality.
 
@@ -44,7 +44,7 @@ Here's an example page fragment created with Grub:
 
 Unlike Google, when Grub is given a site it may return one or more images and/or search indexes. Indexes can be queried later by using Solr's time or relatedness functions.
 
-This process may be useful for testing or training machine learning models or providing new types of search features to users, such as what is being done over at [mitta.us](https://mitta.us).
+This process may be useful for testing or training machine learning models or providing new types of search features to users, such as what is done over at [mitta.us](https://mitta.us) with timeseries-based document archives.
 
 ## How
 Grub is a "computed aperture" which has been implemented in Geckodriver, Firefox, Solr and various machine learning vision models. By passing a site's image to a model, we may find and crop related images or text on the page. When child images are found they may be passed onto other models for additional object extraction or segmentation.
