@@ -3,7 +3,7 @@ Grub-2.0 implements a machine learning crawler.
 
 Grub provides machines and humans the ability to find, explore and extract image based content, including content found on-line on the [World Wide Web](https://en.wikipedia.org/wiki/World_Wide_Web).
 
-One or more machine learning models can be used to inspect and extract text or images from page screenshots imaged using a [Selinium](https://selenium-python.readthedocs.io/installation.html) box. Imagery data from the "crawl" is processed by various models and the results are then placed into an index where they can be searched or related to other content using [Solr's facet API](https://lucene.apache.org/solr/guide/8_7/json-facet-api.html).
+One or more machine learning models may be used to inspect and extract text or images from page screenshots imaged using a [Selinium](https://selenium-python.readthedocs.io/installation.html) box. Screen images from a page "crawl" are processed by various models and the results are placed into an index where they may be searched or related to other content using [Solr's facet API](https://lucene.apache.org/solr/guide/8_7/json-facet-api.html).
 
 Here is an example where we use Grub's crawler to image [a page about photographing snowflakes](https://mymodernmet.com/nathan-myhrvold-snowflake-images/) and then send that image to an [OpenCV model](https://pypi.org/project/opencv-python/) to crop and extract larger imagery found on the page (in this case a photo of a snowflake). Passing the original article and the image of the snowflake to Google Vision's model returns text which may be added to a document already the index.
 
