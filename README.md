@@ -1,11 +1,11 @@
 # Grub 2.0
 Grub-2.0 implements a machine learning crawler.
 
-Grub provides a "computed aperture function" allowing machines and humans to find, extract and explore various image based content, including content found on-line on the [World Wide Web](https://en.wikipedia.org/wiki/World_Wide_Web).
+Grub provides machines and humans the ability to find, explore and extract image based content, including content found on-line on the [World Wide Web](https://en.wikipedia.org/wiki/World_Wide_Web).
 
-Machine learning models are used to inspect and extract text or images from page screenshots imaged using a [Selinium](https://selenium-python.readthedocs.io/installation.html) box. Imagery data from the "crawl" is processed by various models and the results are then placed into an index where they can be searched or related to other content using [Solr's relatedness functions](https://lucene.apache.org/solr/guide/8_7/json-facet-api.html).
+One or more machine learning models may be used to inspect and extract text or images from page screenshots imaged using a [Selinium](https://selenium-python.readthedocs.io/installation.html) box. Screen images from a page "crawl" are processed by various models and the results are placed into an index where they may be searched or related to other content using [Solr's facet API](https://lucene.apache.org/solr/guide/8_7/json-facet-api.html).
 
-Here is an example where we use Grub's crawler to image [a page about photographing snowflakes](https://mymodernmet.com/nathan-myhrvold-snowflake-images/) and then send that image to an [OpenCV model](https://pypi.org/project/opencv-python/) to crop and extract larger imagery found on the page (in this case a photo of a snowflake). Passing the original article and the image of the snowflake to Google Vision's model returns text which may be added to a document already the index.
+Here is an example where we use Grub's crawler to image [a page about photographing snowflakes](https://mymodernmet.com/nathan-myhrvold-snowflake-images/) and then send that image to an [OpenCV model](https://pypi.org/project/opencv-python/) to crop and extract larger imagery found on the page (in this case a photo of a snowflake). Passing the original article and the image of the snowflake to Google Vision's model returns text which may be added to a document already in the index.
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/snowflake_google_vision.png" width="360">
 
@@ -19,7 +19,7 @@ Grub-2.0 is the rebirth and expansion upon the idea of decentralized search proc
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
 ## Ramifications for AGI
-[AGI](https://en.wikipedia.org/wiki/Artificial_general_intelligence) stands for artificial generalized intelligence. 
+[AGI](https://en.wikipedia.org/wiki/Artificial_general_intelligence) stands for artificial general intelligence. 
 
 > "AI-complete problems are hypothesized to include general computer vision, natural language understanding, and dealing with unexpected circumstances while solving any real-world problem." - Wikipedia
 
@@ -32,11 +32,11 @@ How computer systems create internal imagery in the future may be key to develop
 [![synth](https://img.youtube.com/vi/frB8I5gxSXk/0.jpg)](https://www.youtube.com/watch?v=frB8I5gxSXk)
 
 ## Competition
-Google provides image search functions for the massive amount of content they have crawled. If you can build an optimized query, their semantic knowledge graph built from billions of pages will do a good job of returning related imagery. 
+Google provides image search functions for the massive amount of content they have crawled. If you can build an optimized query, their semantic knowledge graph built from billions of pages will do a good job of returning related imagery. Here's a demo of using search terms gathered from [Stack Exchange](https://cooking.stackexchange.com/) to help extract relevant imagery from a Google search:
 
-Many believe that having more content in your index is better. A few don't.
+[![synth](https://img.youtube.com/vi/tqggQstJHX8/0.jpg)](https://www.youtube.com/watch?v=tqggQstJHX8&feature=youtu.be)
 
-A machine or human using Grub may receive related imagery using search queries such as "robot hand" even if Grub is only shown a few pages on robot hands. This keeps things simple and secure and doesn't require scraping Google results to get imagery into your machine.
+Like when you use Google, a machine or human using Grub may receive related imagery using search queries such as "robot hand" even if Grub is only shown a few pages on robot hands. This keeps things simple and secure and doesn't require scraping Google results to get imagery into your machine.
 
 Here's an example page fragment created with Grub:
 
@@ -59,7 +59,7 @@ Here we see a Google Vision model looking at a Bloomberg article and seeing peop
 
 Other models may be run on Tensorflow directly. We'll implement this in the very near future.
 
-Grub runs on [Flask](https://flask.palletsprojects.com/en/1.1.x/) in Python and uses [Solr 7.5.2](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
+Grub runs on [Flask](https://flask.palletsprojects.com/en/1.1.x/) in Python and uses [Solr 8.7](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
 
 ## Install
 This open code repository provides information and scripts for deploying a computed aperture. This system can be used to image websites and image content.
