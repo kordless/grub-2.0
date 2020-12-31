@@ -1,6 +1,8 @@
 # Grub 2.0
 Grub-2.0 implements a machine learning crawler.
 
+[Skip to the Install](https://github.com/kordless/grub-2.0#install)
+
 Grub provides machines and humans the ability to find, explore and extract image based content, including content found on-line on the [World Wide Web](https://en.wikipedia.org/wiki/World_Wide_Web).
 
 One or more machine learning models may be used to inspect and extract text or images from page screenshots imaged using a [Selinium](https://selenium-python.readthedocs.io/installation.html) box. Screen images from a page "crawl" are processed by various models and the results are placed into an index where they may be searched or related to other content using [Solr's facet API](https://lucene.apache.org/solr/guide/8_7/json-facet-api.html).
