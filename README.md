@@ -49,9 +49,9 @@ Unlike Google, when Grub is given a site it may return one or more images and/or
 This process may be useful for testing or training machine learning models or providing new types of search features to users, such as what is done over at [mitta.us](https://mitta.us) with timeseries-based document archives.
 
 ## How
-Grub is a "computed aperture" which has been implemented in Geckodriver, Firefox, Solr and various machine learning vision models. By passing a site's image to a model, we may find and crop related images or text on the page. When child images are found they may be passed onto other models for additional object extraction or segmentation.
+Grub is a "crawling aperture" which has been implemented in Geckodriver, Firefox, Solr and various machine learning vision models. By passing a website's image to a model, we may find and crop related images or text on the page. When images are cropped out, they may be passed onto other models for additional object extraction.
 
-We may even image and extract the source code of a page (this example uses Google Vision's model):
+We may also image and extract the source code of a page (this example uses Google Vision's model):
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/index.png" width="500">
 
