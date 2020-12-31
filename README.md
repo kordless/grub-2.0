@@ -1,5 +1,5 @@
 # Grub 2.0
-Grub-2.0 implements a machine learning crawler.
+Grub-2.0 is a machine learning crawler.
 
 [Skip to the Install](https://github.com/kordless/grub-2.0#install)
 
@@ -64,7 +64,7 @@ Other models may be run on Tensorflow directly. We'll implement this in the very
 Grub runs on [Flask](https://flask.palletsprojects.com/en/1.1.x/) in Python and uses [Solr 8.7](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
 
 ## Install
-This repository provides scripts and reference code for deploying your own machine learning search engine.
+This repository will help you install scripts and reference code for deploying your own machine learning crawler.
 
 Begin by checking out this repository onto your Google Cloud Shell terminal:
 
