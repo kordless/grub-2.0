@@ -64,7 +64,7 @@ Other models may be run on Tensorflow directly. We'll implement this in the very
 Grub runs on [Flask](https://flask.palletsprojects.com/en/1.1.x/) in Python and uses [Solr 8.7](https://lucene.apache.org/solr/), [Webdriver](https://github.com/SeleniumHQ/selenium) and [Tensorflow](https://github.com/tensorflow/tensorflow).
 
 ## Install
-This open code repository provides information and scripts for deploying a computed aperture. This system can be used to image websites and image content.
+This repository provides scripts and reference code for deploying your own machine learning search engine.
 
 Begin by checking out this repository onto your Google Cloud Shell terminal:
 
