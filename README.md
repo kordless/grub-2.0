@@ -1,7 +1,5 @@
 # Grub 2.0
-Grub-2.0 is a machine learning crawler.
-
-[Skip to the Install](https://github.com/kordless/grub-2.0#install)
+Grub-2.0 is a machine learning crawler. Skip to [the install instead](https://github.com/kordless/grub-2.0#install)?
 
 Grub provides machines and humans the ability to find, explore and extract image based content, including content found on-line on the [World Wide Web](https://en.wikipedia.org/wiki/World_Wide_Web).
 
