@@ -9,6 +9,8 @@ Here is an example where we use Grub's crawler to image [a page about photograph
 
 <img src="https://raw.githubusercontent.com/kordless/grub-2.0/main/docs/snowflake_google_vision.png" width="360">
 
+Once we have tags from the model, we can see if how they relate to the tags and text that exists in other documents.
+
 ## History
 [Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine inspired by [SETI@Home](https://setiathome.berkeley.edu/) and built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content changes only when pages were noted to have been updated. One of the main requests received by the team was the ability for volunteers to add their own curated content.
 
