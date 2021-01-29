@@ -47,6 +47,11 @@ def grub():
 	return response
 
 
+@app.route('/h', methods=['GET'])
+def health_check():
+	return "OK"
+
+
 @app.errorhandler(404)
 def f404_notfound(e):
 	logging.info("here")
