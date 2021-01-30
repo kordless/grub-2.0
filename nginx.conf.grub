@@ -16,9 +16,7 @@ http {
                         auth_basic_user_file /etc/nginx/htpasswd;
                         proxy_pass http://grub/;
                 }
-        }
-        server {
-                listen 8983;
+                
                 location /h {
                         proxy_pass http://grub/h;
                 }
