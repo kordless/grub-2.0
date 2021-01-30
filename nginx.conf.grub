@@ -17,4 +17,10 @@ http {
                         proxy_pass http://grub/;
                 }
         }
+        server {
+                listen 8983;
+                location /h {
+                        proxy_pass http://grub/h;
+                }
+        }
 }
