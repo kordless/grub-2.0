@@ -14,7 +14,7 @@ case $option in
     unset PREEMPTIBLE
 	echo "Production mode enabled..."
     echo;
-    IP="--address=35.233.155.193"
+    IP=""
 esac
 
 if [ -f secrets.sh ]; then
@@ -40,7 +40,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --labels type=grub \
 --tags mitta,grub,token-$TOKEN,bid-$NEW_UUID \
 $PREEMPTIBLE \
-# --subnet=default $IP --network-tier=PREMIUM \
+--subnet=default $IP --network-tier=PREMIUM \
 --metadata startup-script='#! /bin/bash
 if [ -d "/opt/grub-2.0/" ]; then
   echo "starting grub"
