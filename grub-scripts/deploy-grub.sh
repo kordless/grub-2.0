@@ -6,7 +6,7 @@ NEW_UUID=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
 
 option=$1
 PREEMPTIBLE="--preemptible"
-IP="--address=34.82.44.60"
+# IP="--address=34.82.44.60"
 
 echo "This instance is preemtible, unless it's started with --prod";
 case $option in
@@ -40,7 +40,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --labels type=grub \
 --tags mitta,grub,token-$TOKEN,bid-$NEW_UUID \
 $PREEMPTIBLE \
---subnet=default $IP --network-tier=PREMIUM \
+# --subnet=default $IP --network-tier=PREMIUM \
 --metadata startup-script='#! /bin/bash
 if [ -d "/opt/grub-2.0/" ]; then
   echo "starting grub"
