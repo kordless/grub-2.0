@@ -9,8 +9,6 @@ evalcontent = eval(content)
 for item in evalcontent:
         if 'token' in item:
                 key,token = item.split('-')
-        if 'bid' in item:
-        	    key,bid = item.split('-')
 
 # set nginx password with it
 import os, sys
@@ -20,4 +18,3 @@ os.system("/usr/bin/htpasswd -b -c /etc/nginx/htpasswd %s %s" % (user, token))
 # drop it for the env
 f = open('bidntoken', 'w')
 f.write("TOKEN=%s\n" % token)
-f.write("BID=%s\n" % bid)
