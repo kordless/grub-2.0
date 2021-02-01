@@ -29,6 +29,7 @@ def images(path):
 def grub():
 	# url
 	url = request.form.get('url')
+	upload_url = request.form.get('upload_url')
 
 	if not url:
 		abort(404, "go away")
@@ -36,11 +37,13 @@ def grub():
 	# killing joe over and over again, for softly
 	filename = check_output(["python3", "/opt/grub-2.0/aperture/BrowserSession.py", "%s" % url])
 
-
+	# upload to the spool endpoint
+	# actually do the upload to the upload_url endpoint
+	# upload_response = requests()
 	response = make_response(
 		render_template(
 			'grub.json',
-			json = json.dumps({"result": "success", "filename": "%s" % filename.decode("utf-8").rstrip()})
+			json = json.dumps({"result": "success", "upload_url": upload_url, "filename": "%s" % filename.decode("utf-8").rstrip()})
 		)
 	)
 

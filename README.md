@@ -121,7 +121,7 @@ Instances will be running in a few minutes, listening on port 8983 for Grub.
 A request for imaging a URL: 
 
 ```
-$ curl -X POST -d "https://news.ycombinator.com/news" http://grub:f00bark@x.x.x.x:8983/g
+$ curl -X POST -d "url=https://news.ycombinator.com/news" http://grub:f00bark@x.x.x.x:8983/g
 {"result": "success", "filename": "1ORJX7BCQ6vT0J2erqu8kWd.png"}
 ```
 
