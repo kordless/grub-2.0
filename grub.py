@@ -29,20 +29,19 @@ def grub():
 	if not url or not upload_url or not api_token:
 		abort(404, "go away")
 
+	# don't allow any quotes in the URL
+	if '"' in url or "'" in url:
+		abort(404, "go away")
+
 	# killing joe over and over again, for softly
-	p = Popen(["python3", "/opt/grub-2.0/aperture/BrowserSession.py", "%s" % url])
+	p = Popen([
+		"python3", 
+		"/opt/grub-2.0/aperture/BrowserSession.py", 
+		"%s" % url,
+		"%s" % upload_url,
+		"%s" % api_token
+	])
 
-	# upload to the spool endpoint
-	"""
-	with open("/opt/grub-2.0/aperture/images/%s" % filename.decode().rstrip('\r\n'),'rb') as filedata:
-		appengine_response = requests.post(
-			"%s?token=%s" % (upload_url, api_token),
-			files={'file': filedata}
-		)
-
-	print(appengine_response.text)
-	"""
-	
 	# reponse to appengine
 	response = make_response(
 		render_template(
