@@ -94,8 +94,9 @@ class BrowserSession:
                 "%s?token=%s" % (sys.argv[2], sys.argv[3]),
                 files={'file': filedata}
             )
-            print(appengine_response)
-        return
+            print(appengine_response.text)
+        
+        return filename
     
         
 def main():
