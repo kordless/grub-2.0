@@ -39,10 +39,11 @@ def grub():
 	filename = check_output(["python3", "/opt/grub-2.0/aperture/BrowserSession.py", "%s" % url])
 
 	# upload to the spool endpoint
-	appengine_response = requests.post(
-		"%s?token=%s" %(upload_url, api_token),
-		files='/opt/grub-2.0/aperture/images/%s' % filename
-	)
+	with open(r'/opt/grub-2.0/aperture/images/%s' % filename,'rb') as filedata:
+		appengine_response = requests.post(
+			"%s?token=%s" % (upload_url, api_token),
+			files={'file': filedata}
+		)
 
 	print(appengine_response.text)
 
