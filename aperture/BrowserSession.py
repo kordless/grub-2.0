@@ -65,6 +65,7 @@ class BrowserSession:
 
             if self.debug:
                 print("filename="+filename)
+                print("in debug")
 
         try:
             if self.fullscreen:
@@ -86,14 +87,13 @@ class BrowserSession:
             traceback.print_exc()
             pass
 
-        print(filename)
         # upload to the spool endpoint
         with open("/opt/grub-2.0/aperture/images/%s" % filename.rstrip('\r\n'),'rb') as filedata:
             appengine_response = requests.post(
                 "%s?token=%s" % (sys.argv[2], sys.argv[3]),
                 files={'file': filedata}
             )
-
+            print(appengine_response)
         return
     
         
