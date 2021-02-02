@@ -10,19 +10,13 @@ import urllib
 import json
 
 import sys
-from subprocess import check_output
+from subprocess import Popen
 
 from flask import Flask, render_template, make_response, request, abort, send_from_directory
 
 # app up
 app = Flask(__name__)
 
-"""
-# serving images
-@app.route('/images/<path:path>')
-def images(path):
-    return send_from_directory('/opt/grub-2.0/aperture/images/', path)
-"""
 
 # main route
 @app.route('/g', methods=['POST'])
@@ -36,9 +30,10 @@ def grub():
 		abort(404, "go away")
 
 	# killing joe over and over again, for softly
-	filename = check_output(["python3", "/opt/grub-2.0/aperture/BrowserSession.py", "%s" % url])
+	p = Popen(["python3", "/opt/grub-2.0/aperture/BrowserSession.py", "%s" % url])
 
 	# upload to the spool endpoint
+	"""
 	with open("/opt/grub-2.0/aperture/images/%s" % filename.decode().rstrip('\r\n'),'rb') as filedata:
 		appengine_response = requests.post(
 			"%s?token=%s" % (upload_url, api_token),
@@ -46,7 +41,8 @@ def grub():
 		)
 
 	print(appengine_response.text)
-
+	"""
+	
 	# reponse to appengine
 	response = make_response(
 		render_template(
