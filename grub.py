@@ -40,7 +40,7 @@ def grub():
 
 	# upload to the spool endpoint
 	appengine_response = requests.post(
-		"%s?token=%s" %(upload_url, user_token),
+		"%s?token=%s" %(upload_url, api_token),
 		files='/opt/grub-2.0/aperture/images/%s' % filename
 	)
 
