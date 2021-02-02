@@ -108,8 +108,8 @@ def main():
         
         print(filename)
 
-    except:
-        print("error")
+    except Exception as ex:
+        print("error %s" % ex)
 
 if __name__ == '__main__':
     main()
