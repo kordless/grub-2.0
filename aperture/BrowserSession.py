@@ -84,6 +84,7 @@ class BrowserSession:
                     print(r.json())
 
         except Exception:
+            print("got exception")
             traceback.print_exc()
             pass
 
