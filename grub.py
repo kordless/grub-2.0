@@ -33,7 +33,7 @@ def grub():
 	if '"' in url or "'" in url:
 		abort(404, "go away")
 
-	# killing joe over and over again, for softly
+	# killing joe over and over again, for safety
 	p = Popen([
 		"python3", 
 		"/opt/grub-2.0/aperture/BrowserSession.py", 
