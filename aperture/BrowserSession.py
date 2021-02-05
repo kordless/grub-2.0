@@ -89,13 +89,14 @@ class BrowserSession:
             pass
 
         # upload to the spool endpoint
+        # always return image/png
+        headers = {'Content-type': 'image/png'}
         with open("/opt/grub-2.0/aperture/images/%s" % filename.rstrip('\r\n'),'rb') as filedata:
             appengine_response = requests.post(
                 "%s?token=%s" % (sys.argv[2], sys.argv[3]),
-                files={'data': filedata}
+                files={'data': filedata},
+                headers=headers
             )
-            print(appengine_response.text)
-        
         return filename
     
         
