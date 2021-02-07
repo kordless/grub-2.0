@@ -104,11 +104,9 @@ def main():
 		new_session.headless = True
 		new_session.setup_session()
 
-		new_session.go_to_url(sys.argv[1],fullscreen=True)
-		time.sleep(2)
+		new_session.go_to_url(sys.argv[1], fullscreen=True)
+		time.sleep(3)
 		filename = new_session.save_screenshot()
-		
-		print(filename)
 
 	except Exception as ex:
 		print("error %s" % ex)
