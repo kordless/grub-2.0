@@ -92,7 +92,8 @@ class BrowserSession:
 		# always return image/png
 		url = "%s?token=%s" % (sys.argv[2], sys.argv[3])
 		files = [('images', (filename, open("/opt/grub-2.0/aperture/images/%s" % filename.rstrip('\r\n'), 'rb'), 'image/png'))]
-		return appengine_response.text
+		response = requests.request("POST", url, files = files)
+		return response.text
 	
 		
 def main():
