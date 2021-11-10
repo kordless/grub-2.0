@@ -1,9 +1,12 @@
 # Grub 2.0
-Grub-2.0 is a machine learning crawler. Skip to [the install instead](https://github.com/kordless/grub-2.0#install)?
+Grub-2.0 is a machine learning crawler. Skip to [the install](https://github.com/kordless/grub-2.0#install) if you want to jump into it.
 
 Grub provides machines and humans the ability to find, explore and extract image based content, including content found on-line on the [World Wide Web](https://en.wikipedia.org/wiki/World_Wide_Web).
 
-One or more machine learning models may be used to inspect and extract text or images from page screenshots imaged using a [Selinium](https://selenium-python.readthedocs.io/installation.html) box. Screen images from a page "crawl" are processed by various models and the results are placed into an index where they may be searched or related to other content using [Solr's facet API](https://lucene.apache.org/solr/guide/8_7/json-facet-api.html).
+Grub provides deployment mechanisms for Solr, Tensorflow and Aperture, Grub's imaging crawler. Grub runs behind the scenes at [https://mitta.us](https://mitta.us), a site I run that provides machine learning models a way to record what they've seen and run various predictive and relatedness functions provided by Solr. Using Tensorflow and other machine learning vision services, like Google Vision and GPT-3, Mitta is able to do additive extraction of image labels and intellegent analysis of content.
+
+## Aperture
+One or more machine learning models may be used to inspect and extract text or images from page screenshots imaged using a [Selinium](https://selenium-python.readthedocs.io/installation.html) box we call Aperture. Screen images from a page "crawl" are processed by various models and the results are placed into an index where they may be searched or related to other content using [Solr's facet API](https://lucene.apache.org/solr/guide/8_7/json-facet-api.html).
 
 Here is an example where we use Grub's crawler to image [a page about photographing snowflakes](https://mymodernmet.com/nathan-myhrvold-snowflake-images/) and then send that image to an [OpenCV model](https://pypi.org/project/opencv-python/) to crop and extract larger imagery found on the page (in this case a photo of a snowflake). Passing the original article and the image of the snowflake to Google Vision's model returns text which may be added to a document already in the index.
 
@@ -12,11 +15,11 @@ Here is an example where we use Grub's crawler to image [a page about photograph
 Once we have tags from the model, we can see if how they relate to the tags and text that exists in other documents.
 
 ## History
-[Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine inspired by [SETI@Home](https://setiathome.berkeley.edu/) and built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content changes only when pages were noted to have been updated. One of the main requests received by the team was the ability for volunteers to add their own curated content.
+[Grub "One Oh"](https://en.wikipedia.org/wiki/Grub_(search_engine)) was an Open Source search engine I helped architect and direct. Inspired by [SETI@Home](https://setiathome.berkeley.edu/), Grub was built to distribute the job of gathering content from the web. At one point several hundred volunteers were crawling the web for the project, sending in content changes only when pages were noted to have been updated. One of the main requests received by the team was the ability for volunteers to add their own curated content.
 
-Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity. The original Grub team would later find itself working at Splunk, marketing and porting it to Windows.
+Grub was sold in 2003 to Looksmart and [then again in 2007 to Wikimedia](https://readwrite.com/2007/07/27/wikia_acquires_grub_from_looksmart/), where it fell into inactivity. The original Grub team later found itself working at Splunk.
 
-Grub-2.0 is the rebirth and expansion upon the idea of decentralized search processes through AI-powered vision systems. It is only now that we have the technology to see the original vision of search for the people to become a reality.
+Grub-2.0 is a persona revist and rebirth of decentralized search processes through AI-powered vision systems. It is only now that we have the technology to see the original vision of search for the people to become a reality.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Grub.svg/440px-Grub.svg.png" width="200">
 
