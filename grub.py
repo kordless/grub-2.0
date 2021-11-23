@@ -10,7 +10,7 @@ import urllib
 import json
 
 import sys
-from subprocess import check_output
+from subprocess import Popen
 
 from flask import Flask, render_template, make_response, request, abort, send_from_directory
 
@@ -18,33 +18,44 @@ from flask import Flask, render_template, make_response, request, abort, send_fr
 app = Flask(__name__)
 
 
-# serving images
-@app.route('/images/<path:path>')
-def images(path):
-    return send_from_directory('/opt/grub-2.0/aperture/images/', path)
-
-
 # main route
 @app.route('/g', methods=['POST'])
 def grub():
-	# url
+	# url, upload_url and user_token from appengine
 	url = request.form.get('url')
+	upload_url = request.form.get('upload_url')
+	api_token = request.form.get('api_token')
 
-	if not url:
+	if not url or not upload_url or not api_token:
 		abort(404, "go away")
 
-	# killing joe over and over again, for softly
-	filename = check_output(["python3", "/opt/grub-2.0/aperture/BrowserSession.py", "%s" % url])
+	# don't allow any quotes in the URL
+	if '"' in url or "'" in url:
+		abort(404, "go away")
 
+	# killing joe over and over again, for safety
+	p = Popen([
+		"python3", 
+		"/opt/grub-2.0/aperture/BrowserSession.py", 
+		"%s" % url,
+		"%s" % upload_url,
+		"%s" % api_token
+	])
 
+	# reponse to appengine
 	response = make_response(
 		render_template(
 			'grub.json',
-			json = json.dumps({"result": "success", "filename": "%s" % filename.decode("utf-8").rstrip()})
+			json = json.dumps({"result": "success",	"upload_url": upload_url})
 		)
 	)
 
 	return response
+
+
+@app.route('/h', methods=['GET'])
+def health_check():
+	return "OK"
 
 
 @app.errorhandler(404)

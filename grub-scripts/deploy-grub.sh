@@ -6,7 +6,7 @@ NEW_UUID=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
 
 option=$1
 PREEMPTIBLE="--preemptible"
-IP="--address=34.82.44.60"
+# IP="--address=34.82.44.60"
 
 echo "This instance is preemtible, unless it's started with --prod";
 case $option in
@@ -14,7 +14,7 @@ case $option in
     unset PREEMPTIBLE
 	echo "Production mode enabled..."
     echo;
-    IP="--address=35.233.155.193"
+    IP=""
 esac
 
 if [ -f secrets.sh ]; then
