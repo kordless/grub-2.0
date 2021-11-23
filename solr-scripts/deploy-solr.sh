@@ -2,15 +2,15 @@
 TYPE=n1-standard-4
 ZONE=us-west1-c
 NAME=solr
-VERSION=8.7.0
-NEW_UUID=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
+NEW_UUID=$(LC_ALL=C tr -dc 'a-z0-9' </dev/urandom | head -c 4 ; echo)
 
-option=$1
+OPTION=$1
 PREEMPTIBLE="--preemptible"
-IP="--address=34.83.44.36"
+IP="--address=35.230.108.84"
+UBUNTU_VERSION="ubuntu-1804-bionic-v20211115"
 
 echo "This instance is preemtible, unless it's started with --prod";
-case $option in
+case $OPTION in
     -p|--prod|--production)
     unset PREEMPTIBLE
 	echo "Production mode enabled..."
@@ -28,20 +28,9 @@ else
    exit;
 fi
 
-gcloud compute instances create $NAME-$NEW_UUID \
---machine-type $TYPE \
---image "ubuntu-1804-bionic-v20201211a" \
---image-project "ubuntu-os-cloud" \
---boot-disk-size "10GB" \
---boot-disk-type "pd-ssd" \
---boot-disk-device-name "$NEW_UUID" \
---service-account mitta-us@appspot.gserviceaccount.com \
---zone $ZONE \
---labels type=solr \
---tags mitta,solr,token-$TOKEN \
---preemptible \
---subnet=default $IP --network-tier=PREMIUM \
---metadata startup-script='#!/bin/bash
+SOLR_VERSION=8.9.0
+SCRIPT=$(cat <<EOF
+#!/bin/bash
 if [ -d "/opt/solr/" ]; then
   echo "starting solr"
   sudo -i -u solr /opt/solr/bin/solr start
@@ -55,7 +44,7 @@ else
 
   #entropy
   apt-get -y install rng-tools
-  cat "HRNGDEVICE=/dev/urandom" >> /etc/default/rng-tools
+  cat "RNGDEVICE=/dev/urandom" >> /etc/default/rng-tools
   /etc/init.d/rng-tools restart
 
   # files
@@ -69,10 +58,10 @@ else
 
   cd /opt/
 
-  curl https://archive.apache.org/dist/lucene/solr/8.7.0/solr-8.7.0.tgz > solr-8.7.0.tgz
-  tar xzf solr-8.7.0.tgz solr-8.7.0/bin/install_solr_service.sh --strip-components=2
+  curl https://archive.apache.org/dist/lucene/solr/$SOLR_VERSION/solr-$SOLR_VERSION.tgz > solr-$SOLR_VERSION.tgz
+  tar xzf solr-$SOLR_VERSION.tgz solr-$SOLR_VERSION/bin/install_solr_service.sh --strip-components=2
 
-  bash ./install_solr_service.sh solr-8.7.0.tgz -u solr -s solr -p 8983
+  bash ./install_solr_service.sh solr-$SOLR_VERSION.tgz -u solr -s solr -p 8983
 
   cp -rp /opt/solr/server/solr/configsets /var/solr/data/
 
@@ -100,7 +89,23 @@ else
   date >> /opt/done.time
 
 fi
-'
+EOF
+)
+
+gcloud compute instances create $NAME-$NEW_UUID \
+--machine-type $TYPE \
+--image "$UBUNTU_VERSION" \
+--image-project "ubuntu-os-cloud" \
+--boot-disk-size "10GB" \
+--boot-disk-type "pd-ssd" \
+--boot-disk-device-name "$NEW_UUID" \
+--service-account mitta-us@appspot.gserviceaccount.com \
+--zone $ZONE \
+--labels type=solr \
+--tags mitta,solr,token-$TOKEN \
+--preemptible \
+--subnet=default $IP --network-tier=PREMIUM \
+--metadata startup-script="$SCRIPT"
 sleep 15
 
 gcloud compute instances add-metadata $NAME-$NEW_UUID --zone $ZONE --metadata-from-file=shutdown-script=stop-solr.sh
