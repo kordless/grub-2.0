@@ -25,6 +25,8 @@ def grub():
 	url = request.form.get('url')
 	upload_url = request.form.get('upload_url')
 	api_token = request.form.get('api_token')
+	sidekick_name = request.form.get('sidekick_name')
+	doc_id = request.form.get('doc_id')
 
 	if not url or not upload_url or not api_token:
 		abort(404, "go away")
@@ -39,7 +41,9 @@ def grub():
 		"/opt/grub-2.0/aperture/BrowserSession.py", 
 		"%s" % url,
 		"%s" % upload_url,
-		"%s" % api_token
+		"%s" % api_token,
+		"%s" % sidekick_name,
+		"%s" % doc_id
 	])
 
 	# reponse to appengine
