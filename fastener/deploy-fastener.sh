@@ -41,7 +41,9 @@ apt-get install build-essential -y
 apt-get install python-dev -y
 apt-get install python-setuptools -y
 apt-get install python-paste -y
-easy_install pip
+
+apt install pip
+
 pip install bottle
 pip install google-cloud
 pip install --upgrade google-api-python-client
@@ -55,7 +57,6 @@ git clone https://github.com/kordless/grub-2.0
 cd /grub-2.0/fastener/
 screen -dmS fastener bash -c "bash start-web.sh"
 
-fi
 EOF
 )
 
