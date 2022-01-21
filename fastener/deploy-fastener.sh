@@ -71,7 +71,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --labels type=fastener \
 --tags mitta,fastener,token-$TOKEN \
 $PREEMPTIBLE \
---subnet=default $IP --network-tier=PREMIUM \
+--subnet=default $IP --network-tier=STANDARD \
 --metadata startup-script="$SCRIPT"
 sleep 15
 
