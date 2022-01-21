@@ -1,0 +1,178 @@
+[
+    {
+        "cpuPlatform": "Intel Broadwell",
+        "creationTimestamp": "2018-07-22T06:23:17.681-07:00",
+        "deletionProtection": false,
+        "disks": [
+            {
+                "autoDelete": true,
+                "boot": true,
+                "deviceName": "persistent-disk-0",
+                "guestOsFeatures": [
+                    {
+                        "type": "VIRTIO_SCSI_MULTIQUEUE"
+                    }
+                ],
+                "index": 0,
+                "interface": "SCSI",
+                "kind": "compute#attachedDisk",
+                "licenses": [
+                    "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/licenses/ubuntu-1604-xenial"
+                ],
+                "mode": "READ_WRITE",
+                "source": "https://www.googleapis.com/compute/v1/projects/labs-209320/zones/us-west1-c/disks/button-lou-1dvf",
+                "type": "PERSISTENT"
+            }
+        ],
+        "id": "6765139003201633195",
+        "kind": "compute#instance",
+        "labelFingerprint": "tVFZyDGHIEs=",
+        "labels": {
+            "iid": "1dvf",
+            "sid": "lou",
+            "type": "button"
+        },
+        "machineType": "https://www.googleapis.com/compute/v1/projects/labs-209320/zones/us-west1-c/machineTypes/n1-standard-4",
+        "metadata": {
+            "fingerprint": "95uuFRqTjHo=",
+            "items": [
+                {
+                    "key": "startup-script-url",
+                    "value": "https://raw.githubusercontent.com/lucidworks/streams/master/projects/buttons/fastener/scripts/start-button.sh"
+                }
+            ],
+            "kind": "compute#metadata"
+        },
+        "name": "button-lou-1dvf",
+        "networkInterfaces": [
+            {
+                "accessConfigs": [
+                    {
+                        "kind": "compute#accessConfig",
+                        "name": "External NAT",
+                        "natIP": "35.197.119.248",
+                        "networkTier": "PREMIUM",
+                        "type": "ONE_TO_ONE_NAT"
+                    }
+                ],
+                "fingerprint": "lXSn38Rvj5A=",
+                "kind": "compute#networkInterface",
+                "name": "nic0",
+                "network": "https://www.googleapis.com/compute/v1/projects/labs-209320/global/networks/default",
+                "networkIP": "10.138.0.3",
+                "subnetwork": "https://www.googleapis.com/compute/v1/projects/labs-209320/regions/us-west1/subnetworks/default"
+            }
+        ],
+        "scheduling": {
+            "automaticRestart": false,
+            "onHostMaintenance": "TERMINATE",
+            "preemptible": true
+        },
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/labs-209320/zones/us-west1-c/instances/button-lou-1dvf",
+        "serviceAccounts": [
+            {
+                "email": "labs-209320@appspot.gserviceaccount.com",
+                "scopes": [
+                    "https://www.googleapis.com/auth/devstorage.read_only",
+                    "https://www.googleapis.com/auth/servicecontrol",
+                    "https://www.googleapis.com/auth/service.management.readonly"
+                ]
+            }
+        ],
+        "startRestricted": false,
+        "status": "RUNNING",
+        "tags": {
+            "fingerprint": "ZAJE_l5Y41E=",
+            "items": [
+                "fusion"
+            ]
+        },
+        "zone": "https://www.googleapis.com/compute/v1/projects/labs-209320/zones/us-west1-c"
+    },
+    {
+        "canIpForward": false,
+        "cpuPlatform": "Intel Broadwell",
+        "creationTimestamp": "2018-07-19T10:11:17.111-07:00",
+        "deletionProtection": false,
+        "disks": [
+            {
+                "autoDelete": true,
+                "boot": true,
+                "deviceName": "fastener-api-disk-hseo",
+                "guestOsFeatures": [
+                    {
+                        "type": "VIRTIO_SCSI_MULTIQUEUE"
+                    }
+                ],
+                "index": 0,
+                "interface": "SCSI",
+                "kind": "compute#attachedDisk",
+                "licenses": [
+                    "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/licenses/ubuntu-1604-xenial"
+                ],
+                "mode": "READ_WRITE",
+                "source": "https://www.googleapis.com/compute/v1/projects/labs-209320/zones/us-west1-c/disks/fastener-api-hseo",
+                "type": "PERSISTENT"
+            }
+        ],
+        "id": "2804003864259164379",
+        "kind": "compute#instance",
+        "labelFingerprint": "42WmSpB8rSM=",
+        "machineType": "https://www.googleapis.com/compute/v1/projects/labs-209320/zones/us-west1-c/machineTypes/n1-standard-1",
+        "metadata": {
+            "fingerprint": "ClWeQnbkWp8=",
+            "items": [
+                {
+                    "key": "startup-script",
+                    "value": "#! /bin/bash\nsudo su -\n\napt-get update -y\napt-get install unzip -y\napt-get install build-essential -y\napt-get install python-dev -y\napt-get install python-setuptools -y\napt-get install python-paste -y\neasy_install pip\npip install bottle\npip install google-cloud\npip install --upgrade google-api-python-client\npip install --upgrade pyasn1-modules\npip install google-auth-httplib2\n\ncd /;\ngit clone https://github.com/lucidworks/streams\ncd /streams/projects/buttons/fastener/;\nscreen -dmS buttons sudo python main.py\n"
+                }
+            ],
+            "kind": "compute#metadata"
+        },
+        "name": "fastener-api-hseo",
+        "networkInterfaces": [
+            {
+                "accessConfigs": [
+                    {
+                        "kind": "compute#accessConfig",
+                        "name": "external-nat",
+                        "natIP": "35.230.26.45",
+                        "networkTier": "PREMIUM",
+                        "type": "ONE_TO_ONE_NAT"
+                    }
+                ],
+                "fingerprint": "SHpTO42xB2g=",
+                "kind": "compute#networkInterface",
+                "name": "nic0",
+                "network": "https://www.googleapis.com/compute/v1/projects/labs-209320/global/networks/default",
+                "networkIP": "10.138.0.2",
+                "subnetwork": "https://www.googleapis.com/compute/v1/projects/labs-209320/regions/us-west1/subnetworks/default"
+            }
+        ],
+        "scheduling": {
+            "automaticRestart": false,
+            "onHostMaintenance": "TERMINATE",
+            "preemptible": true
+        },
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/labs-209320/zones/us-west1-c/instances/fastener-api-hseo",
+        "serviceAccounts": [
+            {
+                "email": "labs-209320@appspot.gserviceaccount.com",
+                "scopes": [
+                    "https://www.googleapis.com/auth/compute"
+                ]
+            }
+        ],
+        "startRestricted": false,
+        "status": "RUNNING",
+        "tags": {
+            "fingerprint": "WVhjhIMKnCY=",
+            "items": [
+                "http-server",
+                "lucid",
+                "token-464535a73a5b5684d4f49c965d5a2fef"
+            ]
+        },
+        "zone": "https://www.googleapis.com/compute/v1/projects/labs-209320/zones/us-west1-c"
+    }
+]
