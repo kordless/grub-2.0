@@ -78,4 +78,3 @@ sleep 15
 IP=$(gcloud compute instances describe $NAME-$NEW_UUID --zone $ZONE  | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')
 
 echo "Server started with $IP. Use the SSH button to login."
-echo "Try http://$IP"
