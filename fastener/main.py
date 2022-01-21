@@ -33,12 +33,12 @@ for item in evalcontent:
 credentials = compute_engine.Credentials()
 compute = discovery.build('compute', 'v1', credentials=credentials)
 compute_beta = discovery.build('compute', 'beta', credentials=credentials)
-project = 'labs-209320'
+project = 'mitta-us'
 
 # regions, zones & sizes (NOTE: us-east1 does not have an 'a' zone and has a 'd' zone)
-regions = ['us-central1', 'us-west1', 'us-west2', 'us-east4', 'us-east1', 'europe-west2', 'asia-east2'] # numbered 0, 1, 2, etc. in name
+regions = ['us-central1', 'us-west1', 'us-west2', 'us-east4', 'us-east1'] # numbered 0, 1, 2, etc. in name
 zones = ['a', 'b', 'c']
-sizes = ['n1-standard-4', 'n1-standard-8', 'n1-standard-16']
+sizes = ['n1-standard-4']
 
 
 app = Bottle(__name__)
@@ -101,30 +101,6 @@ def list():
         return dumps([])
 
 
-@app.route('/api/instance/<instance_id>/console', method='GET')
-def console(instance_id):
-    # token
-    try:
-        if request.query['token'] != token:
-            return dumps({'error': "need token"})
-    except:
-        return dumps({'error': "need token"})
-
-    regionint = instance_id[-2]
-    zonealpha = instance_id[-1]
-
-    try:
-        result = compute.instances().getSerialPortOutput(
-            project=project,
-            zone='%s-%s' % (regions[int(regionint)], zonealpha),
-            instance=instance_id
-        ).execute()
-    except Exception as ex:
-        result = {}
-        print "console probably not ready, but here's the actual error: %s" % ex
-    return dumps(result)
-
-
 @app.route('/api/instance/<instance_id>/status', method='GET')
 def status(instance_id):
     # token
@@ -163,67 +139,6 @@ def status(instance_id):
 
     return dumps(result)
 
-# requires ssh_key (encoded) and username parameters
-@app.route('/api/instance/<instance_id>/addkey', method='GET')
-def addkey(instance_id):
-    # ssh key
-    try:
-        if not request.query['ssh_key']:
-            return dumps({'error': "need ssh_key"})
-        if not request.query['username']:
-            return dumps({'error': "need username"})
-
-
-        ssh_key = urllib.unquote(request.query['ssh_key'])
-        username = request.query['username']
-    except:
-        return dumps({'error': "ssh_key, username required to add keys"})
-
-    regionint = instance_id[-2]
-    zonealpha = instance_id[-1]
-
-    status = "FAIL"
-
-    # write ssh_key to file
-    try:
-        # this be juju
-        # convert to use 'compute.instances.setmetadata'
-        # for adding metadata to an instance
-        f = open("keys/%s_rsa.pub" % username, "w")
-        f.write("%s:%s" % (username, ssh_key))
-        f.close()
-
-        # likely attack vector through not scrubing github username?
-        command = "gcloud compute instances add-metadata %s --metadata-from-file ssh-keys=keys/%s_rsa.pub --zone=%s-%s" % (
-            instance_id,
-            username,
-            regions[int(regionint)],
-            zonealpha
-        )
-        print "executing `%s`" % command
-
-        # sigh (at least it doesn't block)
-        commands = command.split()
-        p = subprocess.Popen(commands)
-
-        # os.system(command)
-
-        status = "SUCCESS"
-
-    except Exception as ex:
-        print ex
-        pass
-
-    result = {
-        'project': project,
-        'zone': '%s-%s' % (regions[int(regionint)], zonealpha),
-        'instance': instance_id,
-        'ssh_key': ssh_key,
-        'status': status
-    }
-
-    return dumps(result)
-
 
 @app.route('/api/instance/<instance_id>/stop', method='GET')
 def stop(instance_id):
@@ -233,31 +148,6 @@ def stop(instance_id):
             return dumps({'error': "need token"})
     except:
         return dumps({'error': "need token"})
-
-
-@app.route('/api/instance/<instance_id>/delete', method='GET')
-def delete(instance_id):
-    # token
-    try:
-        if request.query['token'] != token:
-            return dumps({'error': "need token"})
-    except:
-        return dumps({'error': "need token"})
-
-    regionint = instance_id[-2]
-    zonealpha = instance_id[-1]
-
-    try:
-        result = compute.instances().delete(
-            project=project,
-            zone='%s-%s' % (regions[int(regionint)], zonealpha),
-            instance=instance_id
-        ).execute()
-        return dumps(result)
-
-    except Exception as ex:
-        print "error: %s" % ex
-        return dumps({"response": "%s" % ex})
 
 
 @app.route('/api/instance/<instance_id>/restart', method='GET')
