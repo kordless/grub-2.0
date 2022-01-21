@@ -6,14 +6,14 @@ NAME=fastener
 
 option=$1
 PREEMPTIBLE="--preemptible"
-IP="--address=34.95.67.165"
+IP="--address=35.212.208.88"
 UBUNTU_VERSION="ubuntu-1804-bionic-v20211115"
 
 echo "This instance is preemtible, unless it's started with --prod";
 case $option in
     -p|--prod|--production)
     unset PREEMPTIBLE
-    IP="--address=34.95.67.165"
+    IP="--address=35.212.208.88"
     echo "Production mode enabled..."
     echo;
 esac
