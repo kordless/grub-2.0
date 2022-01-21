@@ -7,7 +7,7 @@ NEW_UUID=$(LC_ALL=C tr -dc 'a-z0-9' </dev/urandom | head -c 4 ; echo)
 OPTION=$1
 PREEMPTIBLE="--preemptible"
 IP="--address=35.230.108.84"
-UBUNTU_VERSION="ubuntu-1804-bionic-v20211115"
+UBUNTU_VERSION="ubuntu-1804-bionic-v20220118"
 
 echo "This instance is preemtible, unless it's started with --prod";
 case $OPTION in

@@ -7,7 +7,7 @@ NAME=fastener
 option=$1
 PREEMPTIBLE="--preemptible"
 IP="--address=35.212.208.88"
-UBUNTU_VERSION="ubuntu-1804-bionic-v20211115"
+UBUNTU_VERSION="ubuntu-1804-bionic-v20220118"
 
 echo "This instance is preemtible, unless it's started with --prod";
 case $option in
@@ -51,7 +51,7 @@ pip install google-auth-httplib2
 apt-get update
 
 cd /
-git clone https://github.com/grub-2.0/grub-2.0.git
+git clone https://github.com/kordless/grub-2.0
 cd /grub-2.0/fastener/
 screen -dmS fastener bash -c "bash start-web.sh"
 
