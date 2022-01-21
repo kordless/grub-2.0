@@ -40,10 +40,10 @@ gcloud beta compute instances create $NAME-$NEW_UUID \
 --boot-disk-type "pd-ssd" \
 --boot-disk-device-name "$NAME-disk-$NEW_UUID" \
 --zone $ZONE \
---tags http-server,lucid,token-$TOKEN \
+--tags http-server,token-$TOKEN \
 --scopes compute-rw, https://www.googleapis.com/auth/cloud-platform \
 --subnet=default $IP --network-tier=PREMIUM \
---service-account labs-209320@appspot.gserviceaccount.com \
+--service-account mitta-us@appspot.gserviceaccount.com \
 $PREEMPTIBLE \
 --metadata startup-script='#! /bin/bash
 sudo su -
@@ -61,9 +61,6 @@ pip install --upgrade google-api-python-client
 pip install --upgrade pyasn1-modules
 pip install google-auth-httplib2
 
-curl -L https://git.io/get_helm.sh | bash
-helm init
-
 apt-get update && apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list
@@ -75,11 +72,9 @@ sudo mkdir /usr/local/share/ca-certificates/cacert.org
 sudo wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt
 sudo update-ca-certificates
 
-gcloud beta container clusters get-credentials lucidworks-streams-fusion5-cluster --region us-central1 --project labs-209320
-
-cd /;
+cd /
 git clone https://github.com/grub-2.0/grub-2.0.git
-cd /grub-2.0/fastener/;
+cd /grub-2.0/fastener/
 screen -dmS fastener bash -c "bash start-web.sh"
 '
 
