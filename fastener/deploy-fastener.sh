@@ -41,8 +41,7 @@ apt-get install build-essential -y
 apt-get install python-dev -y
 apt-get install python-setuptools -y
 apt-get install python-paste -y
-
-apt install pip
+apt-get install python-pip -y
 
 pip install bottle
 pip install google-cloud
