@@ -15,7 +15,7 @@ from googleapiclient import discovery
 from bottle import Bottle, route, run, template, response, request, redirect, error
 
 # generators
-def id_generator(size=4, chars=string.ascii_lowercase + "labs"):return ''.join(random.choice(chars) for _ in range(size))
+def id_generator(size=4, chars=string.ascii_lowercase + "solr"):return ''.join(random.choice(chars) for _ in range(size))
 def password_generator(size=12, chars=string.ascii_lowercase + string.digits):return ''.join(random.choice(chars) for _ in range(size))
 
 # get the token from gcp tag on instance
