@@ -54,7 +54,7 @@ apt-get update
 cd /
 git clone https://github.com/kordless/grub-2.0
 cd /grub-2.0/fastener/
-screen -dmS fastener bash -c "bash start-web.sh"
+touch RUN_START_WEB
 
 EOF
 )
