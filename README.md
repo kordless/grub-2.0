@@ -1,4 +1,5 @@
-# Grub-2.0 is a set of deployment scripts and programs that create a system which puts an AI (a set of machine learning models + databases) in charge of crawling and indexing documents and URLs.
+# Grub-2.0 
+Grub is a set of deployment scripts and programs that create a system which puts an AI (a set of machine learning models + databases) in charge of crawling and indexing documents and URLs.
 
 We start by deploying Solr:
 # Deploy Solr on Google Cloud in 2 Minutes
