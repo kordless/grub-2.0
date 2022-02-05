@@ -40,9 +40,9 @@ class BrowserSession:
 			self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--width=1920')
 
 		self.session = webdriver.Session(self.config['webdriverip'], self.config['webdriverport'], capabilities=self.config['capabilities'])
+
 		return
 
-		
 
 	def go_to_url(self,url=None,fullscreen=True):
 

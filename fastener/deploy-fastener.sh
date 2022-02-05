@@ -67,6 +67,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --boot-disk-type "pd-ssd" \
 --boot-disk-device-name "$NEW_UUID" \
 --service-account mitta-us@appspot.gserviceaccount.com \
+--scopes https://www.googleapis.com/auth/cloud-platform, https://www.googleapis.com/auth/compute \
 --zone $ZONE \
 --labels type=fastener \
 --tags mitta,fastener,token-$TOKEN \
