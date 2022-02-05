@@ -90,9 +90,14 @@ class BrowserSession:
 
 		# upload to the spool endpoint
 		# always return image/png
-		url = "%s?token=%s&sidekick_name=%s&doc_id=%s" % (sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5]) 
+		url = "%s?token=%s&sidekick_name=%s&document_id=%s" % (sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5]) 
 		files = [('images', (filename, open("/opt/grub-2.0/aperture/images/%s" % filename.rstrip('\r\n'), 'rb'), 'image/png'))]
 		response = requests.request("POST", url, files = files)
+
+		file_object = open('/opt/grub-2.0/aperture/mitta_API_Upload.log', 'a')
+		file_object.write(response.text)
+		file_object.close()
+
 		return response.text
 	
 		
