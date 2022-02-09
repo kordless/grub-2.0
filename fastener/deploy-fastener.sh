@@ -6,7 +6,7 @@ NAME=fastener
 
 option=$1
 PREEMPTIBLE="--preemptible"
-IP=""
+IP="35.212.208.88"
 UBUNTU_VERSION="ubuntu-1804-bionic-v20220118"
 
 echo "This instance is preemtible, unless it's started with --prod";
