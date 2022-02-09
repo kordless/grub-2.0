@@ -46,7 +46,7 @@ app = Bottle(__name__)
 @app.error(404)
 def error404(error):
     # client_ip = request.environ.get('REMOTE_ADDR')
-    client_ip = "foo"
+    client_ip = "<ip_masked_display>"
     return dumps({'error': "illegal scan reported from %s" % client_ip, 'response': "fyuta"})
 
 # redirect elsewhere
