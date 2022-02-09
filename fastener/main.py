@@ -37,10 +37,8 @@ project = 'mitta-us'
 
 
 # regions, zones & sizes (NOTE: us-east1 does not have an 'a' zone and has a 'd' zone)
-regions = ['us-central1', 'us-west1', 'us-west2', 'us-east4', 'us-east1'] # numbered 0, 1, 2, etc. in name
-zones = ['a', 'b', 'c']
-sizes = ['n1-standard-4']
-
+regions = ['us-west1'] # numbered 0, 1, 2, etc. in name
+zones = ['c']
 
 app = Bottle(__name__)
 
@@ -51,12 +49,10 @@ def error404(error):
     client_ip = "foo"
     return dumps({'error': "illegal scan reported from %s" % client_ip, 'response': "fyuta"})
 
-
 # redirect elsewhere
 @app.route('/')
 def main():
     redirect("https://google.com/")
-
 
 @app.route('/api/instance/list', method='GET')
 def list():
@@ -177,8 +173,8 @@ def start(instance_id):
             return dumps({'error': "need token"})
     except:
         return dumps({'error': "need token"})
-    regionint = instance_id[-2]
-    zonealpha = instance_id[-1]
+    regionint = 0
+    zonealpha = "c"
     try:
         result = compute.instances().start(
             project=project,
