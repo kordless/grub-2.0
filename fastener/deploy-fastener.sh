@@ -1,5 +1,5 @@
 #!/bin/bash
-TYPE=n1-standard-2
+TYPE=f1-micro
 ZONE=us-west1-c
 NEW_UUID=$(LC_ALL=C tr -dc 'a-z0-9' </dev/urandom | head -c 4 ; echo)
 NAME=fastener
