@@ -1,9 +1,9 @@
 #!/bin/bash
-TYPE=n1-standard-4
-ZONE=us-west1-c
+TYPE=n2-highmem-4 # ~0.06 an hour
 NAME=solr
 NEW_UUID=$(LC_ALL=C tr -dc 'a-z0-9' </dev/urandom | head -c 4 ; echo)
 
+ZONE=$2
 OPTION=$1
 PREEMPTIBLE="--preemptible"
 IP="--address=35.230.108.84"
@@ -12,9 +12,17 @@ UBUNTU_VERSION="ubuntu-1804-bionic-v20220118"
 echo "This instance is preemtible, unless it's started with --prod";
 case $OPTION in
     -p|--prod|--production)
-    unset PREEMPTIBLE
-	echo "Production mode enabled..."
-    echo;
+       unset PREEMPTIBLE
+       echo "Production mode enabled..."
+       echo;
+esac
+
+case $ZONE in
+    us-west1-c)
+       echo "Using us-west1-c to start solr...";
+    *)
+       echo "Need a valid zone to start..."    
+       exit;
 esac
 
 if [ -f secrets.sh ]; then
@@ -96,7 +104,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --machine-type $TYPE \
 --image "$UBUNTU_VERSION" \
 --image-project "ubuntu-os-cloud" \
---boot-disk-size "10GB" \
+--boot-disk-size "100GB" \
 --boot-disk-type "pd-ssd" \
 --boot-disk-device-name "$NEW_UUID" \
 --service-account mitta-us@appspot.gserviceaccount.com \
