@@ -2,7 +2,7 @@
 
 while true; do
   cd /opt/grub-2.0/aperture/
-  python3 ./grub.py
+  gunicorn -w 8 grub:app
   sleep 5
 done
 
