@@ -77,7 +77,7 @@ else
   tar xzhf geckodriver.tar.gz
 
   mv geckodriver /opt/grub-2.0/aperture
-  cd grub-2.0
+  cd /opt/grub-2.0
   chmod -R 755 *.sh
 
   apt-get install apache2-utils -y
