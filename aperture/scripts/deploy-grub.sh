@@ -2,7 +2,7 @@
 TYPE=e2-medium
 ZONE=us-west1-c
 NAME=grub
-NEW_UUID=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
+NEW_UUID=$(LC_ALL=C tr -dc 'a-z0-9' </dev/urandom | head -c 4 ; echo)
 
 option=$1
 PREEMPTIBLE="--preemptible"
@@ -44,12 +44,12 @@ $PREEMPTIBLE \
 --metadata startup-script='#! /bin/bash
 if [ -d "/opt/grub-2.0/" ]; then
   echo "starting grub"
-  cd /opt/grub-2.0/
-  screen -dmS geckodriver bash -c "bash ./grub-scripts/start-geckodriver.sh"
-  screen -dmS grub bash -c "bash ./grub-scripts/start-grub.sh"
+  cd /opt/grub-2.0/aperture
+  screen -dmS geckodriver bash -c "bash ./scripts/start-geckodriver.sh"
+  screen -dmS grub bash -c "bash ./scripts/start-grub.sh"
 else
   sudo su -
-  date >> /opt/start.time
+  date >> /opt/grub-2.0/apeture/start.time
   apt-get update -y
   apt-get install unzip -y
   apt-get update -y
@@ -65,20 +65,25 @@ else
   pip3 install urllib3
   pip3 install httplib2
   pip3 install requests
+  pip3 install gunicorn
 
   cd /opt/
+  git clone https://github.com/kordless/grub-2.0.git
+
+  mkdir /opt/temp
+  cd /opt/temp/
 
   curl https://storage.googleapis.com/mitta-config/geckodriver-v0.28.0-linux64.tar.gz > geckodriver.tar.gz
   tar xzhf geckodriver.tar.gz
 
-  git clone https://github.com/kordless/grub-2.0.git
-
-  mv geckodriver /opt/grub-2.0/
+  mv geckodriver /opt/grub-2.0/aperture
   cd grub-2.0
   chmod -R 755 *.sh
 
   apt-get install apache2-utils -y
   apt-get install nginx -y
+  
+  cd /opt/grub-2.0/aperture/
   cp nginx.conf.grub /etc/nginx/nginx.conf
 
   python3 get_token.py grub
@@ -89,8 +94,9 @@ else
   systemctl restart nginx.service
  
   echo "starting grub"
-  screen -dmS geckodriver bash -c "bash ./grub-scripts/start-geckodriver.sh"
-  screen -dmS grub bash -c "bash ./grub-scripts/start-grub.sh"
+  cd /opt/aperture/
+  screen -dmS geckodriver bash -c "bash ./scripts/start-geckodriver.sh"
+  screen -dmS grub bash -c "bash ./scripts/start-grub.sh"
 
   date >> /opt/done.time
 fi
