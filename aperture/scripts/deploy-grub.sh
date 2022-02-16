@@ -95,7 +95,7 @@ else
  
   echo "starting grub"
   cd /opt/grub-2.0/aperture/
-  screen -dmS geckodriver bash -c "bash ./scripts/start-geckodriver.sh"
+  bash ./scripts/start-geckodriver.sh
   screen -dmS grub bash -c "bash ./scripts/start-grub.sh"
 
   date >> /opt/done.time
