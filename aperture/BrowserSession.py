@@ -106,7 +106,8 @@ class BrowserSession:
 		
 def main():
 	error_count = 0
-	while True:
+	yeah = True
+	while yeah:
 		try:
 			new_session = BrowserSession()
 			new_session.headless = True
@@ -120,7 +121,7 @@ def main():
 			filename = new_session.save_screenshot()
 
 			# we got something, so leave the loop
-			break
+			yeah = False
 
 		except Exception as ex:
 			# probably have a session	
@@ -130,7 +131,7 @@ def main():
 			# leave if it isn't going to work after 10 times (keeps many from being created)
 			error_count = error_count + 1
 			if error_count > 10:
-				break
+				yeah = False
 
 if __name__ == '__main__':
 	main()
