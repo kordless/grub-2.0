@@ -32,7 +32,10 @@ class BrowserSession:
 
 	def setup_session(self):
 
-		self.config = json.loads(open('config.json', 'r').read()) 
+		self.config = json.loads(open('config.json', 'r').read())
+
+		# randomly pick a port to try - if it's running we'll throw an error down at the bottom
+		self.config['webdriverport'] = 4444 + random.randrange(5)
 
 		if self.headless:
 			self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--headless')
@@ -102,17 +105,32 @@ class BrowserSession:
 	
 		
 def main():
-	try:
-		new_session = BrowserSession()
-		new_session.headless = True
-		new_session.setup_session()
+	error_count = 0
+	while True:
+		try:
+			new_session = BrowserSession()
+			new_session.headless = True
 
-		new_session.go_to_url(sys.argv[1], fullscreen=True)
-		time.sleep(3)
-		filename = new_session.save_screenshot()
+			# randomize who we pick, if we pick wrong we'll drop to the except below
+			new_session.setup_session()
 
-	except Exception as ex:
-		print("error %s" % ex)
+			new_session.go_to_url(sys.argv[1], fullscreen=True)
+
+			time.sleep(3)
+			filename = new_session.save_screenshot()
+
+			# we got something, so leave the loop
+			break
+
+		except Exception as ex:
+			# probably have a session	
+			print("error %s" % ex)
+			time.sleep(1) # hang out for a second
+
+			# leave if it isn't going to work after 10 times (keeps many from being created)
+			error_count = error_count + 1
+			if error_count > 10:
+				break
 
 if __name__ == '__main__':
 	main()
