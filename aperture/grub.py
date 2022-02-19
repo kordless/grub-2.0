@@ -35,6 +35,7 @@ def grub():
 	if '"' in url or "'" in url:
 		abort(404, "go away")
 
+	
 	# killing joe over and over again, for safety
 	p = Popen([
 		"python3", 

@@ -30,9 +30,12 @@ class BrowserSession:
 		self.local_index = None
 		self.save_text = False
 
-	def setup_session(self):
+	def setup_session(self, offset=0):
 
-		self.config = json.loads(open('config.json', 'r').read()) 
+		self.config = json.loads(open('config.json', 'r').read())
+
+		# randomly pick a port to try - if it's running we'll throw an error down at the bottom
+		self.config['webdriverport'] = 4444 + offset
 
 		if self.headless:
 			self.config['capabilities']['alwaysMatch']['moz:firefoxOptions']['args'].insert(1,'--headless')
@@ -59,7 +62,7 @@ class BrowserSession:
 		return
 
 
-	def save_screenshot(self,filename=None):
+	def save_screenshot(self,filename=None,offset=0):
 		if filename is None:
 			filename = "%s.png" % random_string(23)
 
@@ -68,10 +71,11 @@ class BrowserSession:
 				print("in debug")
 
 		try:
+			port = 4444 + offset
 			if self.fullscreen:
-				r = requests.get(url="http://localhost:4444/session/" + self.session.session_id + "/moz/screenshot/full")
+				r = requests.get(url="http://localhost:"+"%s"%port+"/session/" + self.session.session_id + "/moz/screenshot/full")
 			else:
-				r = requests.get(url="http://localhost:4444/session/" + self.session.session_id + "/screenshot")
+				r = requests.get(url="http://localhost:"+"%s"%port+"/session/" + self.session.session_id + "/screenshot")
 			if r.status_code == 200:
 				try:
 					with open("/opt/grub-2.0/aperture/images/%s" % filename, 'wb') as screenshot:
@@ -102,17 +106,34 @@ class BrowserSession:
 	
 		
 def main():
-	try:
-		new_session = BrowserSession()
-		new_session.headless = True
-		new_session.setup_session()
+	error_count = 0
+	yeah = True
+	while yeah:
+		try:
+			new_session = BrowserSession()
+			new_session.headless = True
 
-		new_session.go_to_url(sys.argv[1], fullscreen=True)
-		time.sleep(3)
-		filename = new_session.save_screenshot()
+			# randomize who we pick, if we pick wrong we'll drop to the except below
+			offset = random.randrange(5)
+			new_session.setup_session(offset=offset)
 
-	except Exception as ex:
-		print("error %s" % ex)
+			new_session.go_to_url(sys.argv[1], fullscreen=True)
+
+			time.sleep(3)
+			filename = new_session.save_screenshot(offset=offset)
+
+			# we got something, so leave the loop
+			yeah = False
+
+		except Exception as ex:
+			# probably have a session	
+			print("error %s" % ex)
+			time.sleep(1) # hang out for a second
+
+			# leave if it isn't going to work after 10 times (keeps many from being created)
+			error_count = error_count + 1
+			if error_count > 10:
+				yeah = False
 
 if __name__ == '__main__':
 	main()
