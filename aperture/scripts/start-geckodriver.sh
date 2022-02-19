@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /opt/grub-2.0/
-/opt/grub-2.0/geckodriver -v --marionette-port 2928
+cd /opt/grub-2.0/aperture
+./geckodriver -v --marionette-port 2928 -p 4444

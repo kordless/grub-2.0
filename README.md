@@ -1,8 +1,9 @@
 # Grub-2.0 
-Grub is a set of deployment scripts and programs that create a system which puts an AI (a set of machine learning models + databases) in charge of crawling and indexing documents and URLs.
+Grub is a set of deployment scripts and programs for Google Cloud which creates an AI system for crawling and indexing documents or URLs.
 
-We start by deploying Solr:
-# Deploy Solr on Google Cloud in 2 Minutes
+This is a work in progress.
+
+# Deploy Solr on Google Cloud
 Useful information and scripts for deploying an instance based Solr Cloud in 2 minutes.
 
 Check this repo out on your Google Cloud Shell terminal.
@@ -34,7 +35,7 @@ Deploy a controller box for Solr instances. Not done yet.
 $ ./deploy-fastener.sh
 ```
 
-Instance will be running in 2.5 minutes, listening on port 80.
+Instance will be running and listening on port 80.
 
 ## Bookmark and Index
 [Bookmark and index](https://mitta.us/https://github.com/kordless/mitta-deploy/) this page using [Mitta.us](https://mitta.us/https://github.com/kordless/mitta-deploy/).
