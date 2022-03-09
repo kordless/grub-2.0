@@ -29,7 +29,7 @@ Instance will be running in 2.5 minutes, listening on port 8389.
 URL like: http://solr:password@x.x.x.x:8389
 
 ## Fastener
-Deploy a controller box for Solr instances. Not done yet.
+Deploy a controller box for Solr instances. The scripts should be copied to Google Compute instance templates.
 
 ```
 $ ./deploy-fastener.sh
