@@ -120,6 +120,7 @@ def main():
 			new_session.go_to_url(sys.argv[1], fullscreen=True)
 
 			time.sleep(3)
+			print(new_session.toJSON())
 			filename = new_session.save_screenshot(offset=offset)
 
 			# we got something, so leave the loop
