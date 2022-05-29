@@ -41,7 +41,7 @@ SCRIPT=$(cat <<EOF
 #!/bin/bash
 if [ -d "/opt/solr/" ]; then
   echo "starting solr"
-  sudo -i -u solr /opt/solr/bin/solr start
+  sudo -i -u solr /opt/solr/bin/solr start -m 8192m
 else
   sudo su -
   date >> /opt/start.time
