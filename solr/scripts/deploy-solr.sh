@@ -18,11 +18,13 @@ case $OPTION in
 esac
 
 case $ZONE in
-    us-west1-c)
-       echo "Using us-west1-c to start solr...";
+    us-west1-a)
+       echo "Using $ZONE to start solr...";
+       ;;
     *)
-       echo "Need a valid zone to start..."    
+       echo "Need a valid zone to start...";   
        exit;
+       ;;
 esac
 
 if [ -f secrets.sh ]; then
@@ -79,9 +81,9 @@ else
   cd /opt/
   git clone https://github.com/kordless/grub-2.0.git
 
-  cd grub-2.0
-  chmod -R 755 *.sh
-  ./solr-scripts/start-solr.sh
+  cd grub-2.0/solr
+  chmod -R 755 scripts/*.sh
+  ./scripts/start-solr.sh
 
   cp solr /etc/init.d/solr
   chmod 755 /etc/init.d/solr
