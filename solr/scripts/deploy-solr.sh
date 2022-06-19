@@ -113,7 +113,7 @@ gcloud compute instances create $NAME-$NEW_UUID \
 --zone $ZONE \
 --labels type=solr \
 --tags mitta,solr,token-$TOKEN \
---preemptible \
+$PREEMPTIBLE \
 --subnet=default $IP --network-tier=PREMIUM \
 --metadata startup-script="$SCRIPT"
 sleep 15
