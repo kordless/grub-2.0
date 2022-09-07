@@ -38,7 +38,7 @@ else
    exit;
 fi
 
-SOLR_VERSION=8.9.0
+SOLR_VERSION=9.0.0
 SCRIPT=$(cat <<EOF
 #!/bin/bash
 if [ -d "/opt/solr/" ]; then
@@ -68,7 +68,7 @@ else
 
   cd /opt/
 
-  curl https://archive.apache.org/dist/lucene/solr/$SOLR_VERSION/solr-$SOLR_VERSION.tgz > solr-$SOLR_VERSION.tgz
+  curl https://archive.apache.org/dist/solr/solr/$SOLR_VERSION/solr-$SOLR_VERSION.tgz > solr-$SOLR_VERSION.tgz
   tar xzf solr-$SOLR_VERSION.tgz solr-$SOLR_VERSION/bin/install_solr_service.sh --strip-components=2
 
   bash ./install_solr_service.sh solr-$SOLR_VERSION.tgz -u solr -s solr -p 8983
@@ -88,6 +88,9 @@ else
   cp solr /etc/init.d/solr
   chmod 755 /etc/init.d/solr
 
+  cp managed-schema.xml /var/solr/data/configsets/_default/conf/
+  chown solr.solr /var/solr/data/configsets/_default/conf/managed-schema.xml
+  
   apt-get install apache2-utils -y
   apt-get install nginx -y
   cp nginx.conf.solr /etc/nginx/nginx.conf

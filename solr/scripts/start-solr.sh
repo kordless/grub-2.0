@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo -i -u solr /opt/solr/bin/solr start -p 8983
+sudo -i -u solr /opt/solr/bin/solr restart -p 8983
