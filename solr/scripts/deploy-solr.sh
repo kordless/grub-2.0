@@ -6,14 +6,15 @@ NEW_UUID=$(LC_ALL=C tr -dc 'a-z0-9' </dev/urandom | head -c 4 ; echo)
 ZONE=$2
 OPTION=$1
 PREEMPTIBLE="--preemptible"
-IP="--address=35.230.108.84"
 UBUNTU_VERSION="ubuntu-1804-bionic-v20220118"
+IP=""
 
 echo "This instance is preemtible, unless it's started with --prod";
 case $OPTION in
     -p|--prod|--production)
        unset PREEMPTIBLE
        echo "Production mode enabled..."
+       IP="--address=35.230.108.84"
        echo;
 esac
 
@@ -22,7 +23,7 @@ case $ZONE in
        echo "Using $ZONE to start solr...";
        ;;
     *)
-       echo "Need a valid zone to start...";   
+       echo "Need a valid zone to start...such as us-west1-a";   
        exit;
        ;;
 esac
