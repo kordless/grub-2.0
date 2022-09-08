@@ -1,1 +1,0 @@
-TOKEN=f00bar

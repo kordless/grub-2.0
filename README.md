@@ -1,22 +1,14 @@
 # Grub-2.0 
-Grub is a set of deployment scripts and programs for Google Cloud which creates an AI system for crawling and indexing documents or URLs.
+Grub is a system for crawling and indexing documents.
 
-This is a work in progress.
+This is a work in progress. Feel free to open tickets.
 
-# Deploy Solr on Google Cloud
-Useful information and scripts for deploying an instance based Solr Cloud in 2 minutes.
+# Deploy a Solr Neural Indexer on Google Cloud
+Useful information and scripts for deploying a Solr indexer hosted on a single machine. 
 
-Check this repo out on your Google Cloud Shell terminal.
+There is also a [Docker version of Solr available](https://hub.docker.com/_/solr).
 
-## Launch Solr
-Deploy a secure Solr instance on Google cloud:
-
-```
-$ ./deploy-solr.sh
-Password token is: f00bar
-```
-
-### Create a secrets.sh file
+## Create a secrets.sh file
 
 ```
 $ vi secrets.sh
@@ -24,9 +16,15 @@ TOKEN=f00bar
 :x
 ```
 
+
+```
+$ ./deploy-solr.sh
+```
+
 Instance will be running in 2.5 minutes, listening on port 8389.
 
-URL like: http://solr:password@x.x.x.x:8389
+URL goes like: http://solr:password@x.x.x.x:8389
+
 
 ## Fastener
 Deploy a controller box for Solr instances. The scripts should be copied to Google Compute instance templates.
