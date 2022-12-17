@@ -39,7 +39,7 @@ else
    exit;
 fi
 
-SOLR_VERSION=9.0.0
+SOLR_VERSION=9.1.0
 SCRIPT=$(cat <<EOF
 #!/bin/bash
 if [ -d "/opt/solr/" ]; then
