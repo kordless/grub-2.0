@@ -2,7 +2,7 @@
 Grub is a system for crawling and indexing documents and then running machine learning models to them. This is a work in progress.
 
 # Deploy a Solr "Neural" Indexer.
-These scripts deploy a single Solr instance (9.0.0) running on Google Cloud.
+These scripts deploy a single Solr instance (9.1.0) running on Google Cloud.
 
 There is also a [Docker version of Solr available](https://hub.docker.com/_/solr), if you don't use Google Cloud.
 
